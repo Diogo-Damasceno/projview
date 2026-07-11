@@ -1,10 +1,5 @@
 # projview
 
-> ## 🌐 SITE DO PORTFÓLIO: https://diogo-damasceno.github.io/projview/
-> Clique e veja todos os meus projetos com testes, explicação e diagrama de algoritmo.
->
-> [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-ver%20site-blue?style=for-the-badge)](https://diogo-damasceno.github.io/projview/)
-
 Gerador de **portfólio estático** para os meus projetos de cibersegurança e DevOps.
 
 Ele roda os testes de cada projeto **localmente** (na minha máquina, no
