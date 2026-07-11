@@ -105,20 +105,20 @@ def _algo_html(name: str) -> str:
 # páginas
 # --------------------------------------------------------------------------
 
-def _page(title: str, body: str, active: str = "") -> str:
+def _page(title: str, body: str, active: str = "", asset_prefix: str = "") -> str:
     return f"""<!DOCTYPE html>
 <html lang="pt-BR"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{html.escape(title)} · ProjView</title>
-<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="{asset_prefix}assets/style.css">
 </head><body>
 <header class="top">
-  <a class="brand" href="../index.html">◈ ProjView</a>
-  <nav><a href="../index.html">Projetos</a></nav>
+  <a class="brand" href="{asset_prefix}index.html">◈ ProjView</a>
+  <nav><a href="{asset_prefix}index.html">Projetos</a></nav>
 </header>
 <main class="wrap">{body}</main>
 <footer class="foot">Portfólio estático gerado por projview — nenhum código é executado no servidor ou no navegador.</footer>
-<script src="../assets/site.js"></script>
+<script src="{asset_prefix}assets/site.js"></script>
 </body></html>"""
 
 
@@ -142,13 +142,19 @@ def build_site() -> None:
         p["analysis"] = an
         projects.append(p)
 
+    # ordena: projetos com testes passando primeiro, depois os sem testes
+    def _has_tests(p):
+        s = p["suite"]
+        return s.get("ran") and s.get("total", 0) > 0
+    projects.sort(key=lambda p: (not _has_tests(p), p["name"]))
+
     # home
     cards = "\n".join(_card(p, p["suite"]) for p in projects)
     home = _page("Projetos", f"""
       <h1>Meus projetos</h1>
       <p class="lead">Clique em um projeto para ver o fluxo dos testes, como funciona e o diagrama do algoritmo. Tudo gerado estaticamente — seguro para portfólio.</p>
       <section class="grid">{cards}</section>
-    """)
+    """, asset_prefix="")
 
     with open(os.path.join(DOCS, "index.html"), "w", encoding="utf-8") as fh:
         fh.write(home)
@@ -178,7 +184,7 @@ def build_site() -> None:
         </section>
         <section class="pane" id="algo">{_algo_html(p['name'])}</section>
         """
-        page = _page(p["name"], body, active=p["name"])
+        page = _page(p["name"], body, active=p["name"], asset_prefix="../")
         with open(os.path.join(DOCS, "proj", f"{p['name']}.html"), "w", encoding="utf-8") as fh:
             fh.write(page)
 

@@ -1,43 +1,4 @@
 {
-  "BIGMAN": {
-    "suite": {
-      "ran": false,
-      "total": 0,
-      "passed": 0,
-      "failed": 0,
-      "skipped": 0,
-      "tests": [],
-      "error": "sem su\u00edte de testes (pytest n\u00e3o configurado)"
-    },
-    "lang": "Node",
-    "category": "Web"
-  },
-  "DDfetch": {
-    "suite": {
-      "ran": false,
-      "total": 0,
-      "passed": 0,
-      "failed": 0,
-      "skipped": 0,
-      "tests": [],
-      "error": "sem su\u00edte de testes (pytest n\u00e3o configurado)"
-    },
-    "lang": "Shell",
-    "category": "DevOps"
-  },
-  "Umbra": {
-    "suite": {
-      "ran": false,
-      "total": 0,
-      "passed": 0,
-      "failed": 0,
-      "skipped": 0,
-      "tests": [],
-      "error": "sem su\u00edte de testes (pytest n\u00e3o configurado)"
-    },
-    "lang": "Java",
-    "category": "Privacidade"
-  },
   "cve-watch": {
     "suite": {
       "ran": true,
@@ -134,7 +95,7 @@
           "nodeid": "tests.test_fim::test_hash_file_stable",
           "name": "test_hash_file_stable",
           "status": "passed",
-          "duration": 0.002,
+          "duration": 0.003,
           "detail": ""
         },
         {
@@ -169,7 +130,7 @@
           "nodeid": "tests.test_fim::test_cli_init_check_detects_modification",
           "name": "test_cli_init_check_detects_modification",
           "status": "passed",
-          "duration": 0.002,
+          "duration": 0.003,
           "detail": ""
         },
         {
@@ -183,7 +144,7 @@
           "nodeid": "tests.test_fim::test_cli_diff_json",
           "name": "test_cli_diff_json",
           "status": "passed",
-          "duration": 0.002,
+          "duration": 0.003,
           "detail": ""
         }
       ],
@@ -218,14 +179,14 @@
           "nodeid": "tests.test_honeypot::test_honeypot_captures_http_connection",
           "name": "test_honeypot_captures_http_connection",
           "status": "passed",
-          "duration": 0.605,
+          "duration": 0.604,
           "detail": ""
         },
         {
           "nodeid": "tests.test_honeypot::test_honeypot_captures_ssh_banner",
           "name": "test_honeypot_captures_ssh_banner",
           "status": "passed",
-          "duration": 0.603,
+          "duration": 0.604,
           "detail": ""
         }
       ],
@@ -288,14 +249,14 @@
           "nodeid": "tests.test_engine::test_real_collectors_run",
           "name": "test_real_collectors_run",
           "status": "passed",
-          "duration": 0.021,
+          "duration": 0.02,
           "detail": ""
         },
         {
           "nodeid": "tests.test_engine::test_snapshot_and_diff",
           "name": "test_snapshot_and_diff",
           "status": "passed",
-          "duration": 0.059,
+          "duration": 0.06,
           "detail": ""
         }
       ],
@@ -547,7 +508,7 @@
           "nodeid": "tests.test_scanner::test_socket_scan_detects_open_port",
           "name": "test_socket_scan_detects_open_port",
           "status": "passed",
-          "duration": 0.016,
+          "duration": 0.015,
           "detail": ""
         },
         {
@@ -918,7 +879,7 @@
           "nodeid": "tests.test_tip::test_dedup_updates",
           "name": "test_dedup_updates",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.0,
           "detail": ""
         },
         {
@@ -946,7 +907,7 @@
           "nodeid": "tests.test_tip::test_rest_api_roundtrip",
           "name": "test_rest_api_roundtrip",
           "status": "passed",
-          "duration": 0.514,
+          "duration": 0.515,
           "detail": ""
         }
       ],
@@ -1024,5 +985,44 @@
     },
     "lang": "Python",
     "category": "Defensiva"
+  },
+  "BIGMAN": {
+    "suite": {
+      "ran": false,
+      "total": 0,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [],
+      "error": "sem su\u00edte de testes (pytest n\u00e3o configurado)"
+    },
+    "lang": "Node",
+    "category": "Web"
+  },
+  "DDfetch": {
+    "suite": {
+      "ran": false,
+      "total": 0,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [],
+      "error": "sem su\u00edte de testes (pytest n\u00e3o configurado)"
+    },
+    "lang": "Shell",
+    "category": "DevOps"
+  },
+  "Umbra": {
+    "suite": {
+      "ran": false,
+      "total": 0,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [],
+      "error": "sem su\u00edte de testes (pytest n\u00e3o configurado)"
+    },
+    "lang": "Java",
+    "category": "Privacidade"
   }
 }
