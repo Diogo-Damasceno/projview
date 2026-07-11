@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>mini-siem · ProjView</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body>
+<header class="top">
+  <a class="brand" href="../index.html">◈ ProjView</a>
+  <nav><a href="../index.html">Projetos</a></nav>
+</header>
+<main class="wrap">
+        <a class="back" href="../index.html">← todos os projetos</a>
+        <div class="phead">
+          <h1>mini-siem</h1>
+          <div class="tags"><span class="lang">Python</span>
+          <span class="cat">Defensiva</span>
+          <a class="repo" href="https://github.com/Diogo-Damasceno/mini-siem" target="_blank" rel="noopener">GitHub ↗</a></div>
+          <p class="lead">Mini-SIEM: ingestão, normalização e correlação de logs com detecção de ataques.</p>
+        </div>
+        <div class="tabs">
+          <button class="tab active" data-tab="tests">Testes</button>
+          <button class="tab" data-tab="how">Como funciona</button>
+          <button class="tab" data-tab="algo">Algoritmo</button>
+        </div>
+        <section class="pane active" id="tests"><p class="summary"><b>9</b> testes · <span class="ok">9 passou</span> · <span class="bad">0 falhou</span> · <span class="muted">0 skip</span></p><ul class="tests"><li class="trow pass"><span class="dot"></span><span class="tname">test_package_importable</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_source_files_present</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_parse_ssh_failure</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_parse_ssh_success</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_parse_nginx</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_bruteforce_detection</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_web_scan_detection</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_store_ingest_and_query</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_stats</span><span class="ttime">0.00s</span><div class="tdetail"></div></li></ul></section>
+        <section class="pane" id="how">
+          
+    <h3>Entrypoints (CLI)</h3><ul class="eps"><li><code>minisiem</code></li></ul>
+    <h3>Módulos e funções principais</h3><details><summary>minisiem/__init__.py</summary><ul><li>—</li></ul></details><details><summary>minisiem/cli.py</summary><ul><li><code>main()</code></li></ul></details><details><summary>minisiem/parsers.py</summary><ul><li><code>parse_line()</code></li><li><code>parse_stream()</code></li></ul></details><details><summary>minisiem/store.py</summary><ul><li><code>detect_bruteforce()</code> — Regra: N falhas de autenticação do mesmo IP =&gt; brute-force.</li><li><code>detect_web_scan()</code> — Regra: muitos 404 do mesmo IP =&gt; varredura web.</li><li><code>run_all_rules()</code></li></ul></details>
+    <h3>Estrutura de arquivos</h3><ul class="tree"><li>LICENSE</li><li>README.md</li><li>mini_siem.egg-info/PKG-INFO</li><li>mini_siem.egg-info/SOURCES.txt</li><li>mini_siem.egg-info/dependency_links.txt</li><li>mini_siem.egg-info/entry_points.txt</li><li>mini_siem.egg-info/requires.txt</li><li>mini_siem.egg-info/top_level.txt</li><li>minisiem/__init__.py</li><li>minisiem/cli.py</li><li>minisiem/parsers.py</li><li>minisiem/store.py</li><li>pyproject.toml</li><li>samples/auth.log</li><li>tests/test_imports.py</li><li>tests/test_siem.py</li></ul>
+    
+          <h3>README</h3>
+          <div class="readme"># Mini-SIEM 📊
+
+Um SIEM caseiro (mini-Splunk) que **ingere logs**, **normaliza** em eventos estruturados, **armazena** em SQLite, permite **consultas** e roda **regras de correlação/detecção** (brute-force SSH, varredura web).
+
+&gt; Núcleo funcional (parsers + storage + regras) pronto. Dashboard React/Grafana e backend Go estão no roadmap — ver abaixo.
+
+## Estado atual (funcional ✅)
+
+- Parsers: **sshd** (auth_failure/success/invalid_user), **syslog**, **nginx access**
+- Armazenamento e consulta em **SQLite**
+- Regras de detecção:
+  - `ssh_bruteforce` — N falhas do mesmo IP
+  - `web_scan` — muitos 404 do mesmo IP
+- CLI de ingestão (arquivo ou stdin), consulta, stats e detecção
+
+## Instalação
+
+```bash
+git clone https://github.com/Diogo-Damasceno/mini-siem.git
+cd mini-siem
+pip install -e .
+```
+
+## Uso
+
+```bash
+# ingerir o log de exemplo (detecta brute-force + web scan)
+minisiem --db siem.db ingest samples/auth.log
+
+# via stdin (ex.: journald)
+journalctl -u sshd --no-pager | minisiem ingest
+
+# consultar e estatísticas
+minisiem --db siem.db query --type auth_failure
+minisiem --db siem.db stats
+minisiem --db siem.db detect
+```
+
+### Saída de exemplo
+
+```
+[*] 18 eventos ingeridos.
+  [!] CRITICAL ssh_bruteforce: 6 tentativas de autenticação falhas de 45.9.148.2
+  [!] WARNING web_scan: 11 respostas 404 de 185.100.87.1 (possível varredura)
+```
+
+## Arquitetura
+
+```
+minisiem/
+├── parsers.py   # normalização de logs -&gt; Event  [✅ funcional]
+├── store.py     # SQLite + regras de detecção      [✅ funcional]
+└── cli.py       # ingestão / consulta / detecção    [✅ funcional]
+```
+
+## Roadmap (expansão para SIEM completo)
+
+- [ ] Backend HTTP (FastAPI/Go) expondo consultas e alertas
+- [ ] Dashboard web (React) com gráficos de eventos/alertas
+- [ ] Coletores para Docker, firewall (nftables), auditd
+- [ ] Regras adicionais (impossible travel, exfil, privilege escalation)
+- [ ] PostgreSQL como backend para alto volume
+- [ ] Integração com o Threat Intelligence Platform (enriquecimento de IOCs)
+
+## Testes
+
+```bash
+pip install -e &#x27;.[dev]&#x27;
+pytest -q
+```
+
+## Licença
+
+MIT
+</div>
+        </section>
+        <section class="pane" id="algo"><div class="algo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 644" class="flow" role="img" aria-label="mini-siem">
+<text x="150" y="18" class="flow-title">mini-siem</text>
+<defs><marker id="a139824629138368next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="124" x2="150" y2="124" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a139824629138368next)"/>
+<defs><marker id="a139824629138368next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="194" x2="150" y2="194" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a139824629138368next)"/>
+<defs><marker id="a139824629394224yes" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#56d364"/></marker></defs><line x1="390" y1="229" x2="210" y2="299" stroke="#56d364" stroke-width="1.6" marker-end="url(#a139824629394224yes)"/><text x="300" y="264" class="edge-lbl" fill="#56d364">S</text>
+<defs><marker id="a139824629393984no" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ff7b72"/></marker></defs><line x1="-90" y1="229" x2="90" y2="579" stroke="#ff7b72" stroke-width="1.6" marker-end="url(#a139824629393984no)"/><text x="0" y="404" class="edge-lbl" fill="#ff7b72">N</text>
+<defs><marker id="a139824629138368next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="334" x2="150" y2="334" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a139824629138368next)"/>
+<defs><marker id="a139824629138368next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="404" x2="150" y2="404" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a139824629138368next)"/>
+<defs><marker id="a139824629394224yes" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#56d364"/></marker></defs><line x1="390" y1="439" x2="210" y2="509" stroke="#56d364" stroke-width="1.6" marker-end="url(#a139824629394224yes)"/><text x="300" y="474" class="edge-lbl" fill="#56d364">S</text>
+<defs><marker id="a139824629393984no" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ff7b72"/></marker></defs><line x1="-90" y1="439" x2="90" y2="579" stroke="#ff7b72" stroke-width="1.6" marker-end="url(#a139824629393984no)"/><text x="0" y="509" class="edge-lbl" fill="#ff7b72">N</text>
+<defs><marker id="a139824629138368next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="544" x2="150" y2="544" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a139824629138368next)"/>
+<g class="node"><ellipse cx="150.0" cy="89.0" rx="120.0" ry="28.0" class="oval"/><text x="150.0" y="89.0" class="lbl">Ingestão de log (arquivo/stdin)</text></g>
+<g class="node"><rect x="30" y="124" width="240" height="56" rx="8" class="box"/><text x="150.0" y="159.0" class="lbl">Parsers por tipo (ssh/web)</text></g>
+<g class="node"><polygon points="150.0,194 270,229.0 150.0,250 30,229.0" class="dia"/><text x="150.0" y="229.0" class="lbl">Parseou?</text></g>
+<g class="node"><rect x="30" y="264" width="240" height="56" rx="8" class="box"/><text x="150.0" y="299.0" class="lbl">Normalizar em evento estruturado</text></g>
+<g class="node"><rect x="30" y="334" width="240" height="56" rx="8" class="box"/><text x="150.0" y="369.0" class="lbl">Armazenar em SQLite</text></g>
+<g class="node"><polygon points="150.0,404 270,439.0 150.0,460 30,439.0" class="dia"/><text x="150.0" y="439.0" class="lbl">Regra de correlação bate?</text></g>
+<g class="node"><rect x="30" y="474" width="240" height="56" rx="8" class="box"/><text x="150.0" y="509.0" class="lbl">Disparar alerta (brute-force/web scan)</text></g>
+<g class="node"><ellipse cx="150.0" cy="579.0" rx="120.0" ry="28.0" class="oval end"/><text x="150.0" y="579.0" class="lbl">Query/stats/alertas disponíveis</text></g>
+</svg></div></section>
+        </main>
+<footer class="foot">Portfólio estático gerado por projview — nenhum código é executado no servidor ou no navegador.</footer>
+<script src="../assets/site.js"></script>
+</body></html>

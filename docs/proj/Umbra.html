@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Umbra · ProjView</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body>
+<header class="top">
+  <a class="brand" href="../index.html">◈ ProjView</a>
+  <nav><a href="../index.html">Projetos</a></nav>
+</header>
+<main class="wrap">
+        <a class="back" href="../index.html">← todos os projetos</a>
+        <div class="phead">
+          <h1>Umbra</h1>
+          <div class="tags"><span class="lang">Java</span>
+          <span class="cat">Privacidade</span>
+          <a class="repo" href="https://github.com/Diogo-Damasceno/Umbra" target="_blank" rel="noopener">GitHub ↗</a></div>
+          <p class="lead">Simulador de privacidade em Java que detecta/anonimiza dados sensíveis em JSON.</p>
+        </div>
+        <div class="tabs">
+          <button class="tab active" data-tab="tests">Testes</button>
+          <button class="tab" data-tab="how">Como funciona</button>
+          <button class="tab" data-tab="algo">Algoritmo</button>
+        </div>
+        <section class="pane active" id="tests"><p class="muted">Este projeto não possui suíte de testes configurada (sem suíte de testes (pytest não configurado)).</p></section>
+        <section class="pane" id="how">
+          
+    <h3>Entrypoints (CLI)</h3><ul class="eps"><li>—</li></ul>
+    <h3>Módulos e funções principais</h3>
+    <h3>Estrutura de arquivos</h3><ul class="tree"><li>LICENSE.md</li><li>README.md</li><li>docs/Pesquisas.md</li><li>examples/input/sensitive_data.json</li><li>pom.xml</li></ul>
+    
+          <h3>README</h3>
+          <div class="readme"># 🌑 Project Umbra: Simulador de Privacidade e Anonimização de Dados
+
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;#sobre-o-projeto&quot;&gt;Sobre&lt;/a&gt; &amp;nbsp; | &amp;nbsp; 
+  &lt;a href=&quot;#características-principais&quot;&gt;Características&lt;/a&gt; &amp;nbsp; | &amp;nbsp; 
+  &lt;a href=&quot;#estrutura-do-projeto&quot;&gt;Estrutura&lt;/a&gt; &amp;nbsp; | &amp;nbsp; 
+  &lt;a href=&quot;#instalação-e-uso&quot;&gt;Instalação&lt;/a&gt; &amp;nbsp; | &amp;nbsp; 
+  &lt;a href=&quot;#contribuição&quot;&gt;Contribuição&lt;/a&gt; &amp;nbsp; | &amp;nbsp; 
+  &lt;a href=&quot;#licença&quot;&gt;Licença&lt;/a&gt;
+&lt;/p&gt;
+
+## ✨ Sobre o Projeto
+
+**Project Umbra** é um simulador avançado de privacidade desenvolvido em **Java** que visa demonstrar a viabilidade e a eficácia da **anonimização automática** de dados pessoais identificáveis (PII) em arquivos JSON.
+
+O sistema atua como uma **camada de proteção invisível**, processando dados sensíveis de forma ética e eficiente, garantindo que a privacidade seja mantida sem comprometer a integridade estrutural dos dados necessários para testes ou análises.
+
+## 🎯 Objetivo
+
+O principal objetivo do Umbra é fornecer uma prova de conceito robusta e uma ferramenta prática para:
+* **Detecção:** Identificar PII (e-mails, CPFs/CNPJs, telefones, etc.) em JSONs usando lógica de correspondência (e.g., RegEx).
+* **Anonimização:** Aplicar técnicas como mascaramento, tokenização ou pseudonimização aos dados detectados.
+
+## 🚀 Características Principais
+
+* **Processamento JSON Nativo:** Leitura e escrita otimizada para o formato JSON.
+* **Detecção Orientada à RegEx:** Módulo de detecção facilmente configurável via expressões regulares para abranger diversos tipos de PII.
+* **Estratégias de Anonimização:** Suporte a múltiplas técnicas de anonimização (e.g., hash, substituição de caracteres, truncamento).
+* **Interface de Linha de Comando (CLI):** Uso simples e direto através do terminal.
+* **Java e Maven:** Construído com Java para desempenho e gerenciamento de dependências via `pom.xml`.
+
+## 📂 Estrutura do Projeto
+
+A estrutura de diretórios segue a convenções de projetos Maven em Java:
+
+📦 Umbra  
+├── 📚 docs/  
+│ └── 📄 Pesquisas.md  
+├── 🧪 examples/  
+├── 📥 input/  
+│ └── 🔐 sensitive_data.json  
+├── 📤 output/  
+├── 💻 src/  
+│ ├── 🧩 main/  
+│ │ └── 📂 java/com/umbra/  
+│ │ ├── 🛡️ anonymization/  
+│ │ ├── ⚙️ core/  
+│ │ └── 🔍 detection/  
+│ └── 🧪 test/java/  
+├── 📄 LICENSE.md  
+├── 📄 pom.xml  
+└── 📄 README.md
+
+## Build e execução (resumo)
+
+Projeto **Java (Maven)** — requer JDK 17+ e `mvn` instalado.
+
+```bash
+git clone https://github.com/Diogo-Damasceno/Umbra.git
+cd Umbra
+mvn package          # gera o JAR em target/
+java -jar target/umbra-*.jar
+```
+
+Exemplos de entrada/saída ficam em `examples/` e a documentação detalhada em `docs/`.
+</div>
+        </section>
+        <section class="pane" id="algo"><div class="algo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 504" class="flow" role="img" aria-label="Umbra">
+<text x="150" y="18" class="flow-title">Umbra</text>
+<defs><marker id="a139824629138368next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="124" x2="150" y2="124" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a139824629138368next)"/>
+<defs><marker id="a139824629138368next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="194" x2="150" y2="194" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a139824629138368next)"/>
+<defs><marker id="a139824629394224yes" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#56d364"/></marker></defs><line x1="390" y1="229" x2="210" y2="299" stroke="#56d364" stroke-width="1.6" marker-end="url(#a139824629394224yes)"/><text x="300" y="264" class="edge-lbl" fill="#56d364">S</text>
+<defs><marker id="a139824629393984no" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ff7b72"/></marker></defs><line x1="-90" y1="229" x2="90" y2="369" stroke="#ff7b72" stroke-width="1.6" marker-end="url(#a139824629393984no)"/><text x="0" y="299" class="edge-lbl" fill="#ff7b72">N</text>
+<defs><marker id="a139824629138368next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="334" x2="150" y2="334" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a139824629138368next)"/>
+<defs><marker id="a139824629138368next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="404" x2="150" y2="404" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a139824629138368next)"/>
+<g class="node"><ellipse cx="150.0" cy="89.0" rx="120.0" ry="28.0" class="oval"/><text x="150.0" y="89.0" class="lbl">JSON de entrada</text></g>
+<g class="node"><rect x="30" y="124" width="240" height="56" rx="8" class="box"/><text x="150.0" y="159.0" class="lbl">Detectar campos sensíveis (regex/ML leve)</text></g>
+<g class="node"><polygon points="150.0,194 270,229.0 150.0,250 30,229.0" class="dia"/><text x="150.0" y="229.0" class="lbl">Campo sensível?</text></g>
+<g class="node"><rect x="30" y="264" width="240" height="56" rx="8" class="box"/><text x="150.0" y="299.0" class="lbl">Anonimizar (mascarar/hash)</text></g>
+<g class="node"><rect x="30" y="334" width="240" height="56" rx="8" class="box"/><text x="150.0" y="369.0" class="lbl">Reconstruir JSON preservando estrutura</text></g>
+<g class="node"><ellipse cx="150.0" cy="439.0" rx="120.0" ry="28.0" class="oval end"/><text x="150.0" y="439.0" class="lbl">JSON anonimizado (privacidade ética)</text></g>
+</svg></div></section>
+        </main>
+<footer class="foot">Portfólio estático gerado por projview — nenhum código é executado no servidor ou no navegador.</footer>
+<script src="../assets/site.js"></script>
+</body></html>

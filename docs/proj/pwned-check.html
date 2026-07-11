@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>pwned-check · ProjView</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body>
+<header class="top">
+  <a class="brand" href="../index.html">◈ ProjView</a>
+  <nav><a href="../index.html">Projetos</a></nav>
+</header>
+<main class="wrap">
+        <a class="back" href="../index.html">← todos os projetos</a>
+        <div class="phead">
+          <h1>pwned-check</h1>
+          <div class="tags"><span class="lang">Python</span>
+          <span class="cat">Defensiva</span>
+          <a class="repo" href="https://github.com/Diogo-Damasceno/pwned-check" target="_blank" rel="noopener">GitHub ↗</a></div>
+          <p class="lead">Verificador de vazamento de senhas via k-anonymity (HIBP range API, só 5 chars do SHA-1 saem).</p>
+        </div>
+        <div class="tabs">
+          <button class="tab active" data-tab="tests">Testes</button>
+          <button class="tab" data-tab="how">Como funciona</button>
+          <button class="tab" data-tab="algo">Algoritmo</button>
+        </div>
+        <section class="pane active" id="tests"><p class="summary"><b>7</b> testes · <span class="ok">7 passou</span> · <span class="bad">0 falhou</span> · <span class="muted">0 skip</span></p><ul class="tests"><li class="trow pass"><span class="dot"></span><span class="tname">test_sha1_hex_known_value</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_sha1_hex_is_uppercase</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_split_hash_lengths</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_match_suffix_count_found</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_match_suffix_count_not_found</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_match_suffix_count_case_insensitive</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_check_password_offline</span><span class="ttime">0.00s</span><div class="tdetail"></div></li></ul></section>
+        <section class="pane" id="how">
+          
+    <h3>Entrypoints (CLI)</h3><ul class="eps"><li><code>pwned-check</code></li></ul>
+    <h3>Módulos e funções principais</h3><details><summary>src/pwned_check/checker.py</summary><ul><li><code>sha1_hex()</code> — Retorna o SHA-1 da senha em maiúsculas hexadecimais.</li><li><code>split_hash()</code> — Divide o hash em (prefixo, sufixo) segundo o comprimento do prefixo.</li><li><code>match_suffix_count()</code> — Procura o sufixo na resposta do range HIBP e devolve a contagem.</li></ul></details><details><summary>src/pwned_check/cli.py</summary><ul><li><code>build_parser()</code></li><li><code>build_result_message()</code> — Monta a mensagem de saída com base na contagem de vazamentos.</li><li><code>main()</code></li></ul></details><details><summary>src/pwned_check/hibp.py</summary><ul><li><code>query_hibp()</code> — Consulta a API de range da HIBP enviando apenas o prefixo de 5 chars.</li><li><code>check_password_online()</code> — Calcula hash, envia só o prefixo e retorna quantas vezes vazou.</li><li><code>load_local_hashes()</code> — Carrega um arquivo de hashes SHA-1 (um por linha, maiúsculas).</li><li><code>check_password_offline()</code> — Verifica a senha contra um conjunto local de hashes SHA-1.</li></ul></details>
+    <h3>Estrutura de arquivos</h3><ul class="tree"><li>LICENSE</li><li>README.md</li><li>pyproject.toml</li><li>src/pwned_check.egg-info/PKG-INFO</li><li>src/pwned_check.egg-info/SOURCES.txt</li><li>src/pwned_check.egg-info/dependency_links.txt</li><li>src/pwned_check.egg-info/entry_points.txt</li><li>src/pwned_check.egg-info/top_level.txt</li><li>src/pwned_check/__init__.py</li><li>src/pwned_check/checker.py</li><li>src/pwned_check/cli.py</li><li>src/pwned_check/hibp.py</li><li>tests/test_checker.py</li></ul>
+    
+          <h3>README</h3>
+          <div class="readme"># pwned-check
+
+Verificador defensivo de vazamento de senhas baseado em **k-anonymity** (modelo
+do [Have I Been Pwned](https://haveibeenpwned.com/)). A senha **nunca** sai da
+sua máquina: apenas os 5 primeiros caracteres do SHA-1 são enviados à API.
+
+## Aviso ético
+
+Ferramenta **educacional e defensiva**. Use apenas para verificar suas próprias
+senhas ou em contextos com autorização. Não a utilize para perseguir, expor ou
+atacar terceiros. O autor não se responsabiliza por uso indevido.
+
+## Instalação
+
+```bash
+pip install -e .
+```
+
+Requer Python 3.10+ (apenas biblioteca padrão; nenhuma dependência externa).
+
+## Uso
+
+### Online (HIBP range API)
+```bash
+pwned-check &quot;minhaSenha123&quot;
+```
+
+### Offline (arquivo local de hashes)
+```bash
+pwned-check --file hashes.txt &quot;minhaSenha123&quot;
+```
+
+No modo offline, o arquivo deve conter um hash SHA-1 (maiúsculas) por linha.
+
+## Como funciona
+
+1. Calcula `SHA-1` da senha (em maiúsculas hexadecimais).
+2. Envia **só os 5 primeiros caracteres** (prefixo) à API pública da HIBP.
+3. Confere o sufixo na lista de respostas retornadas (k-anonymity).
+
+Como a API só recebe o prefixo, ela não sabe qual senha você está testando.
+
+## Testes
+
+```bash
+pip install pytest
+pytest tests/
+```
+
+## Licença
+
+MIT — Copyright (c) 2026 Diogo Damasceno. Veja `LICENSE`.
+</div>
+        </section>
+        <section class="pane" id="algo"><div class="algo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 644" class="flow" role="img" aria-label="pwned-check">
+<text x="150" y="18" class="flow-title">pwned-check</text>
+<defs><marker id="a139824629138368next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="194" x2="150" y2="194" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a139824629138368next)"/>
+<defs><marker id="a139824629138368next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="264" x2="150" y2="264" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a139824629138368next)"/>
+<defs><marker id="a139824629394224yes" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#56d364"/></marker></defs><line x1="390" y1="299" x2="210" y2="369" stroke="#56d364" stroke-width="1.6" marker-end="url(#a139824629394224yes)"/><text x="300" y="334" class="edge-lbl" fill="#56d364">S</text>
+<defs><marker id="a139824629393984no" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ff7b72"/></marker></defs><line x1="-90" y1="299" x2="90" y2="579" stroke="#ff7b72" stroke-width="1.6" marker-end="url(#a139824629393984no)"/><text x="0" y="439" class="edge-lbl" fill="#ff7b72">N</text>
+<defs><marker id="a139824629138368next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="404" x2="150" y2="404" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a139824629138368next)"/>
+<defs><marker id="a139824629394224yes" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#56d364"/></marker></defs><line x1="390" y1="439" x2="210" y2="509" stroke="#56d364" stroke-width="1.6" marker-end="url(#a139824629394224yes)"/><text x="300" y="474" class="edge-lbl" fill="#56d364">S</text>
+<defs><marker id="a139824629393984no" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ff7b72"/></marker></defs><line x1="-90" y1="439" x2="90" y2="579" stroke="#ff7b72" stroke-width="1.6" marker-end="url(#a139824629393984no)"/><text x="0" y="509" class="edge-lbl" fill="#ff7b72">N</text>
+<defs><marker id="a139824629138368next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="544" x2="150" y2="544" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a139824629138368next)"/>
+<g class="node"><ellipse cx="150.0" cy="89.0" rx="120.0" ry="28.0" class="oval"/><text x="150.0" y="89.0" class="lbl">Receber senha</text></g>
+<g class="node"><rect x="30" y="124" width="240" height="56" rx="8" class="box"/><text x="150.0" y="159.0" class="lbl">SHA-1 da senha</text></g>
+<g class="node"><rect x="30" y="194" width="240" height="56" rx="8" class="box"/><text x="150.0" y="229.0" class="lbl">Enviar só 5 primeiros hex (k-anonymity)</text></g>
+<g class="node"><polygon points="150.0,264 270,299.0 150.0,320 30,299.0" class="dia"/><text x="150.0" y="299.0" class="lbl">Prefixo aparece na HIBP?</text></g>
+<g class="node"><rect x="30" y="334" width="240" height="56" rx="8" class="box"/><text x="150.0" y="369.0" class="lbl">Buscar suffix no range retornado</text></g>
+<g class="node"><polygon points="150.0,404 270,439.0 150.0,460 30,439.0" class="dia"/><text x="150.0" y="439.0" class="lbl">Hash completo confere?</text></g>
+<g class="node"><rect x="30" y="474" width="240" height="56" rx="8" class="box"/><text x="150.0" y="509.0" class="lbl">Reportar quantas vezes vazou</text></g>
+<g class="node"><ellipse cx="150.0" cy="579.0" rx="120.0" ry="28.0" class="oval end"/><text x="150.0" y="579.0" class="lbl">Senha comprometida / segura</text></g>
+</svg></div></section>
+        </main>
+<footer class="foot">Portfólio estático gerado por projview — nenhum código é executado no servidor ou no navegador.</footer>
+<script src="../assets/site.js"></script>
+</body></html>

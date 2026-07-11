@@ -1,0 +1,1028 @@
+{
+  "BIGMAN": {
+    "suite": {
+      "ran": false,
+      "total": 0,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [],
+      "error": "sem su\u00edte de testes (pytest n\u00e3o configurado)"
+    },
+    "lang": "Node",
+    "category": "Web"
+  },
+  "DDfetch": {
+    "suite": {
+      "ran": false,
+      "total": 0,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [],
+      "error": "sem su\u00edte de testes (pytest n\u00e3o configurado)"
+    },
+    "lang": "Shell",
+    "category": "DevOps"
+  },
+  "Umbra": {
+    "suite": {
+      "ran": false,
+      "total": 0,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [],
+      "error": "sem su\u00edte de testes (pytest n\u00e3o configurado)"
+    },
+    "lang": "Java",
+    "category": "Privacidade"
+  },
+  "cve-watch": {
+    "suite": {
+      "ran": true,
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_core::test_match_encontra_vulneravel",
+          "name": "test_match_encontra_vulneravel",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_match_ignora_versao_nao_afetada",
+          "name": "test_match_ignora_versao_nao_afetada",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_match_sem_achados",
+          "name": "test_match_sem_achados",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
+  "dockview": {
+    "suite": {
+      "ran": true,
+      "total": 5,
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_smoke::test_whale_art",
+          "name": "test_whale_art",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_smoke::test_palette_has_blue",
+          "name": "test_palette_has_blue",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_smoke::test_banner",
+          "name": "test_banner",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_smoke::test_docker_error_is_runtime",
+          "name": "test_docker_error_is_runtime",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_smoke::test_cli_importable",
+          "name": "test_cli_importable",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "DevOps"
+  },
+  "file-integrity-monitor": {
+    "suite": {
+      "ran": true,
+      "total": 8,
+      "passed": 8,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_fim::test_hash_file_stable",
+          "name": "test_hash_file_stable",
+          "status": "passed",
+          "duration": 0.002,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_fim::test_build_baseline_file",
+          "name": "test_build_baseline_file",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_fim::test_build_baseline_dir",
+          "name": "test_build_baseline_dir",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_fim::test_compare_detects_change",
+          "name": "test_compare_detects_change",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_fim::test_compare_detects_added_and_removed",
+          "name": "test_compare_detects_added_and_removed",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_fim::test_cli_init_check_detects_modification",
+          "name": "test_cli_init_check_detects_modification",
+          "status": "passed",
+          "duration": 0.002,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_fim::test_cli_init_check_clean",
+          "name": "test_cli_init_check_clean",
+          "status": "passed",
+          "duration": 0.002,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_fim::test_cli_diff_json",
+          "name": "test_cli_diff_json",
+          "status": "passed",
+          "duration": 0.002,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
+  "honeypot": {
+    "suite": {
+      "ran": true,
+      "total": 4,
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_honeypot::test_store_log_and_stats",
+          "name": "test_store_log_and_stats",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_honeypot::test_parse_http_basic_auth",
+          "name": "test_parse_http_basic_auth",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_honeypot::test_honeypot_captures_http_connection",
+          "name": "test_honeypot_captures_http_connection",
+          "status": "passed",
+          "duration": 0.605,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_honeypot::test_honeypot_captures_ssh_banner",
+          "name": "test_honeypot_captures_ssh_banner",
+          "status": "passed",
+          "duration": 0.603,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
+  "host-ids": {
+    "suite": {
+      "ran": true,
+      "total": 8,
+      "passed": 8,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_engine::test_new_process_detection",
+          "name": "test_new_process_detection",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_engine::test_suspicious_process_is_critical",
+          "name": "test_suspicious_process_is_critical",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_engine::test_new_connection_detection",
+          "name": "test_new_connection_detection",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_engine::test_new_user_alert",
+          "name": "test_new_user_alert",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_engine::test_file_integrity_modified",
+          "name": "test_file_integrity_modified",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_engine::test_file_integrity_new_and_removed",
+          "name": "test_file_integrity_new_and_removed",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_engine::test_real_collectors_run",
+          "name": "test_real_collectors_run",
+          "status": "passed",
+          "duration": 0.021,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_engine::test_snapshot_and_diff",
+          "name": "test_snapshot_and_diff",
+          "status": "passed",
+          "duration": 0.059,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
+  "log-forensics": {
+    "suite": {
+      "ran": true,
+      "total": 8,
+      "passed": 8,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_logforensics::test_bruteforce_detected",
+          "name": "test_bruteforce_detected",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_logforensics::test_user_scanning_detected",
+          "name": "test_user_scanning_detected",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_logforensics::test_root_login_detected",
+          "name": "test_root_login_detected",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_logforensics::test_benign_ip_not_flagged",
+          "name": "test_benign_ip_not_flagged",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_logforensics::test_per_ip_stats",
+          "name": "test_per_ip_stats",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_logforensics::test_threshold_adjusts_bruteforce",
+          "name": "test_threshold_adjusts_bruteforce",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_logforensics::test_cli_stdin",
+          "name": "test_cli_stdin",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_logforensics::test_cli_json",
+          "name": "test_cli_json",
+          "status": "passed",
+          "duration": 0.002,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
+  "malware-analyzer": {
+    "suite": {
+      "ran": true,
+      "total": 7,
+      "passed": 7,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_analyzer::test_entropy_bounds",
+          "name": "test_entropy_bounds",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_analyzer::test_identify_pe",
+          "name": "test_identify_pe",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_analyzer::test_identify_elf",
+          "name": "test_identify_elf",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_analyzer::test_extract_strings",
+          "name": "test_extract_strings",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_analyzer::test_valid_ip",
+          "name": "test_valid_ip",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_analyzer::test_analyze_fake_pe",
+          "name": "test_analyze_fake_pe",
+          "status": "passed",
+          "duration": 0.002,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_analyzer::test_hashes_stable",
+          "name": "test_hashes_stable",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
+  "mini-siem": {
+    "suite": {
+      "ran": true,
+      "total": 9,
+      "passed": 9,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_imports::test_package_importable",
+          "name": "test_package_importable",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_imports::test_source_files_present",
+          "name": "test_source_files_present",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_siem::test_parse_ssh_failure",
+          "name": "test_parse_ssh_failure",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_siem::test_parse_ssh_success",
+          "name": "test_parse_ssh_success",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_siem::test_parse_nginx",
+          "name": "test_parse_nginx",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_siem::test_bruteforce_detection",
+          "name": "test_bruteforce_detection",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_siem::test_web_scan_detection",
+          "name": "test_web_scan_detection",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_siem::test_store_ingest_and_query",
+          "name": "test_store_ingest_and_query",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_siem::test_stats",
+          "name": "test_stats",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
+  "network-scanner": {
+    "suite": {
+      "ran": true,
+      "total": 6,
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_scanner::test_expand_cidr",
+          "name": "test_expand_cidr",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_scanner::test_expand_single_ip",
+          "name": "test_expand_single_ip",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_scanner::test_guess_os",
+          "name": "test_guess_os",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_scanner::test_socket_scan_detects_open_port",
+          "name": "test_socket_scan_detects_open_port",
+          "status": "passed",
+          "duration": 0.016,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_scanner::test_storage_roundtrip",
+          "name": "test_storage_roundtrip",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_scanner::test_html_report_contains_ip",
+          "name": "test_html_report_contains_ip",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
+  "password-auditor": {
+    "suite": {
+      "ran": true,
+      "total": 9,
+      "passed": 9,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_analyzer::test_common_password_is_flagged",
+          "name": "test_common_password_is_flagged",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_analyzer::test_strong_password_scores_high",
+          "name": "test_strong_password_scores_high",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_analyzer::test_charset_size",
+          "name": "test_charset_size",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_analyzer::test_sequence_detection",
+          "name": "test_sequence_detection",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_analyzer::test_entropy_monotonic_with_length",
+          "name": "test_entropy_monotonic_with_length",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_analyzer::test_shannon_entropy_zero_for_empty",
+          "name": "test_shannon_entropy_zero_for_empty",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_analyzer::test_reuse_detection",
+          "name": "test_reuse_detection",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_analyzer::test_crack_times_present",
+          "name": "test_crack_times_present",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_analyzer::test_masking",
+          "name": "test_masking",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
+  "pentest-agent": {
+    "suite": {
+      "ran": true,
+      "total": 8,
+      "passed": 8,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_agent::test_authorization_allows_listed",
+          "name": "test_authorization_allows_listed",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_agent::test_authorization_blocks_unlisted",
+          "name": "test_authorization_blocks_unlisted",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_agent::test_agent_refuses_unauthorized",
+          "name": "test_agent_refuses_unauthorized",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_agent::test_rulebased_planner_first_step",
+          "name": "test_rulebased_planner_first_step",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_agent::test_rulebased_planner_web_then_report",
+          "name": "test_rulebased_planner_web_then_report",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_agent::test_agent_runs_against_localhost",
+          "name": "test_agent_runs_against_localhost",
+          "status": "passed",
+          "duration": 0.008,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_imports::test_package_importable",
+          "name": "test_package_importable",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_imports::test_source_files_present",
+          "name": "test_source_files_present",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Ofensiva"
+  },
+  "phishing-detector": {
+    "suite": {
+      "ran": true,
+      "total": 9,
+      "passed": 9,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_analyzer::test_legit_url_low_score",
+          "name": "test_legit_url_low_score",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_analyzer::test_ip_host_flagged",
+          "name": "test_ip_host_flagged",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_analyzer::test_typosquatting_detected",
+          "name": "test_typosquatting_detected",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_analyzer::test_brand_in_subdomain",
+          "name": "test_brand_in_subdomain",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_analyzer::test_at_symbol_obfuscation",
+          "name": "test_at_symbol_obfuscation",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_analyzer::test_suspicious_tld",
+          "name": "test_suspicious_tld",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_analyzer::test_levenshtein",
+          "name": "test_levenshtein",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_analyzer::test_entropy_positive",
+          "name": "test_entropy_positive",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_analyzer::test_score_capped",
+          "name": "test_score_capped",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
+  "pwned-check": {
+    "suite": {
+      "ran": true,
+      "total": 7,
+      "passed": 7,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_checker::test_sha1_hex_known_value",
+          "name": "test_sha1_hex_known_value",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_checker::test_sha1_hex_is_uppercase",
+          "name": "test_sha1_hex_is_uppercase",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_checker::test_split_hash_lengths",
+          "name": "test_split_hash_lengths",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_checker::test_match_suffix_count_found",
+          "name": "test_match_suffix_count_found",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_checker::test_match_suffix_count_not_found",
+          "name": "test_match_suffix_count_not_found",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_checker::test_match_suffix_count_case_insensitive",
+          "name": "test_match_suffix_count_case_insensitive",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_checker::test_check_password_offline",
+          "name": "test_check_password_offline",
+          "status": "passed",
+          "duration": 0.002,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
+  "subdomain-recon": {
+    "suite": {
+      "ran": true,
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_core::test_parse_crtsh_extrai_e_normaliza",
+          "name": "test_parse_crtsh_extrai_e_normaliza",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_parse_crtsh_deduplica",
+          "name": "test_parse_crtsh_deduplica",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_dedupe_preserva_ordem",
+          "name": "test_dedupe_preserva_ordem",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
+  "threat-intel": {
+    "suite": {
+      "ran": true,
+      "total": 7,
+      "passed": 7,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_tip::test_detect_type",
+          "name": "test_detect_type",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_tip::test_add_and_lookup",
+          "name": "test_add_and_lookup",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_tip::test_dedup_updates",
+          "name": "test_dedup_updates",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_tip::test_search_filters",
+          "name": "test_search_filters",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_tip::test_import_bulk",
+          "name": "test_import_bulk",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_tip::test_stats",
+          "name": "test_stats",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_tip::test_rest_api_roundtrip",
+          "name": "test_rest_api_roundtrip",
+          "status": "passed",
+          "duration": 0.514,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
+  "tls-auditor": {
+    "suite": {
+      "ran": true,
+      "total": 8,
+      "passed": 8,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_auditor::test_classify_protocol_weak",
+          "name": "test_classify_protocol_weak",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_auditor::test_classify_protocol_ok",
+          "name": "test_classify_protocol_ok",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_auditor::test_is_weak_cipher_detects_markers",
+          "name": "test_is_weak_cipher_detects_markers",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_auditor::test_is_weak_cipher_safe",
+          "name": "test_is_weak_cipher_safe",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_auditor::test_split_weak_ciphers_separates",
+          "name": "test_split_weak_ciphers_separates",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_auditor::test_is_cert_expired_future",
+          "name": "test_is_cert_expired_future",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_auditor::test_is_cert_expired_past",
+          "name": "test_is_cert_expired_past",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_auditor::test_is_cert_expired_string",
+          "name": "test_is_cert_expired_string",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  }
+}

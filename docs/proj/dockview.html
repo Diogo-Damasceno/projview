@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>dockview · ProjView</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body>
+<header class="top">
+  <a class="brand" href="../index.html">◈ ProjView</a>
+  <nav><a href="../index.html">Projetos</a></nav>
+</header>
+<main class="wrap">
+        <a class="back" href="../index.html">← todos os projetos</a>
+        <div class="phead">
+          <h1>dockview</h1>
+          <div class="tags"><span class="lang">Python</span>
+          <span class="cat">DevOps</span>
+          <a class="repo" href="https://github.com/Diogo-Damasceno/dockview" target="_blank" rel="noopener">GitHub ↗</a></div>
+          <p class="lead">TUI visual para Docker (Textual) com abas para todos os tipos de recurso.</p>
+        </div>
+        <div class="tabs">
+          <button class="tab active" data-tab="tests">Testes</button>
+          <button class="tab" data-tab="how">Como funciona</button>
+          <button class="tab" data-tab="algo">Algoritmo</button>
+        </div>
+        <section class="pane active" id="tests"><p class="summary"><b>5</b> testes · <span class="ok">5 passou</span> · <span class="bad">0 falhou</span> · <span class="muted">0 skip</span></p><ul class="tests"><li class="trow pass"><span class="dot"></span><span class="tname">test_whale_art</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_palette_has_blue</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_banner</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_docker_error_is_runtime</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_cli_importable</span><span class="ttime">0.00s</span><div class="tdetail"></div></li></ul></section>
+        <section class="pane" id="how">
+          
+    <h3>Entrypoints (CLI)</h3><ul class="eps"><li><code>dockview</code></li></ul>
+    <h3>Módulos e funções principais</h3><details><summary>src/dockview/__init__.py</summary><ul><li><code>main()</code></li></ul></details><details><summary>src/dockview/cli.py</summary><ul><li><code>main()</code></li></ul></details><details><summary>src/dockview/dockerlib.py</summary><ul><li><code>client()</code> — Retorna um cliente Docker, criado uma vez (lazy).</li><li><code>list_containers()</code> — Lista containers como dicts enxutos pra tabela.</li><li><code>list_images()</code></li><li><code>start()</code></li><li><code>stop()</code></li><li><code>restart()</code></li><li><code>remove_container()</code></li><li><code>remove_image()</code></li></ul></details><details><summary>src/dockview/labs.py</summary><ul><li><code>discover()</code> — Lista os labs (pastas com docker-compose.yml) em ~/labs.</li><li><code>status()</code> — Preenche running/total de cada lab (consulta Docker uma vez).</li><li><code>up()</code> — Sobe o lab (docker compose up -d). Retorna saída resumida.</li><li><code>down()</code> — Derruba o lab (docker compose down). Retorna saída resumida.</li></ul></details><details><summary>src/dockview/theme.py</summary><ul><li><code>whale_lines()</code></li><li><code>banner_title()</code></li></ul></details><details><summary>src/dockview/tui.py</summary><ul><li><code>run()</code></li></ul></details>
+    <h3>Estrutura de arquivos</h3><ul class="tree"><li>LICENSE</li><li>README.md</li><li>install.sh</li><li>pyproject.toml</li><li>src/dockview/__init__.py</li><li>src/dockview/cli.py</li><li>src/dockview/dockerlib.py</li><li>src/dockview/labs.py</li><li>src/dockview/theme.py</li><li>src/dockview/tui.py</li><li>tests/test_smoke.py</li></ul>
+    
+          <h3>README</h3>
+          <div class="readme"># dockview
+
+TUI visual e simples para Docker no Arch Linux (e qualquer distro Linux/macOS).
+Uma baleia azul cuida dos seus containers pra você — sem decorar flags do `docker`.
+
+## Por que
+
+Rodar Docker puro no terminal é funcional, mas feio e fácil de errar
+(`docker rm` sem querer, `docker ps` lotado de colunas). O dockview traz:
+
+- 🐳 baleia ASCII azul na tela inicial
+- **abas para cada tipo de recurso Docker**, tudo num lugar só:
+  - Containers · Imagens · Redes · Volumes · Plugins
+  - Compose · Swarm · Services · Stacks · Buildx (BuildKit)
+  - Labs (descobre `~/labs/*/docker-compose.yml` e sobe/derruba)
+- ações por teclado: start / stop / restart / remove / logs
+- painel de laboratórios que sobe e derruba seus compose locais
+- visualizador de logs em tempo real
+- navegação 100% no teclado, com cores azuis calmas
+
+## Instalação
+
+### Opção A — script automático (recomendado)
+
+```bash
+# já clonou? rode dentro da pasta:
+./install.sh
+
+# ou deixe o script clonar pra você:
+./install.sh https://github.com/Diogo-Damasceno/dockview.git
+```
+
+O script cria um `.venv`, instala o pacote em modo editável e cria o
+atalho `~/.local/bin/dockview`.
+
+### Opção B — manual
+
+Pré-requisitos:
+
+- Python 3.11+
+- Docker instalado e daemon rodando (`docker info` sem erro)
+- seu usuário no grupo `docker` (ou rode com `sudo`)
+
+```bash
+git clone https://github.com/Diogo-Damasceno/dockview.git
+cd dockview
+
+python3 -m venv .venv
+. .venv/bin/activate
+pip install -e .
+
+# atalho opcional
+mkdir -p ~/.local/bin
+ln -sf &quot;$(pwd)/.venv/bin/dockview&quot; ~/.local/bin/dockview
+```
+
+## Como rodar
+
+```bash
+dockview            # se ~/.local/bin estiver no PATH
+# ou, dentro do venv:
+.venv/bin/dockview
+```
+
+## Atalhos
+
+| Tecla       | Ação                              |
+|-------------|-----------------------------------|
+| `tab`       | próxima aba                       |
+| `shift+tab` | aba anterior                      |
+| `enter`     | entrar (tela da baleia) / confirmar |
+| `s`         | start container / up lab          |
+| `x`         | stop container / down lab         |
+| `r`         | restart container                 |
+| `d`         | remove (container/imagem/volume)  |
+| `l`         | ver logs do container             |
+| `q`         | voltar / sair                     |
+
+## Testando sem bagunçar nada
+
+O dockview **só lê** o Docker por padrão — nenhuma ação destrutiva acontece
+sem você apertar uma tecla de ação. Pra testar com segurança:
+
+```bash
+# 1) rode e navegue pelas abas (Containers, Imagens, Redes, ...)
+dockview
+
+# 2) crie um container efêmero e veja aparecer na aba Containers:
+docker run --rm -d --name dockview-test alpine sleep 3600
+
+# 3) no dockview: selecione &quot;dockview-test&quot; e aperte &#x27;x&#x27; (stop) ou &#x27;d&#x27; (remove)
+# 4) limpe: docker rm -f dockview-test
+```
+
+### Labs (opcional)
+
+Se você tem uma pasta `~/labs` com `docker-compose.yml`, a aba **Labs**
+lista cada um, mostra se está rodando e sobe/derruba com `s`/`x`.
+Exemplo de `~/labs/mini/docker-compose.yml`:
+
+```yaml
+services:
+  hello:
+    image: alpine
+    command: sleep 3600
+```
+
+Depois é só abrir o dockview e usar `s` na linha do lab.
+
+## Requisitos
+
+- Docker instalado e daemon rodando (`docker info` sem erro)
+- Python 3.11+
+- Linux (Arch testado); roda em qualquer distro/macOS com Docker
+
+## Aviso ético
+
+Ferramenta de uso pessoal/educacional para gerenciar seus próprios
+containers. Remoção de containers/imagens/volumes é **irreversível** —
+confirme sempre antes de apertar Enter. Não use para gerenciar sistemas
+que não são seus sem autorização.
+
+## Licença
+
+MIT — veja `LICENSE`.
+</div>
+        </section>
+        <section class="pane" id="algo"><div class="algo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 644" class="flow" role="img" aria-label="dockview">
+<text x="150" y="18" class="flow-title">dockview</text>
+<defs><marker id="a139824629138368next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="124" x2="150" y2="124" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a139824629138368next)"/>
+<defs><marker id="a139824629138368next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="194" x2="150" y2="194" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a139824629138368next)"/>
+<defs><marker id="a139824629394224yes" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#56d364"/></marker></defs><line x1="390" y1="229" x2="210" y2="299" stroke="#56d364" stroke-width="1.6" marker-end="url(#a139824629394224yes)"/><text x="300" y="264" class="edge-lbl" fill="#56d364">S</text>
+<defs><marker id="a139824629393984no" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ff7b72"/></marker></defs><line x1="-90" y1="229" x2="90" y2="579" stroke="#ff7b72" stroke-width="1.6" marker-end="url(#a139824629393984no)"/><text x="0" y="404" class="edge-lbl" fill="#ff7b72">N</text>
+<defs><marker id="a139824629138368next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="334" x2="150" y2="334" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a139824629138368next)"/>
+<defs><marker id="a139824629138368next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="404" x2="150" y2="404" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a139824629138368next)"/>
+<defs><marker id="a139824629394224yes" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#56d364"/></marker></defs><line x1="390" y1="439" x2="210" y2="509" stroke="#56d364" stroke-width="1.6" marker-end="url(#a139824629394224yes)"/><text x="300" y="474" class="edge-lbl" fill="#56d364">S</text>
+<defs><marker id="a139824629393984no" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ff7b72"/></marker></defs><line x1="-90" y1="439" x2="90" y2="579" stroke="#ff7b72" stroke-width="1.6" marker-end="url(#a139824629393984no)"/><text x="0" y="509" class="edge-lbl" fill="#ff7b72">N</text>
+<defs><marker id="a139824629138368next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="544" x2="150" y2="334" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a139824629138368next)"/>
+<g class="node"><ellipse cx="150.0" cy="89.0" rx="120.0" ry="28.0" class="oval"/><text x="150.0" y="89.0" class="lbl">Abrir dockview</text></g>
+<g class="node"><rect x="30" y="124" width="240" height="56" rx="8" class="box"/><text x="150.0" y="159.0" class="lbl">Tela da baleia (ENTER)</text></g>
+<g class="node"><polygon points="150.0,194 270,229.0 150.0,250 30,229.0" class="dia"/><text x="150.0" y="229.0" class="lbl">Aba selecionada?</text></g>
+<g class="node"><rect x="30" y="264" width="240" height="56" rx="8" class="box"/><text x="150.0" y="299.0" class="lbl">Consultar recurso Docker</text></g>
+<g class="node"><rect x="30" y="334" width="240" height="56" rx="8" class="box"/><text x="150.0" y="369.0" class="lbl">Renderizar tabela na aba</text></g>
+<g class="node"><polygon points="150.0,404 270,439.0 150.0,460 30,439.0" class="dia"/><text x="150.0" y="439.0" class="lbl">Tecla de ação (s/x/d/l)?</text></g>
+<g class="node"><rect x="30" y="474" width="240" height="56" rx="8" class="box"/><text x="150.0" y="509.0" class="lbl">start/stop/remove/log via docker SDK</text></g>
+<g class="node"><ellipse cx="150.0" cy="579.0" rx="120.0" ry="28.0" class="oval end"/><text x="150.0" y="579.0" class="lbl">Painel atualizado</text></g>
+</svg></div></section>
+        </main>
+<footer class="foot">Portfólio estático gerado por projview — nenhum código é executado no servidor ou no navegador.</footer>
+<script src="../assets/site.js"></script>
+</body></html>

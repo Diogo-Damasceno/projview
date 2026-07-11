@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>log-forensics · ProjView</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body>
+<header class="top">
+  <a class="brand" href="../index.html">◈ ProjView</a>
+  <nav><a href="../index.html">Projetos</a></nav>
+</header>
+<main class="wrap">
+        <a class="back" href="../index.html">← todos os projetos</a>
+        <div class="phead">
+          <h1>log-forensics</h1>
+          <div class="tags"><span class="lang">Python</span>
+          <span class="cat">Defensiva</span>
+          <a class="repo" href="https://github.com/Diogo-Damasceno/log-forensics" target="_blank" rel="noopener">GitHub ↗</a></div>
+          <p class="lead">Detector de ataques em logs de autenticação (brute-force SSH, user scan, root login).</p>
+        </div>
+        <div class="tabs">
+          <button class="tab active" data-tab="tests">Testes</button>
+          <button class="tab" data-tab="how">Como funciona</button>
+          <button class="tab" data-tab="algo">Algoritmo</button>
+        </div>
+        <section class="pane active" id="tests"><p class="summary"><b>8</b> testes · <span class="ok">8 passou</span> · <span class="bad">0 falhou</span> · <span class="muted">0 skip</span></p><ul class="tests"><li class="trow pass"><span class="dot"></span><span class="tname">test_bruteforce_detected</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_user_scanning_detected</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_root_login_detected</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_benign_ip_not_flagged</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_per_ip_stats</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_threshold_adjusts_bruteforce</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_cli_stdin</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_cli_json</span><span class="ttime">0.00s</span><div class="tdetail"></div></li></ul></section>
+        <section class="pane" id="how">
+          
+    <h3>Entrypoints (CLI)</h3><ul class="eps"><li><code>logforensics</code></li></ul>
+    <h3>Módulos e funções principais</h3><details><summary>src/logforensics/__init__.py</summary><ul><li>—</li></ul></details><details><summary>src/logforensics/cli.py</summary><ul><li><code>build_parser()</code></li><li><code>render_text()</code></li><li><code>main()</code></li></ul></details><details><summary>src/logforensics/core.py</summary><ul><li><code>parse_lines()</code> — Processa linhas de log e acumula estatísticas por IP.</li><li><code>analyze()</code> — Analisa linhas e gera relatório de indicadores por IP.</li></ul></details>
+    <h3>Estrutura de arquivos</h3><ul class="tree"><li>LICENSE</li><li>README.md</li><li>pyproject.toml</li><li>src/log_forensics.egg-info/PKG-INFO</li><li>src/log_forensics.egg-info/SOURCES.txt</li><li>src/log_forensics.egg-info/dependency_links.txt</li><li>src/log_forensics.egg-info/entry_points.txt</li><li>src/log_forensics.egg-info/top_level.txt</li><li>src/logforensics/__init__.py</li><li>src/logforensics/cli.py</li><li>src/logforensics/core.py</li><li>tests/test_logforensics.py</li></ul>
+    
+          <h3>README</h3>
+          <div class="readme"># log-forensics
+
+Ferramenta defensiva de linha de comando que analisa logs de autenticação
+(estilo `/var/log/auth.log`) e detecta tentativas de ataque, agregando
+estatísticas e indicadores **por endereço IP**.
+
+## O que detecta
+
+- **Brute-force SSH** — muitas ocorrências de `Failed password` de um mesmo IP.
+- **Scanning de usuários** — tentativas contra múltiplos usuários inválidos.
+- **Root login** — tentativas/aceites de login como `root`.
+
+## ⚠️ Aviso ético
+
+Esta é uma ferramenta **defensiva e educacional**, voltada à análise de logs
+de sistemas **de sua propriedade ou nos quais você tenha autorização** para
+investigar. Não a utilize para monitorar sistemas de terceiros sem
+permissão. O autor não se responsabiliza por uso indevido.
+
+## Requisitos
+
+- Python 3.10+
+- Apenas biblioteca padrão (sem dependências externas).
+
+## Instalação
+
+```bash
+pip install -e .
+```
+
+## Uso
+
+A partir de um arquivo de log:
+
+```bash
+logforensics /var/log/auth.log
+```
+
+Lendo de stdin (exemplo com um log de exemplo):
+
+```bash
+cat auth.log | logforensics
+```
+
+Com limiar personalizado de brute-force e saída JSON:
+
+```bash
+logforensics auth.log --threshold 10 --json
+```
+
+## Saída
+
+- Modo texto: resumo por IP (falhas de senha, usuários inválidos, root
+  login, usuários testados) e lista de indicadores de ataque.
+- Modo `--json`: relatório estruturado com `per_ip`, `indicators` e o
+  limiar utilizado.
+
+## Testes
+
+```bash
+pytest
+```
+
+## Licença
+
+MIT — Copyright (c) 2026 Diogo Damasceno.
+</div>
+        </section>
+        <section class="pane" id="algo"><div class="algo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 644" class="flow" role="img" aria-label="log-forensics">
+<text x="150" y="18" class="flow-title">log-forensics</text>
+<defs><marker id="a139824629138368next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="194" x2="150" y2="194" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a139824629138368next)"/>
+<defs><marker id="a139824629394224yes" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#56d364"/></marker></defs><line x1="390" y1="229" x2="210" y2="299" stroke="#56d364" stroke-width="1.6" marker-end="url(#a139824629394224yes)"/><text x="300" y="264" class="edge-lbl" fill="#56d364">S</text>
+<defs><marker id="a139824629393984no" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ff7b72"/></marker></defs><line x1="-90" y1="229" x2="90" y2="509" stroke="#ff7b72" stroke-width="1.6" marker-end="url(#a139824629393984no)"/><text x="0" y="369" class="edge-lbl" fill="#ff7b72">N</text>
+<defs><marker id="a139824629138368next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="334" x2="150" y2="334" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a139824629138368next)"/>
+<defs><marker id="a139824629394224yes" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#56d364"/></marker></defs><line x1="390" y1="369" x2="210" y2="439" stroke="#56d364" stroke-width="1.6" marker-end="url(#a139824629394224yes)"/><text x="300" y="404" class="edge-lbl" fill="#56d364">S</text>
+<defs><marker id="a139824629393984no" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ff7b72"/></marker></defs><line x1="-90" y1="369" x2="90" y2="509" stroke="#ff7b72" stroke-width="1.6" marker-end="url(#a139824629393984no)"/><text x="0" y="439" class="edge-lbl" fill="#ff7b72">N</text>
+<defs><marker id="a139824629138368next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="474" x2="150" y2="474" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a139824629138368next)"/>
+<defs><marker id="a139824629138368next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="544" x2="150" y2="544" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a139824629138368next)"/>
+<g class="node"><ellipse cx="150.0" cy="89.0" rx="120.0" ry="28.0" class="oval"/><text x="150.0" y="89.0" class="lbl">Ler log de auth (arquivo/stdin)</text></g>
+<g class="node"><rect x="30" y="124" width="240" height="56" rx="8" class="box"/><text x="150.0" y="159.0" class="lbl">Iterar linhas; regex em Failed password / Accepted</text></g>
+<g class="node"><polygon points="150.0,194 270,229.0 150.0,250 30,229.0" class="dia"/><text x="150.0" y="229.0" class="lbl">É falha de senha?</text></g>
+<g class="node"><rect x="30" y="264" width="240" height="56" rx="8" class="box"/><text x="150.0" y="299.0" class="lbl">Agregar por IP (contador + usuários)</text></g>
+<g class="node"><polygon points="150.0,334 270,369.0 150.0,390 30,369.0" class="dia"/><text x="150.0" y="369.0" class="lbl">Mesmo IP em &gt;N usuários?</text></g>
+<g class="node"><rect x="30" y="404" width="240" height="56" rx="8" class="box"/><text x="150.0" y="439.0" class="lbl">Marcar como user-scanning</text></g>
+<g class="node"><rect x="30" y="474" width="240" height="56" rx="8" class="box"/><text x="150.0" y="509.0" class="lbl">Gerar relatório: IP, contagem, indicadores</text></g>
+<g class="node"><ellipse cx="150.0" cy="579.0" rx="120.0" ry="28.0" class="oval end"/><text x="150.0" y="579.0" class="lbl">Imprimir estatísticas por IP</text></g>
+</svg></div></section>
+        </main>
+<footer class="foot">Portfólio estático gerado por projview — nenhum código é executado no servidor ou no navegador.</footer>
+<script src="../assets/site.js"></script>
+</body></html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>host-ids · ProjView</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body>
+<header class="top">
+  <a class="brand" href="../index.html">◈ ProjView</a>
+  <nav><a href="../index.html">Projetos</a></nav>
+</header>
+<main class="wrap">
+        <a class="back" href="../index.html">← todos os projetos</a>
+        <div class="phead">
+          <h1>host-ids</h1>
+          <div class="tags"><span class="lang">Python</span>
+          <span class="cat">Defensiva</span>
+          <a class="repo" href="https://github.com/Diogo-Damasceno/host-ids" target="_blank" rel="noopener">GitHub ↗</a></div>
+          <p class="lead">IDS baseado em host (Linux): monitora processos, conexões e integridade, sem deps externas.</p>
+        </div>
+        <div class="tabs">
+          <button class="tab active" data-tab="tests">Testes</button>
+          <button class="tab" data-tab="how">Como funciona</button>
+          <button class="tab" data-tab="algo">Algoritmo</button>
+        </div>
+        <section class="pane active" id="tests"><p class="summary"><b>8</b> testes · <span class="ok">8 passou</span> · <span class="bad">0 falhou</span> · <span class="muted">0 skip</span></p><ul class="tests"><li class="trow pass"><span class="dot"></span><span class="tname">test_new_process_detection</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_suspicious_process_is_critical</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_new_connection_detection</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_new_user_alert</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_file_integrity_modified</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_file_integrity_new_and_removed</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_real_collectors_run</span><span class="ttime">0.02s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_snapshot_and_diff</span><span class="ttime">0.06s</span><div class="tdetail"></div></li></ul></section>
+        <section class="pane" id="how">
+          
+    <h3>Entrypoints (CLI)</h3><ul class="eps"><li><code>hostids</code></li></ul>
+    <h3>Módulos e funções principais</h3><details><summary>hostids/__init__.py</summary><ul><li>—</li></ul></details><details><summary>hostids/cli.py</summary><ul><li><code>main()</code></li></ul></details><details><summary>hostids/collectors.py</summary><ul><li><code>list_processes()</code></li><li><code>list_connections()</code></li><li><code>logged_users()</code> — Usuários logados via `who`-like parsing de /var/run/utmp (fallback: env).</li><li><code>hash_file()</code></li><li><code>snapshot_files()</code> — Hash de arquivos monitorados para checagem de integridade.</li></ul></details><details><summary>hostids/engine.py</summary><ul><li><code>check_new_processes()</code></li><li><code>check_new_connections()</code></li><li><code>check_users()</code></li><li><code>check_file_integrity()</code></li><li><code>take_snapshot()</code></li><li><code>diff()</code></li></ul></details>
+    <h3>Estrutura de arquivos</h3><ul class="tree"><li>LICENSE</li><li>README.md</li><li>host_ids.egg-info/PKG-INFO</li><li>host_ids.egg-info/SOURCES.txt</li><li>host_ids.egg-info/dependency_links.txt</li><li>host_ids.egg-info/entry_points.txt</li><li>host_ids.egg-info/requires.txt</li><li>host_ids.egg-info/top_level.txt</li><li>hostids/__init__.py</li><li>hostids/cli.py</li><li>hostids/collectors.py</li><li>hostids/engine.py</li><li>pyproject.toml</li><li>tests/test_engine.py</li></ul>
+    
+          <h3>README</h3>
+          <div class="readme"># Host IDS 🛡️
+
+Sistema de detecção de intrusão baseado em host (**HIDS**) para Linux. Monitora continuamente o sistema e emite **alertas** quando detecta mudanças suspeitas — sem dependências externas (usa `/proc` e a stdlib).
+
+&gt; ⚠️ Ferramenta educacional/defensiva. Rode no **seu próprio** sistema. Alguns dados (todos os processos/arquivos) exigem privilégios para visibilidade completa.
+
+## O que monitora
+
+- **Novos processos** — com detecção de linhas de comando suspeitas (reverse shell `bash -i`, `/dev/tcp/`, `nc -e`, `curl | sh`, base64 decode, nmap…)
+- **Novas conexões de rede** — TCP/UDP via `/proc/net`, destacando destinos externos
+- **Usuários logados** — alerta em novas sessões interativas
+- **Integridade de arquivos** — hash SHA256 de arquivos/diretórios monitorados (modificação/remoção/criação)
+
+## Severidades
+
+`info` (verde) · `warning` (amarelo) · `critical` (vermelho)
+
+## Instalação
+
+```bash
+git clone https://github.com/Diogo-Damasceno/host-ids.git
+cd host-ids
+pip install -e .
+```
+
+## Uso
+
+```bash
+# monitorar processos/conexões/usuários a cada 3s
+hostids
+
+# incluir integridade de arquivos críticos
+hostids -w /etc/passwd -w /etc/shadow -w ~/.ssh/authorized_keys
+
+# intervalo customizado
+hostids -i 1.5 -w /etc/crontab
+
+# apenas baseline (uma varredura) e sair
+hostids --once
+```
+
+### Testar a detecção
+
+Em outro terminal, dispare algo suspeito (no seu próprio host):
+
+```bash
+bash -i &gt;&amp; /dev/tcp/127.0.0.1/9999 0&gt;&amp;1   # gera alerta critical
+echo &quot;x&quot; &gt;&gt; /etc/... (num arquivo monitorado)  # gera alerta de integridade
+```
+
+## Testes
+
+```bash
+pip install -e &#x27;.[dev]&#x27;
+pytest -q
+```
+
+## Arquitetura
+
+```
+hostids/
+├── collectors.py  # snapshots via /proc (processos, conexões, usuários, hashes)
+├── engine.py      # diff de snapshots + regras de alerta
+└── cli.py         # loop de monitoramento
+```
+
+## Licença
+
+MIT
+</div>
+        </section>
+        <section class="pane" id="algo"><div class="algo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 574" class="flow" role="img" aria-label="host-ids">
+<text x="150" y="18" class="flow-title">host-ids</text>
+<defs><marker id="a139824629138368next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="124" x2="150" y2="124" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a139824629138368next)"/>
+<defs><marker id="a139824629394224yes" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#56d364"/></marker></defs><line x1="390" y1="159" x2="210" y2="229" stroke="#56d364" stroke-width="1.6" marker-end="url(#a139824629394224yes)"/><text x="300" y="194" class="edge-lbl" fill="#56d364">S</text>
+<defs><marker id="a139824629393984no" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ff7b72"/></marker></defs><line x1="-90" y1="159" x2="90" y2="299" stroke="#ff7b72" stroke-width="1.6" marker-end="url(#a139824629393984no)"/><text x="0" y="229" class="edge-lbl" fill="#ff7b72">N</text>
+<defs><marker id="a139824629138368next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="264" x2="150" y2="474" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a139824629138368next)"/>
+<defs><marker id="a139824629138368next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="334" x2="150" y2="334" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a139824629138368next)"/>
+<defs><marker id="a139824629394224yes" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#56d364"/></marker></defs><line x1="390" y1="369" x2="210" y2="439" stroke="#56d364" stroke-width="1.6" marker-end="url(#a139824629394224yes)"/><text x="300" y="404" class="edge-lbl" fill="#56d364">S</text>
+<defs><marker id="a139824629393984no" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ff7b72"/></marker></defs><line x1="-90" y1="369" x2="90" y2="299" stroke="#ff7b72" stroke-width="1.6" marker-end="url(#a139824629393984no)"/><text x="0" y="334" class="edge-lbl" fill="#ff7b72">N</text>
+<defs><marker id="a139824629138368next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="474" x2="150" y2="264" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a139824629138368next)"/>
+<g class="node"><ellipse cx="150.0" cy="89.0" rx="120.0" ry="28.0" class="oval"/><text x="150.0" y="89.0" class="lbl">Varredura de baseline (--once)</text></g>
+<g class="node"><polygon points="150.0,124 270,159.0 150.0,180 30,159.0" class="dia"/><text x="150.0" y="159.0" class="lbl">Modo baseline?</text></g>
+<g class="node"><rect x="30" y="194" width="240" height="56" rx="8" class="box"/><text x="150.0" y="229.0" class="lbl">Snapshot de processos/conexões/arquivos</text></g>
+<g class="node"><rect x="30" y="264" width="240" height="56" rx="8" class="box"/><text x="150.0" y="299.0" class="lbl">Nova varredura periódica</text></g>
+<g class="node"><polygon points="150.0,334 270,369.0 150.0,390 30,369.0" class="dia"/><text x="150.0" y="369.0" class="lbl">Mudança vs baseline?</text></g>
+<g class="node"><rect x="30" y="404" width="240" height="56" rx="8" class="box"/><text x="150.0" y="439.0" class="lbl">Emitir alerta</text></g>
+<g class="node"><ellipse cx="150.0" cy="509.0" rx="120.0" ry="28.0" class="oval end"/><text x="150.0" y="509.0" class="lbl">Baseline pronto / Monitor ativo</text></g>
+</svg></div></section>
+        </main>
+<footer class="foot">Portfólio estático gerado por projview — nenhum código é executado no servidor ou no navegador.</footer>
+<script src="../assets/site.js"></script>
+</body></html>

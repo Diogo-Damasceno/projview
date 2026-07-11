@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>threat-intel · ProjView</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body>
+<header class="top">
+  <a class="brand" href="../index.html">◈ ProjView</a>
+  <nav><a href="../index.html">Projetos</a></nav>
+</header>
+<main class="wrap">
+        <a class="back" href="../index.html">← todos os projetos</a>
+        <div class="phead">
+          <h1>threat-intel</h1>
+          <div class="tags"><span class="lang">Python</span>
+          <span class="cat">Defensiva</span>
+          <a class="repo" href="https://github.com/Diogo-Damasceno/threat-intel" target="_blank" rel="noopener">GitHub ↗</a></div>
+          <p class="lead">TIP: armazena, busca e expõe IOCs via API REST (stdlib pura).</p>
+        </div>
+        <div class="tabs">
+          <button class="tab active" data-tab="tests">Testes</button>
+          <button class="tab" data-tab="how">Como funciona</button>
+          <button class="tab" data-tab="algo">Algoritmo</button>
+        </div>
+        <section class="pane active" id="tests"><p class="summary"><b>7</b> testes · <span class="ok">7 passou</span> · <span class="bad">0 falhou</span> · <span class="muted">0 skip</span></p><ul class="tests"><li class="trow pass"><span class="dot"></span><span class="tname">test_detect_type</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_add_and_lookup</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_dedup_updates</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_search_filters</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_import_bulk</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_stats</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_rest_api_roundtrip</span><span class="ttime">0.51s</span><div class="tdetail"></div></li></ul></section>
+        <section class="pane" id="how">
+          
+    <h3>Entrypoints (CLI)</h3><ul class="eps"><li><code>tip</code></li></ul>
+    <h3>Módulos e funções principais</h3><details><summary>tip/__init__.py</summary><ul><li>—</li></ul></details><details><summary>tip/api.py</summary><ul><li><code>make_handler()</code></li><li><code>serve()</code></li></ul></details><details><summary>tip/cli.py</summary><ul><li><code>main()</code></li></ul></details><details><summary>tip/store.py</summary><ul><li><code>detect_type()</code></li></ul></details>
+    <h3>Estrutura de arquivos</h3><ul class="tree"><li>LICENSE</li><li>README.md</li><li>pyproject.toml</li><li>tests/test_tip.py</li><li>threat_intel.egg-info/PKG-INFO</li><li>threat_intel.egg-info/SOURCES.txt</li><li>threat_intel.egg-info/dependency_links.txt</li><li>threat_intel.egg-info/entry_points.txt</li><li>threat_intel.egg-info/requires.txt</li><li>threat_intel.egg-info/top_level.txt</li><li>tip/__init__.py</li><li>tip/api.py</li><li>tip/cli.py</li><li>tip/store.py</li></ul>
+    
+          <h3>README</h3>
+          <div class="readme"># Threat Intelligence Platform (TIP) 🌐
+
+Plataforma para armazenar, consultar e compartilhar **Indicadores de Comprometimento (IOCs)** — IPs, domínios, URLs, hashes (MD5/SHA1/SHA256) e e-mails maliciosos — com **detecção automática de tipo**, busca filtrada, importação em massa e **API REST** (stdlib pura, sem dependências).
+
+&gt; ⚠️ Ferramenta educacional/defensiva para gestão de threat intel.
+
+## Recursos
+
+- **Detecção automática** do tipo de IOC
+- Deduplicação inteligente (atualiza `last_seen`/confiança em vez de duplicar)
+- Campos: `threat`, `source`, `confidence` (0–100), `tags`, `first_seen`, `last_seen`
+- **Busca** por tipo, ameaça e confiança mínima
+- **Importação em massa** de arquivos (um IOC por linha, ignora `#` comentários)
+- **API REST**: `/health`, `/stats`, `/lookup`, `/search`, `POST /ioc`
+- Persistência em **SQLite**
+
+## Instalação
+
+```bash
+git clone https://github.com/Diogo-Damasceno/threat-intel.git
+cd threat-intel
+pip install -e .
+```
+
+## Uso (CLI)
+
+```bash
+tip add 185.220.101.5 --threat C2 --source honeypot --confidence 90
+tip add evil-phish.tk --threat phishing
+tip lookup 185.220.101.5
+tip search --type ip --min-confidence 80
+tip import iocs.txt --threat ransomware --source feed-x
+tip stats
+```
+
+## API REST
+
+```bash
+tip serve --port 8088
+```
+
+```bash
+# adicionar IOC
+curl -X POST http://127.0.0.1:8088/ioc \
+  -H &#x27;Content-Type: application/json&#x27; \
+  -d &#x27;{&quot;value&quot;:&quot;9.9.9.9&quot;,&quot;threat&quot;:&quot;C2&quot;,&quot;confidence&quot;:95}&#x27;
+
+# consultar
+curl &#x27;http://127.0.0.1:8088/lookup?value=9.9.9.9&#x27;
+curl &#x27;http://127.0.0.1:8088/search?type=ip&amp;min_confidence=80&#x27;
+curl http://127.0.0.1:8088/stats
+```
+
+## Integração com o portfólio
+
+Este TIP é o *hub* central: o **Honeypot** alimenta IOCs, o **Malware Analyzer** exporta hashes/URLs, e o **Phishing Detector** consulta domínios. Juntos formam a base do **SentinelAI**.
+
+## Testes
+
+```bash
+pip install -e &#x27;.[dev]&#x27;
+pytest -q
+```
+
+## Licença
+
+MIT
+</div>
+        </section>
+        <section class="pane" id="algo"><div class="algo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 714" class="flow" role="img" aria-label="threat-intel">
+<text x="150" y="18" class="flow-title">threat-intel</text>
+<defs><marker id="a139824629138368next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="124" x2="150" y2="124" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a139824629138368next)"/>
+<defs><marker id="a139824629394224yes" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#56d364"/></marker></defs><line x1="390" y1="159" x2="210" y2="229" stroke="#56d364" stroke-width="1.6" marker-end="url(#a139824629394224yes)"/><text x="300" y="194" class="edge-lbl" fill="#56d364">S</text>
+<defs><marker id="a139824629393984no" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ff7b72"/></marker></defs><line x1="-90" y1="159" x2="90" y2="369" stroke="#ff7b72" stroke-width="1.6" marker-end="url(#a139824629393984no)"/><text x="0" y="264" class="edge-lbl" fill="#ff7b72">N</text>
+<defs><marker id="a139824629138368next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="264" x2="150" y2="264" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a139824629138368next)"/>
+<defs><marker id="a139824629138368next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="334" x2="150" y2="474" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a139824629138368next)"/>
+<defs><marker id="a139824629394224yes" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#56d364"/></marker></defs><line x1="390" y1="369" x2="210" y2="439" stroke="#56d364" stroke-width="1.6" marker-end="url(#a139824629394224yes)"/><text x="300" y="404" class="edge-lbl" fill="#56d364">S</text>
+<defs><marker id="a139824629393984no" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ff7b72"/></marker></defs><line x1="-90" y1="369" x2="90" y2="579" stroke="#ff7b72" stroke-width="1.6" marker-end="url(#a139824629393984no)"/><text x="0" y="474" class="edge-lbl" fill="#ff7b72">N</text>
+<defs><marker id="a139824629138368next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="474" x2="150" y2="474" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a139824629138368next)"/>
+<defs><marker id="a139824629394224yes" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#56d364"/></marker></defs><line x1="390" y1="509" x2="210" y2="579" stroke="#56d364" stroke-width="1.6" marker-end="url(#a139824629394224yes)"/><text x="300" y="544" class="edge-lbl" fill="#56d364">S</text>
+<defs><marker id="a139824629393984no" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ff7b72"/></marker></defs><line x1="-90" y1="509" x2="90" y2="649" stroke="#ff7b72" stroke-width="1.6" marker-end="url(#a139824629393984no)"/><text x="0" y="579" class="edge-lbl" fill="#ff7b72">N</text>
+<defs><marker id="a139824629138368next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="614" x2="150" y2="614" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a139824629138368next)"/>
+<g class="node"><ellipse cx="150.0" cy="89.0" rx="120.0" ry="28.0" class="oval"/><text x="150.0" y="89.0" class="lbl">Comando: add/lookup/search/import/serve</text></g>
+<g class="node"><polygon points="150.0,124 270,159.0 150.0,180 30,159.0" class="dia"/><text x="150.0" y="159.0" class="lbl">É ingestão?</text></g>
+<g class="node"><rect x="30" y="194" width="240" height="56" rx="8" class="box"/><text x="150.0" y="229.0" class="lbl">Detectar tipo (ip/domain/url/hash) + confiança</text></g>
+<g class="node"><rect x="30" y="264" width="240" height="56" rx="8" class="box"/><text x="150.0" y="299.0" class="lbl">Armazenar em SQLite</text></g>
+<g class="node"><polygon points="150.0,334 270,369.0 150.0,390 30,369.0" class="dia"/><text x="150.0" y="369.0" class="lbl">É consulta?</text></g>
+<g class="node"><rect x="30" y="404" width="240" height="56" rx="8" class="box"/><text x="150.0" y="439.0" class="lbl">Filtrar por tipo/confiança/tags</text></g>
+<g class="node"><polygon points="150.0,474 270,509.0 150.0,530 30,509.0" class="dia"/><text x="150.0" y="509.0" class="lbl">Modo serve?</text></g>
+<g class="node"><rect x="30" y="544" width="240" height="56" rx="8" class="box"/><text x="150.0" y="579.0" class="lbl">Subir API REST (stdlib)</text></g>
+<g class="node"><ellipse cx="150.0" cy="649.0" rx="120.0" ry="28.0" class="oval end"/><text x="150.0" y="649.0" class="lbl">IOC registrado / resposta da busca</text></g>
+</svg></div></section>
+        </main>
+<footer class="foot">Portfólio estático gerado por projview — nenhum código é executado no servidor ou no navegador.</footer>
+<script src="../assets/site.js"></script>
+</body></html>

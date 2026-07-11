@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>phishing-detector · ProjView</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body>
+<header class="top">
+  <a class="brand" href="../index.html">◈ ProjView</a>
+  <nav><a href="../index.html">Projetos</a></nav>
+</header>
+<main class="wrap">
+        <a class="back" href="../index.html">← todos os projetos</a>
+        <div class="phead">
+          <h1>phishing-detector</h1>
+          <div class="tags"><span class="lang">Python</span>
+          <span class="cat">Defensiva</span>
+          <a class="repo" href="https://github.com/Diogo-Damasceno/phishing-detector" target="_blank" rel="noopener">GitHub ↗</a></div>
+          <p class="lead">Detector de phishing por heurísticas de URL com pontuação de risco 0-100.</p>
+        </div>
+        <div class="tabs">
+          <button class="tab active" data-tab="tests">Testes</button>
+          <button class="tab" data-tab="how">Como funciona</button>
+          <button class="tab" data-tab="algo">Algoritmo</button>
+        </div>
+        <section class="pane active" id="tests"><p class="summary"><b>9</b> testes · <span class="ok">9 passou</span> · <span class="bad">0 falhou</span> · <span class="muted">0 skip</span></p><ul class="tests"><li class="trow pass"><span class="dot"></span><span class="tname">test_legit_url_low_score</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_ip_host_flagged</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_typosquatting_detected</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_brand_in_subdomain</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_at_symbol_obfuscation</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_suspicious_tld</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_levenshtein</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_entropy_positive</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_score_capped</span><span class="ttime">0.00s</span><div class="tdetail"></div></li></ul></section>
+        <section class="pane" id="how">
+          
+    <h3>Entrypoints (CLI)</h3><ul class="eps"><li><code>phishdet</code></li></ul>
+    <h3>Módulos e funções principais</h3><details><summary>phishdet/__init__.py</summary><ul><li>—</li></ul></details><details><summary>phishdet/analyzer.py</summary><ul><li><code>analyze_url()</code></li></ul></details><details><summary>phishdet/cli.py</summary><ul><li><code>main()</code></li></ul></details>
+    <h3>Estrutura de arquivos</h3><ul class="tree"><li>LICENSE</li><li>README.md</li><li>phishdet/__init__.py</li><li>phishdet/analyzer.py</li><li>phishdet/cli.py</li><li>phishing_detector.egg-info/PKG-INFO</li><li>phishing_detector.egg-info/SOURCES.txt</li><li>phishing_detector.egg-info/dependency_links.txt</li><li>phishing_detector.egg-info/entry_points.txt</li><li>phishing_detector.egg-info/requires.txt</li><li>phishing_detector.egg-info/top_level.txt</li><li>pyproject.toml</li><li>tests/test_analyzer.py</li></ul>
+    
+          <h3>README</h3>
+          <div class="readme"># Phishing Detector 🎣
+
+Analisa uma **URL** e produz uma **pontuação de risco (0–100)** com base em heurísticas de phishing — sem depender de listas negras externas. Funciona totalmente offline, com checagens de rede (SSL) opcionais.
+
+&gt; ⚠️ Ferramenta educacional/defensiva. Um score baixo **não garante** que um site é seguro; um score alto indica sinais suspeitos que merecem atenção.
+
+## Heurísticas avaliadas
+
+| Sinal | Descrição |
+|-------|-----------|
+| `no_https` | URL sem TLS |
+| `ip_as_host` | IP em vez de domínio |
+| `at_symbol` | `@` no netloc (ofuscação) |
+| `many_subdomains` | excesso de rótulos |
+| `punycode` | domínio homógrafo (`xn--`) |
+| `suspicious_tld` | TLD abusado (.tk, .xyz, .zip…) |
+| `url_shortener` | encurtador de URL |
+| `brand_in_subdomain` | marca fora do domínio registrável |
+| `typosquatting` | domínio parecido com marca conhecida |
+| `sensitive_words` | login/verify/secure/senha… |
+| `long_url` | URL muito longa |
+| `high_entropy` | domínio gerado automaticamente |
+| `ssl_error` / `expired_cert` | (com `--network`) |
+
+## Instalação
+
+```bash
+git clone https://github.com/Diogo-Damasceno/phishing-detector.git
+cd phishing-detector
+pip install -e .
+```
+
+## Uso
+
+```bash
+phishdet https://www.google.com
+phishdet &quot;http://paypal.secure-login.xyz/account&quot;
+phishdet --network https://exemplo.com     # inclui checagem de SSL
+phishdet --json &quot;http://paypa1.com&quot;          # saída JSON
+```
+
+### Exemplo
+
+```
+URL:     http://paypal.secure-login.xyz/account
+Domínio: paypal.secure-login.xyz
+Score:   46/100 — RISCO MÉDIO
+
+Sinais detectados:
+  [+22] brand_in_subdomain: Marca &#x27;paypal&#x27; fora do domínio registrável (secure-login.xyz)
+  [+15] no_https: URL não usa HTTPS
+  [+12] suspicious_tld: TLD frequentemente abusado: .xyz
+```
+
+## Testes
+
+```bash
+pip install -e &#x27;.[dev]&#x27;
+pytest -q
+```
+
+## Licença
+
+MIT
+</div>
+        </section>
+        <section class="pane" id="algo"><div class="algo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 644" class="flow" role="img" aria-label="phishing-detector">
+<text x="150" y="18" class="flow-title">phishing-detector</text>
+<defs><marker id="a139824629138368next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="124" x2="150" y2="124" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a139824629138368next)"/>
+<defs><marker id="a139824629138368next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="194" x2="150" y2="194" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a139824629138368next)"/>
+<defs><marker id="a139824629394224yes" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#56d364"/></marker></defs><line x1="390" y1="229" x2="210" y2="299" stroke="#56d364" stroke-width="1.6" marker-end="url(#a139824629394224yes)"/><text x="300" y="264" class="edge-lbl" fill="#56d364">S</text>
+<defs><marker id="a139824629393984no" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ff7b72"/></marker></defs><line x1="-90" y1="229" x2="90" y2="369" stroke="#ff7b72" stroke-width="1.6" marker-end="url(#a139824629393984no)"/><text x="0" y="299" class="edge-lbl" fill="#ff7b72">N</text>
+<defs><marker id="a139824629138368next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="334" x2="150" y2="334" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a139824629138368next)"/>
+<defs><marker id="a139824629138368next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="404" x2="150" y2="404" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a139824629138368next)"/>
+<defs><marker id="a139824629394224yes" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#56d364"/></marker></defs><line x1="390" y1="439" x2="210" y2="509" stroke="#56d364" stroke-width="1.6" marker-end="url(#a139824629394224yes)"/><text x="300" y="474" class="edge-lbl" fill="#56d364">S</text>
+<defs><marker id="a139824629393984no" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ff7b72"/></marker></defs><line x1="-90" y1="439" x2="90" y2="579" stroke="#ff7b72" stroke-width="1.6" marker-end="url(#a139824629393984no)"/><text x="0" y="509" class="edge-lbl" fill="#ff7b72">N</text>
+<defs><marker id="a139824629138368next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="544" x2="150" y2="544" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a139824629138368next)"/>
+<g class="node"><ellipse cx="150.0" cy="89.0" rx="120.0" ry="28.0" class="oval"/><text x="150.0" y="89.0" class="lbl">URL de entrada</text></g>
+<g class="node"><rect x="30" y="124" width="240" height="56" rx="8" class="box"/><text x="150.0" y="159.0" class="lbl">Heurísticas: homografos, @, IP, hunches</text></g>
+<g class="node"><polygon points="150.0,194 270,229.0 150.0,250 30,229.0" class="dia"/><text x="150.0" y="229.0" class="lbl">Flag --network?</text></g>
+<g class="node"><rect x="30" y="264" width="240" height="56" rx="8" class="box"/><text x="150.0" y="299.0" class="lbl">Checar certificado SSL/WHOIS</text></g>
+<g class="node"><rect x="30" y="334" width="240" height="56" rx="8" class="box"/><text x="150.0" y="369.0" class="lbl">Pontuar risco 0-100</text></g>
+<g class="node"><polygon points="150.0,404 270,439.0 150.0,460 30,439.0" class="dia"/><text x="150.0" y="439.0" class="lbl">Score alto?</text></g>
+<g class="node"><rect x="30" y="474" width="240" height="56" rx="8" class="box"/><text x="150.0" y="509.0" class="lbl">Marcar como suspeito</text></g>
+<g class="node"><ellipse cx="150.0" cy="579.0" rx="120.0" ry="28.0" class="oval end"/><text x="150.0" y="579.0" class="lbl">Resultado + recomendação</text></g>
+</svg></div></section>
+        </main>
+<footer class="foot">Portfólio estático gerado por projview — nenhum código é executado no servidor ou no navegador.</footer>
+<script src="../assets/site.js"></script>
+</body></html>

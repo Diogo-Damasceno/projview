@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>network-scanner · ProjView</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body>
+<header class="top">
+  <a class="brand" href="../index.html">◈ ProjView</a>
+  <nav><a href="../index.html">Projetos</a></nav>
+</header>
+<main class="wrap">
+        <a class="back" href="../index.html">← todos os projetos</a>
+        <div class="phead">
+          <h1>network-scanner</h1>
+          <div class="tags"><span class="lang">Python</span>
+          <span class="cat">Defensiva</span>
+          <a class="repo" href="https://github.com/Diogo-Damasceno/network-scanner" target="_blank" rel="noopener">GitHub ↗</a></div>
+          <p class="lead">Scanner de rede: hosts, portas, SO e relatório HTML com histórico SQLite.</p>
+        </div>
+        <div class="tabs">
+          <button class="tab active" data-tab="tests">Testes</button>
+          <button class="tab" data-tab="how">Como funciona</button>
+          <button class="tab" data-tab="algo">Algoritmo</button>
+        </div>
+        <section class="pane active" id="tests"><p class="summary"><b>6</b> testes · <span class="ok">6 passou</span> · <span class="bad">0 falhou</span> · <span class="muted">0 skip</span></p><ul class="tests"><li class="trow pass"><span class="dot"></span><span class="tname">test_expand_cidr</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_expand_single_ip</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_guess_os</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_socket_scan_detects_open_port</span><span class="ttime">0.02s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_storage_roundtrip</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_html_report_contains_ip</span><span class="ttime">0.00s</span><div class="tdetail"></div></li></ul></section>
+        <section class="pane" id="how">
+          
+    <h3>Entrypoints (CLI)</h3><ul class="eps"><li><code>netscan</code></li></ul>
+    <h3>Módulos e funções principais</h3><details><summary>netscan/__init__.py</summary><ul><li>—</li></ul></details><details><summary>netscan/cli.py</summary><ul><li><code>main()</code></li></ul></details><details><summary>netscan/report.py</summary><ul><li><code>render_html()</code></li><li><code>write_report()</code></li></ul></details><details><summary>netscan/scanner.py</summary><ul><li><code>has_nmap()</code></li><li><code>expand_targets()</code> — Aceita IP único, CIDR (192.168.0.0/24) ou hostname.</li><li><code>scan_host_socket()</code></li><li><code>scan_host_nmap()</code></li><li><code>scan_network()</code> — Varre um alvo (IP/CIDR/hostname) e retorna hosts vivos com portas abertas.</li></ul></details><details><summary>netscan/storage.py</summary><ul><li><code>connect()</code></li><li><code>save_scan()</code></li></ul></details>
+    <h3>Estrutura de arquivos</h3><ul class="tree"><li>LICENSE</li><li>README.md</li><li>netscan/__init__.py</li><li>netscan/cli.py</li><li>netscan/report.py</li><li>netscan/scanner.py</li><li>netscan/storage.py</li><li>network_scanner.egg-info/PKG-INFO</li><li>network_scanner.egg-info/SOURCES.txt</li><li>network_scanner.egg-info/dependency_links.txt</li><li>network_scanner.egg-info/entry_points.txt</li><li>network_scanner.egg-info/requires.txt</li><li>network_scanner.egg-info/top_level.txt</li><li>pyproject.toml</li><li>tests/test_scanner.py</li></ul>
+    
+          <h3>README</h3>
+          <div class="readme"># Network Scanner 🛰️
+
+Scanner de rede inteligente que descobre dispositivos, identifica portas abertas, tenta adivinhar o sistema operacional e gera um **relatório HTML** — com armazenamento em **SQLite** para histórico de varreduras.
+
+&gt; ⚠️ Ferramenta educacional. Faça varreduras **apenas em redes que você possui ou tem autorização explícita para testar**. Escanear redes de terceiros sem permissão é ilegal na maioria dos países.
+
+## Recursos
+
+- Descoberta de hosts vivos em IP, **CIDR** (`192.168.0.0/24`) ou hostname
+- Varredura de portas concorrente (multithread)
+- Dois backends: **nmap** (se instalado) ou **fallback puro em Python (socket)** — funciona sem root e sem nmap
+- Captura de **banners** e heurística de detecção de SO
+- Histórico persistente em **SQLite**
+- **Relatório HTML** autocontido com tema escuro
+- Saída bonita no terminal com **Rich**
+
+## Instalação
+
+```bash
+git clone https://github.com/Diogo-Damasceno/network-scanner.git
+cd network-scanner
+pip install -e .
+```
+
+## Uso
+
+```bash
+# varrer a rede local, portas comuns, gerar HTML
+netscan 192.168.1.0/24 --html relatorio.html
+
+# portas específicas ou faixa
+netscan 192.168.1.10 -p 22,80,443
+netscan 192.168.1.10 -p 1-1024
+
+# forçar o fallback em socket (sem nmap)
+netscan 192.168.1.0/24 --no-nmap
+
+# escolher o arquivo de banco
+netscan 10.0.0.0/28 --db minhas_varreduras.db
+```
+
+## Testes
+
+```bash
+pip install -e &#x27;.[dev]&#x27;
+pytest -q
+```
+
+## Arquitetura
+
+```
+netscan/
+├── scanner.py   # descoberta + varredura (nmap e socket)
+├── storage.py   # persistência SQLite
+├── report.py    # geração de HTML
+└── cli.py       # interface de linha de comando (Rich)
+```
+
+## Licença
+
+MIT
+</div>
+        </section>
+        <section class="pane" id="algo"><div class="algo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 644" class="flow" role="img" aria-label="network-scanner">
+<text x="150" y="18" class="flow-title">network-scanner</text>
+<defs><marker id="a139824629138368next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="124" x2="150" y2="124" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a139824629138368next)"/>
+<defs><marker id="a139824629138368next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="194" x2="150" y2="194" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a139824629138368next)"/>
+<defs><marker id="a139824629394224yes" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#56d364"/></marker></defs><line x1="390" y1="229" x2="210" y2="299" stroke="#56d364" stroke-width="1.6" marker-end="url(#a139824629394224yes)"/><text x="300" y="264" class="edge-lbl" fill="#56d364">S</text>
+<defs><marker id="a139824629393984no" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ff7b72"/></marker></defs><line x1="-90" y1="229" x2="90" y2="579" stroke="#ff7b72" stroke-width="1.6" marker-end="url(#a139824629393984no)"/><text x="0" y="404" class="edge-lbl" fill="#ff7b72">N</text>
+<defs><marker id="a139824629138368next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="334" x2="150" y2="334" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a139824629138368next)"/>
+<defs><marker id="a139824629394224yes" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#56d364"/></marker></defs><line x1="390" y1="369" x2="210" y2="439" stroke="#56d364" stroke-width="1.6" marker-end="url(#a139824629394224yes)"/><text x="300" y="404" class="edge-lbl" fill="#56d364">S</text>
+<defs><marker id="a139824629393984no" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ff7b72"/></marker></defs><line x1="-90" y1="369" x2="90" y2="509" stroke="#ff7b72" stroke-width="1.6" marker-end="url(#a139824629393984no)"/><text x="0" y="439" class="edge-lbl" fill="#ff7b72">N</text>
+<defs><marker id="a139824629138368next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="474" x2="150" y2="474" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a139824629138368next)"/>
+<defs><marker id="a139824629138368next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="544" x2="150" y2="544" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a139824629138368next)"/>
+<g class="node"><ellipse cx="150.0" cy="89.0" rx="120.0" ry="28.0" class="oval"/><text x="150.0" y="89.0" class="lbl">Alvo (IP/CIDR/host)</text></g>
+<g class="node"><rect x="30" y="124" width="240" height="56" rx="8" class="box"/><text x="150.0" y="159.0" class="lbl">Descoberta de hosts (nmap ou socket)</text></g>
+<g class="node"><polygon points="150.0,194 270,229.0 150.0,250 30,229.0" class="dia"/><text x="150.0" y="229.0" class="lbl">Host ativo?</text></g>
+<g class="node"><rect x="30" y="264" width="240" height="56" rx="8" class="box"/><text x="150.0" y="299.0" class="lbl">Varrer portas + serviços</text></g>
+<g class="node"><polygon points="150.0,334 270,369.0 150.0,390 30,369.0" class="dia"/><text x="150.0" y="369.0" class="lbl">SO detectável?</text></g>
+<g class="node"><rect x="30" y="404" width="240" height="56" rx="8" class="box"/><text x="150.0" y="439.0" class="lbl">Inferir SO / banner</text></g>
+<g class="node"><rect x="30" y="474" width="240" height="56" rx="8" class="box"/><text x="150.0" y="509.0" class="lbl">Salvar em SQLite + gerar HTML</text></g>
+<g class="node"><ellipse cx="150.0" cy="579.0" rx="120.0" ry="28.0" class="oval end"/><text x="150.0" y="579.0" class="lbl">Relatório de varredura</text></g>
+</svg></div></section>
+        </main>
+<footer class="foot">Portfólio estático gerado por projview — nenhum código é executado no servidor ou no navegador.</footer>
+<script src="../assets/site.js"></script>
+</body></html>
