@@ -144,7 +144,7 @@
           "nodeid": "tests.test_fim::test_cli_diff_json",
           "name": "test_cli_diff_json",
           "status": "passed",
-          "duration": 0.003,
+          "duration": 0.002,
           "detail": ""
         }
       ],
@@ -186,7 +186,7 @@
           "nodeid": "tests.test_honeypot::test_honeypot_captures_ssh_banner",
           "name": "test_honeypot_captures_ssh_banner",
           "status": "passed",
-          "duration": 0.604,
+          "duration": 0.603,
           "detail": ""
         }
       ],
@@ -249,14 +249,14 @@
           "nodeid": "tests.test_engine::test_real_collectors_run",
           "name": "test_real_collectors_run",
           "status": "passed",
-          "duration": 0.02,
+          "duration": 0.024,
           "detail": ""
         },
         {
           "nodeid": "tests.test_engine::test_snapshot_and_diff",
           "name": "test_snapshot_and_diff",
           "status": "passed",
-          "duration": 0.061,
+          "duration": 0.072,
           "detail": ""
         }
       ],
@@ -690,7 +690,7 @@
           "nodeid": "tests.test_analyzer::test_legit_url_low_score",
           "name": "test_legit_url_low_score",
           "status": "passed",
-          "duration": 0.0,
+          "duration": 0.001,
           "detail": ""
         },
         {
@@ -711,7 +711,7 @@
           "nodeid": "tests.test_analyzer::test_brand_in_subdomain",
           "name": "test_brand_in_subdomain",
           "status": "passed",
-          "duration": 0.0,
+          "duration": 0.001,
           "detail": ""
         },
         {
@@ -879,7 +879,7 @@
           "nodeid": "tests.test_tip::test_dedup_updates",
           "name": "test_dedup_updates",
           "status": "passed",
-          "duration": 0.0,
+          "duration": 0.001,
           "detail": ""
         },
         {
