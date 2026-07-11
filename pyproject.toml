@@ -1,0 +1,21 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "projview"
+version = "0.1.0"
+description = "Gerador de portfólio estático: roda os testes dos seus projetos localmente e gera um site visual (GitHub Pages) com fluxo de testes e explicação de algoritmos."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Diogo Damasceno" }]
+dependencies = [
+    "rich>=13.0",
+]
+
+[project.scripts]
+projview = "projview.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/projview"]
