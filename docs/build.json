@@ -11,14 +11,14 @@
           "nodeid": "tests.test_core::test_match_encontra_vulneravel",
           "name": "test_match_encontra_vulneravel",
           "status": "passed",
-          "duration": 0.0,
+          "duration": 0.001,
           "detail": ""
         },
         {
           "nodeid": "tests.test_core::test_match_ignora_versao_nao_afetada",
           "name": "test_match_ignora_versao_nao_afetada",
           "status": "passed",
-          "duration": 0.0,
+          "duration": 0.001,
           "detail": ""
         },
         {
@@ -46,7 +46,7 @@
           "nodeid": "tests.test_smoke::test_whale_art",
           "name": "test_whale_art",
           "status": "passed",
-          "duration": 0.0,
+          "duration": 0.001,
           "detail": ""
         },
         {
@@ -130,21 +130,21 @@
           "nodeid": "tests.test_fim::test_cli_init_check_detects_modification",
           "name": "test_cli_init_check_detects_modification",
           "status": "passed",
-          "duration": 0.003,
+          "duration": 0.004,
           "detail": ""
         },
         {
           "nodeid": "tests.test_fim::test_cli_init_check_clean",
           "name": "test_cli_init_check_clean",
           "status": "passed",
-          "duration": 0.003,
+          "duration": 0.004,
           "detail": ""
         },
         {
           "nodeid": "tests.test_fim::test_cli_diff_json",
           "name": "test_cli_diff_json",
           "status": "passed",
-          "duration": 0.002,
+          "duration": 0.004,
           "detail": ""
         }
       ],
@@ -179,14 +179,14 @@
           "nodeid": "tests.test_honeypot::test_honeypot_captures_http_connection",
           "name": "test_honeypot_captures_http_connection",
           "status": "passed",
-          "duration": 0.605,
+          "duration": 0.607,
           "detail": ""
         },
         {
           "nodeid": "tests.test_honeypot::test_honeypot_captures_ssh_banner",
           "name": "test_honeypot_captures_ssh_banner",
           "status": "passed",
-          "duration": 0.603,
+          "duration": 0.604,
           "detail": ""
         }
       ],
@@ -207,7 +207,7 @@
           "nodeid": "tests.test_engine::test_new_process_detection",
           "name": "test_new_process_detection",
           "status": "passed",
-          "duration": 0.0,
+          "duration": 0.001,
           "detail": ""
         },
         {
@@ -249,14 +249,14 @@
           "nodeid": "tests.test_engine::test_real_collectors_run",
           "name": "test_real_collectors_run",
           "status": "passed",
-          "duration": 0.021,
+          "duration": 0.034,
           "detail": ""
         },
         {
           "nodeid": "tests.test_engine::test_snapshot_and_diff",
           "name": "test_snapshot_and_diff",
           "status": "passed",
-          "duration": 0.066,
+          "duration": 0.11,
           "detail": ""
         }
       ],
@@ -277,7 +277,7 @@
           "nodeid": "tests.test_logforensics::test_bruteforce_detected",
           "name": "test_bruteforce_detected",
           "status": "passed",
-          "duration": 0.0,
+          "duration": 0.001,
           "detail": ""
         },
         {
@@ -319,14 +319,14 @@
           "nodeid": "tests.test_logforensics::test_cli_stdin",
           "name": "test_cli_stdin",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.002,
           "detail": ""
         },
         {
           "nodeid": "tests.test_logforensics::test_cli_json",
           "name": "test_cli_json",
           "status": "passed",
-          "duration": 0.002,
+          "duration": 0.004,
           "detail": ""
         }
       ],
@@ -347,7 +347,7 @@
           "nodeid": "tests.test_analyzer::test_entropy_bounds",
           "name": "test_entropy_bounds",
           "status": "passed",
-          "duration": 0.0,
+          "duration": 0.001,
           "detail": ""
         },
         {
@@ -417,7 +417,7 @@
           "nodeid": "tests.test_imports::test_source_files_present",
           "name": "test_source_files_present",
           "status": "passed",
-          "duration": 0.0,
+          "duration": 0.001,
           "detail": ""
         },
         {
@@ -508,7 +508,7 @@
           "nodeid": "tests.test_scanner::test_socket_scan_detects_open_port",
           "name": "test_socket_scan_detects_open_port",
           "status": "passed",
-          "duration": 0.011,
+          "duration": 0.006,
           "detail": ""
         },
         {
@@ -550,7 +550,7 @@
           "nodeid": "tests.test_analyzer::test_strong_password_scores_high",
           "name": "test_strong_password_scores_high",
           "status": "passed",
-          "duration": 0.0,
+          "duration": 0.001,
           "detail": ""
         },
         {
@@ -620,7 +620,7 @@
           "nodeid": "tests.test_agent::test_authorization_allows_listed",
           "name": "test_authorization_allows_listed",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.002,
           "detail": ""
         },
         {
@@ -655,7 +655,7 @@
           "nodeid": "tests.test_agent::test_agent_runs_against_localhost",
           "name": "test_agent_runs_against_localhost",
           "status": "passed",
-          "duration": 0.008,
+          "duration": 0.014,
           "detail": ""
         },
         {
@@ -690,14 +690,14 @@
           "nodeid": "tests.test_analyzer::test_legit_url_low_score",
           "name": "test_legit_url_low_score",
           "status": "passed",
-          "duration": 0.0,
+          "duration": 0.001,
           "detail": ""
         },
         {
           "nodeid": "tests.test_analyzer::test_ip_host_flagged",
           "name": "test_ip_host_flagged",
           "status": "passed",
-          "duration": 0.0,
+          "duration": 0.001,
           "detail": ""
         },
         {
@@ -718,14 +718,14 @@
           "nodeid": "tests.test_analyzer::test_at_symbol_obfuscation",
           "name": "test_at_symbol_obfuscation",
           "status": "passed",
-          "duration": 0.0,
+          "duration": 0.001,
           "detail": ""
         },
         {
           "nodeid": "tests.test_analyzer::test_suspicious_tld",
           "name": "test_suspicious_tld",
           "status": "passed",
-          "duration": 0.0,
+          "duration": 0.001,
           "detail": ""
         },
         {
@@ -746,7 +746,7 @@
           "nodeid": "tests.test_analyzer::test_score_capped",
           "name": "test_score_capped",
           "status": "passed",
-          "duration": 0.0,
+          "duration": 0.001,
           "detail": ""
         }
       ],
@@ -809,7 +809,7 @@
           "nodeid": "tests.test_checker::test_check_password_offline",
           "name": "test_check_password_offline",
           "status": "passed",
-          "duration": 0.002,
+          "duration": 0.003,
           "detail": ""
         }
       ],
@@ -830,7 +830,7 @@
           "nodeid": "tests.test_core::test_parse_crtsh_extrai_e_normaliza",
           "name": "test_parse_crtsh_extrai_e_normaliza",
           "status": "passed",
-          "duration": 0.0,
+          "duration": 0.001,
           "detail": ""
         },
         {
@@ -865,7 +865,7 @@
           "nodeid": "tests.test_tip::test_detect_type",
           "name": "test_detect_type",
           "status": "passed",
-          "duration": 0.0,
+          "duration": 0.001,
           "detail": ""
         },
         {
@@ -907,7 +907,7 @@
           "nodeid": "tests.test_tip::test_rest_api_roundtrip",
           "name": "test_rest_api_roundtrip",
           "status": "passed",
-          "duration": 0.516,
+          "duration": 0.523,
           "detail": ""
         }
       ],
@@ -928,7 +928,7 @@
           "nodeid": "tests.test_auditor::test_classify_protocol_weak",
           "name": "test_classify_protocol_weak",
           "status": "passed",
-          "duration": 0.0,
+          "duration": 0.001,
           "detail": ""
         },
         {

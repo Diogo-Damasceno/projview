@@ -120,11 +120,13 @@ def _examples_html(name: str) -> str:
 def _hero_html() -> str:
     name = html.escape(ABOUT["name"])
     tag = html.escape(ABOUT["tagline"])
-    socials = "".join(
-        f'<a class="social" href="{html.escape(u)}" target="_blank" rel="noopener">'
-        f'<span class="social-ic">{html.escape(ic)}</span>{html.escape(lbl)}</a>'
-        for ic, lbl, u in ABOUT["socials"]
-    )
+    socials = ""
+    for ic, lbl, u in ABOUT["socials"]:
+        variant = "social--gh" if "github.com" in u else "social--mail"
+        socials += (f'<a class="social {variant}" href="{html.escape(u)}" '
+                    f'target="_blank" rel="noopener">'
+                    f'<span class="social-ic">{html.escape(ic)}</span>'
+                    f'<span class="social-tx">{html.escape(lbl)}</span></a>')
     return f"""
     <header class="hero">
       <div class="hero-glow"></div>
@@ -289,14 +291,20 @@ animation:fadeUp .7s ease both}
 .hero-tag{position:relative;z-index:1;max-width:680px;margin:18px auto 0;
 color:var(--mist);font-size:clamp(1rem,2.4vw,1.2rem)}
 .hero-socials{position:relative;z-index:1;margin-top:26px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.social{display:inline-flex;align-items:center;gap:9px;padding:11px 22px;border-radius:12px;
-color:var(--foam);text-decoration:none;font-size:15px;font-weight:600;transition:.18s;
-background:linear-gradient(120deg,var(--panel2),var(--panel));
-border:1px solid var(--line);box-shadow:0 4px 14px rgba(0,0,0,.3)}
-.social-ic{font-size:18px;line-height:1}
-.social:hover{border-color:transparent;color:#fff;transform:translateY(-3px);
-background:linear-gradient(120deg,var(--ocean),var(--accent));
-box-shadow:0 12px 30px rgba(34,211,238,.28)}
+/* botões do hero no estilo icon-separator (ref: botões com ícone em caixa) */
+.social{position:relative;display:inline-flex;align-items:center;justify-content:center;
+text-decoration:none;color:#fff;font:700 15px/1 'Lato',ui-sans-serif,system-ui,sans-serif;
+text-transform:uppercase;letter-spacing:1px;padding:16px 30px 16px 62px;border-radius:10px;
+overflow:hidden;transition:all .25s;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+.social .social-ic{position:absolute;left:0;top:0;height:100%;width:46px;display:flex;
+align-items:center;justify-content:center;font-size:20px;background:rgba(0,0,0,.18)}
+.social .social-tx{position:relative;z-index:1}
+.social:hover{filter:brightness(1.12)}
+.social:active{transform:translateY(2px)}
+.social--gh{background:linear-gradient(120deg,#1f6feb,#2563eb)}
+.social--gh:hover{background:linear-gradient(120deg,#1b5fcc,#1d4fd0)}
+.social--mail{background:linear-gradient(120deg,#7c3aed,#6d28d9)}
+.social--mail:hover{background:linear-gradient(120deg,#6b2fcf,#5b21c4)}
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 
 /* ---------- SOBRE ---------- */
