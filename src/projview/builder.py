@@ -285,6 +285,34 @@ color:var(--mist);white-space:pre-wrap;font-size:13px;max-height:420px;overflow:
 .ex-out{padding:10px 12px}
 .ex-out pre{margin:0;color:var(--foam);font-family:ui-monospace,Menlo,monospace;font-size:12.5px;white-space:pre-wrap;line-height:1.45}
 .foot{padding:20px;text-align:center;color:var(--mist);font-size:12px;border-top:1px solid var(--line);margin-top:30px}
+
+/* SVG do algoritmo fluido: ocupa a largura disponível sem estourar */
+.algo .flow{width:100%;height:auto;max-width:100%;display:block;margin:0 auto}
+
+/* ---- responsivo: tablet ---- */
+@media (max-width:880px){
+  .wrap{padding:20px 14px}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+  .card{min-height:150px;padding:13px}
+  h1{font-size:1.5rem}
+  .tabs{flex-wrap:wrap}
+  .tab{padding:7px 12px;font-size:13px}
+}
+/* ---- responsivo: celular ---- */
+@media (max-width:560px){
+  .top{padding:12px 14px;flex-wrap:wrap;gap:6px}
+  .brand{font-size:16px}
+  .wrap{padding:16px 12px}
+  .lead{font-size:14px}
+  .grid{grid-template-columns:1fr}
+  .card{min-height:0;padding:14px}
+  h1{font-size:1.3rem}
+  .phead .tags .lang,.phead .tags .cat{font-size:11px}
+  .readme,.tb,.ex-out pre{font-size:12px}
+  .trow{flex-wrap:wrap}
+  .ttime{flex-basis:100%}
+  .foot{font-size:11px;padding:16px 10px}
+}
 """
     with open(os.path.join(DOCS, "assets", "style.css"), "w", encoding="utf-8") as fh:
         fh.write(css)

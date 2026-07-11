@@ -69,31 +69,38 @@ def render(steps: list[Step], title: str = "") -> str:
     top = lambda sid: pos[sid]                 # topo do nó
 
     # ---- arestas (atrás dos nós) ----
-    def edge(x1, y1, x2, y2, kind, label=None):
+    def elbow(x1, y1, x2, y2, kind, label=None):
+        """Linha em 'L' (ou 'C' se y2<y1): sai reto, vira, entra reto no topo."""
         col = _COLORS[kind]
-        d = (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" '
-             f'stroke="{col}" stroke-width="1.8" marker-end="url(#arw-{kind})"/>')
+        if x1 == x2:
+            path = f'M{x1:.1f},{y1:.1f} L{x2:.1f},{y2:.1f}'
+        elif y1 == y2:
+            path = f'M{x1:.1f},{y1:.1f} L{x2:.1f},{y2:.1f}'
+        else:
+            # cotovelo: horizontal na saida, depois vertical ate o topo do alvo
+            my = y2  # entra reto no topo
+            path = f'M{x1:.1f},{y1:.1f} L{x1:.1f},{my:.1f} L{x2:.1f},{y2:.1f}'
+        d = (f'<path d="{path}" fill="none" stroke="{col}" stroke-width="1.8" '
+             f'stroke-linejoin="round" marker-end="url(#arw-{kind})"/>')
         if label:
-            # rótulo perto da origem da bifurcação
-            lx = x2 + (14 if kind == "yes" else -14) if x2 != x1 else (x1 + 8)
+            lx = x1 + (16 if x1 > mid else -16)
             ly = (y1 + y2) / 2
-            d += f'<text x="{lx:.0f}" y="{ly:.0f}" class="edge-lbl" fill="{col}">{label}</text>'
+            anchor = "start" if x1 > mid else "end"
+            d += (f'<text x="{lx:.0f}" y="{ly:.0f}" class="edge-lbl" fill="{col}" '
+                   f'text-anchor="{anchor}">{label}</text>')
         return d
 
     for s in steps:
         if s.type == "decision":
             if s.yes:
                 t = s.yes
-                # sai pela direita, entra no topo do alvo (ou sobe se alvo acima)
-                svg.append(edge(mid + W/2, cy(s.id), mid + W/2, cy(t), "yes", "S"))
-                svg.append(edge(mid + W/2, cy(t), mid, top(t), "yes"))
+                svg.append(elbow(mid + W/2, cy(s.id), mid, top(t), "yes", "SIM"))
             if s.no:
                 t = s.no
-                svg.append(edge(mid - W/2, cy(s.id), mid - W/2, cy(t), "no", "N"))
-                svg.append(edge(mid - W/2, cy(t), mid, top(t), "no"))
+                svg.append(elbow(mid - W/2, cy(s.id), mid, top(t), "no", "NÃO"))
         elif s.next:
             t = s.next
-            svg.append(edge(mid, bottom(s.id), mid, top(t), "next"))
+            svg.append(elbow(mid, bottom(s.id), mid, top(t), "next"))
 
     # ---- nós ----
     for s in steps:
