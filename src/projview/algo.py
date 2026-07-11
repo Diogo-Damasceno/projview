@@ -1,12 +1,14 @@
 """Motor de fluxograma em SVG (estático, offline).
 
-Recebe uma lista de passos e desenha um fluxograma vertical:
+Recebe uma lista de passos e desenha um fluxograma vertical legível, com
+setas connvetadas saindo de cada nó e entrando no topo do próximo:
+
   - start / end : elipse
   - process     : retângulo
-  - decision    : losango
+  - decision    : losango (bifurca em S / N)
   - io          : paralelograma
 
-Cada passo: {"id", "type", "label", "next" (id ou lista p/ decisão)}
+Cada passo: {id, type, label, next (process/start/end/io), yes/no (decision)}.
 
 Gera SVG puro, sem dependências — seguro para o portfólio (o visitante só
 vê a imagem, nada executa).
@@ -28,87 +30,91 @@ class Step:
 
 
 # geometria
-W = 240
-ROW = 70
-PAD = 30
-H_HEADER = 0
+W = 260
+ROW = 76
+PAD = 28
+NH = ROW - 18          # altura do nó
+
+_COLORS = {"next": "#58a6ff", "yes": "#56d364", "no": "#ff7b72"}
 
 
 def _esc(s: str) -> str:
-    return (s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;"))
+    return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
 def render(steps: list[Step], title: str = "") -> str:
     steps_by_id = {s.id: s for s in steps}
     n = len(steps)
-    height = PAD * 2 + n * ROW + (len(title) > 0) * 24
+    header = 26 if title else 0
+    height = PAD * 2 + header + n * ROW
     width = W + PAD * 2
+    mid = PAD + W / 2
 
     svg = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" '
            f'class="flow" role="img" aria-label="{_esc(title)}">']
+    # defs: 3 markers de seta (um por cor), definidos UMA vez
+    svg.append('<defs>')
+    for kind, col in _COLORS.items():
+        svg.append(f'<marker id="arw-{kind}" markerWidth="9" markerHeight="9" refX="6" '
+                   f'refY="3" orient="auto" markerUnits="userSpaceOnUse">'
+                   f'<path d="M0,0 L6,3 L0,6 Z" fill="{col}"/></marker>')
+    svg.append('</defs>')
     if title:
-        svg.append(f'<text x="{width//2}" y="18" class="flow-title">{_esc(title)}</text>')
-    y0 = PAD + (24 if title else 0)
+        svg.append(f'<text x="{width/2:.0f}" y="18" class="flow-title">{_esc(title)}</text>')
 
-    pos = {}
-    for i, s in enumerate(steps):
-        pos[s.id] = y0 + i * ROW
+    y0 = PAD + header
+    pos = {s.id: y0 + i * ROW for i, s in enumerate(steps)}
+    cy = lambda sid: pos[sid] + NH / 2          # centro vertical do nó
+    bottom = lambda sid: pos[sid] + NH         # base do nó
+    top = lambda sid: pos[sid]                 # topo do nó
 
-    # arestas primeiro (atrás)
+    # ---- arestas (atrás dos nós) ----
+    def edge(x1, y1, x2, y2, kind, label=None):
+        col = _COLORS[kind]
+        d = (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" '
+             f'stroke="{col}" stroke-width="1.8" marker-end="url(#arw-{kind})"/>')
+        if label:
+            # rótulo perto da origem da bifurcação
+            lx = x2 + (14 if kind == "yes" else -14) if x2 != x1 else (x1 + 8)
+            ly = (y1 + y2) / 2
+            d += f'<text x="{lx:.0f}" y="{ly:.0f}" class="edge-lbl" fill="{col}">{label}</text>'
+        return d
+
     for s in steps:
-        y = pos[s.id]
-        cy = y + ROW / 2
-        targets = []
         if s.type == "decision":
-            if s.yes: targets.append((s.yes, "S", 1))
-            if s.no: targets.append((s.no, "N", -1))
+            if s.yes:
+                t = s.yes
+                # sai pela direita, entra no topo do alvo (ou sobe se alvo acima)
+                svg.append(edge(mid + W/2, cy(s.id), mid + W/2, cy(t), "yes", "S"))
+                svg.append(edge(mid + W/2, cy(t), mid, top(t), "yes"))
+            if s.no:
+                t = s.no
+                svg.append(edge(mid - W/2, cy(s.id), mid - W/2, cy(t), "no", "N"))
+                svg.append(edge(mid - W/2, cy(t), mid, top(t), "no"))
         elif s.next:
-            targets.append((s.next, None, 0))
-        for tid, label, side in targets:
-            ty = pos.get(tid, cy)
-            tcy = ty + ROW / 2
-            x = width // 2
-            # saída pela base ou lados
-            if label == "S":
-                x2 = x + 60
-                svg.append(_edge(x + W/2 - W/2 + W, cy, x2, tcy, label, "yes"))
-            elif label == "N":
-                x2 = x - 60
-                svg.append(_edge(x - W/2 + W/2 - W, cy, x2, tcy, label, "no"))
-            else:
-                svg.append(_edge(x, cy + ROW/2, x, tcy - ROW/2, None, "next"))
+            t = s.next
+            svg.append(edge(mid, bottom(s.id), mid, top(t), "next"))
 
-    # nós
+    # ---- nós ----
     for s in steps:
         y = pos[s.id]
-        cy = y + ROW / 2
-        x = PAD
+        c = mid
+        cyy = cy(s.id)
         if s.type == "process":
-            svg.append(f'<g class="node"><rect x="{x}" y="{y}" width="{W}" height="{ROW-14}" '
-                       f'rx="8" class="box"/><text x="{x+W/2}" y="{cy}" class="lbl">{_esc(s.label)}</text></g>')
+            svg.append(f'<g class="node"><rect x="{PAD}" y="{y}" width="{W}" height="{NH}" '
+                       f'rx="9" class="box"/><text x="{c}" y="{cyy}" class="lbl">{_esc(s.label)}</text></g>')
         elif s.type == "decision":
-            pts = f"{x+W/2},{y} {x+W},{cy} {x+W/2},{y+ROW-14} {x},{cy}"
-            svg.append(f'<g class="node"><polygon points="{pts}" class="dia"/><text x="{x+W/2}" y="{cy}" class="lbl">{_esc(s.label)}</text></g>')
-        elif s.type == "start":
-            svg.append(f'<g class="node"><ellipse cx="{x+W/2}" cy="{cy}" rx="{W/2}" ry="{ROW/2-7}" class="oval"/><text x="{x+W/2}" y="{cy}" class="lbl">{_esc(s.label)}</text></g>')
-        elif s.type == "end":
-            svg.append(f'<g class="node"><ellipse cx="{x+W/2}" cy="{cy}" rx="{W/2}" ry="{ROW/2-7}" class="oval end"/><text x="{x+W/2}" y="{cy}" class="lbl">{_esc(s.label)}</text></g>')
+            pts = f"{c},{y} {PAD+W},{cyy} {c},{y+NH} {PAD},{cyy}"
+            svg.append(f'<g class="node"><polygon points="{pts}" class="dia"/>'
+                       f'<text x="{c}" y="{cyy}" class="lbl">{_esc(s.label)}</text></g>')
+        elif s.type in ("start", "end"):
+            svg.append(f'<g class="node"><ellipse cx="{c}" cy="{cyy}" rx="{W/2}" ry="{NH/2}" '
+                       f'class="oval{" end" if s.type=="end" else ""}"/>'
+                       f'<text x="{c}" y="{cyy}" class="lbl">{_esc(s.label)}</text></g>')
         elif s.type == "io":
-            svg.append(f'<g class="node"><polygon points="{x+18},{y} {x+W},{y} {x+W-18},{y+ROW-14} {x},{y+ROW-14}" class="para"/><text x="{x+W/2}" y="{cy}" class="lbl">{_esc(s.label)}</text></g>')
+            svg.append(f'<g class="node"><polygon points="{PAD+20},{y} {PAD+W},{y} '
+                       f'{PAD+W-20},{y+NH} {PAD},{y+NH}" class="para"/>'
+                       f'<text x="{c}" y="{cyy}" class="lbl">{_esc(s.label)}</text></g>')
 
     svg.append("</svg>")
     return "\n".join(svg)
-
-
-def _edge(x1, y1, x2, y2, label, kind):
-    color = "#56d364" if kind == "yes" else "#ff7b72" if kind == "no" else "#58a6ff"
-    arrow = f'<marker id="a{id(label)}{kind}" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="{color}"/></marker>'
-    # marcadores únicos simples
-    svg = (f'<defs>{arrow}</defs>'
-           f'<line x1="{x1:.0f}" y1="{y1:.0f}" x2="{x2:.0f}" y2="{y2:.0f}" '
-           f'stroke="{color}" stroke-width="1.6" marker-end="url(#a{id(label)}{kind})"/>')
-    if label:
-        mx = (x1 + x2) / 2
-        my = (y1 + y2) / 2
-        svg += f'<text x="{mx:.0f}" y="{my:.0f}" class="edge-lbl" fill="{color}">{label}</text>'
-    return svg

@@ -21,6 +21,7 @@ import json
 from projview.config import PROJECTS, local_path, repo_url
 from projview import tester, analyzer
 from projview.algorithms_data import ALGORITHMS
+from projview.examples_data import EXAMPLES
 from projview.algo import render as render_svg
 
 DOCS = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "docs")
@@ -101,6 +102,20 @@ def _algo_html(name: str) -> str:
     return f'<div class="algo">{svg}</div>'
 
 
+def _examples_html(name: str) -> str:
+    exs = EXAMPLES.get(name)
+    if not exs:
+        return '<p class="muted">Exemplo em breve.</p>'
+    blocks = []
+    for cmd, out in exs:
+        blocks.append(f"""
+        <div class="ex">
+          <div class="ex-cmd"><span class="prompt">$ </span>{html.escape(cmd)}</div>
+          <div class="ex-out"><pre>{html.escape(out)}</pre></div>
+        </div>""")
+    return '<p class="lead">Como rodar na prática (entrada → saída):</p>' + "".join(blocks)
+
+
 # --------------------------------------------------------------------------
 # páginas
 # --------------------------------------------------------------------------
@@ -175,6 +190,7 @@ def build_site() -> None:
           <button class="tab active" data-tab="tests">Testes</button>
           <button class="tab" data-tab="how">Como funciona</button>
           <button class="tab" data-tab="algo">Algoritmo</button>
+          <button class="tab" data-tab="example">Exemplo</button>
         </div>
         <section class="pane active" id="tests">{_tests_html(p['suite'])}</section>
         <section class="pane" id="how">
@@ -183,6 +199,7 @@ def build_site() -> None:
           <div class="readme">{html.escape(an.readme) if an.readme else '<p class="muted">sem README</p>'}</div>
         </section>
         <section class="pane" id="algo">{_algo_html(p['name'])}</section>
+        <section class="pane" id="example">{_examples_html(p['name'])}</section>
         """
         page = _page(p["name"], body, active=p["name"], asset_prefix="../")
         with open(os.path.join(DOCS, "proj", f"{p['name']}.html"), "w", encoding="utf-8") as fh:
@@ -262,6 +279,11 @@ summary{cursor:pointer;color:var(--sky)}
 .readme{background:#030712;border:1px solid var(--line);border-radius:8px;padding:14px;
 color:var(--mist);white-space:pre-wrap;font-size:13px;max-height:420px;overflow:auto}
 .back{color:var(--mist);text-decoration:none}
+.ex{background:#030712;border:1px solid var(--line);border-radius:10px;margin:12px 0;overflow:hidden}
+.ex-cmd{background:#06122a;padding:8px 12px;color:var(--sky);font-family:ui-monospace,Menlo,monospace;font-size:13px;border-bottom:1px solid var(--line)}
+.ex-cmd .prompt{color:var(--ok)}
+.ex-out{padding:10px 12px}
+.ex-out pre{margin:0;color:var(--foam);font-family:ui-monospace,Menlo,monospace;font-size:12.5px;white-space:pre-wrap;line-height:1.45}
 .foot{padding:20px;text-align:center;color:var(--mist);font-size:12px;border-top:1px solid var(--line);margin-top:30px}
 """
     with open(os.path.join(DOCS, "assets", "style.css"), "w", encoding="utf-8") as fh:

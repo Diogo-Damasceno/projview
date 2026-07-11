@@ -60,4 +60,9 @@ summary{cursor:pointer;color:var(--sky)}
 .readme{background:#030712;border:1px solid var(--line);border-radius:8px;padding:14px;
 color:var(--mist);white-space:pre-wrap;font-size:13px;max-height:420px;overflow:auto}
 .back{color:var(--mist);text-decoration:none}
+.ex{background:#030712;border:1px solid var(--line);border-radius:10px;margin:12px 0;overflow:hidden}
+.ex-cmd{background:#06122a;padding:8px 12px;color:var(--sky);font-family:ui-monospace,Menlo,monospace;font-size:13px;border-bottom:1px solid var(--line)}
+.ex-cmd .prompt{color:var(--ok)}
+.ex-out{padding:10px 12px}
+.ex-out pre{margin:0;color:var(--foam);font-family:ui-monospace,Menlo,monospace;font-size:12.5px;white-space:pre-wrap;line-height:1.45}
 .foot{padding:20px;text-align:center;color:var(--mist);font-size:12px;border-top:1px solid var(--line);margin-top:30px}

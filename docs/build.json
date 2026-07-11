@@ -95,7 +95,7 @@
           "nodeid": "tests.test_fim::test_hash_file_stable",
           "name": "test_hash_file_stable",
           "status": "passed",
-          "duration": 0.003,
+          "duration": 0.002,
           "detail": ""
         },
         {
@@ -144,7 +144,7 @@
           "nodeid": "tests.test_fim::test_cli_diff_json",
           "name": "test_cli_diff_json",
           "status": "passed",
-          "duration": 0.003,
+          "duration": 0.002,
           "detail": ""
         }
       ],
@@ -186,7 +186,7 @@
           "nodeid": "tests.test_honeypot::test_honeypot_captures_ssh_banner",
           "name": "test_honeypot_captures_ssh_banner",
           "status": "passed",
-          "duration": 0.604,
+          "duration": 0.603,
           "detail": ""
         }
       ],
@@ -256,7 +256,7 @@
           "nodeid": "tests.test_engine::test_snapshot_and_diff",
           "name": "test_snapshot_and_diff",
           "status": "passed",
-          "duration": 0.06,
+          "duration": 0.062,
           "detail": ""
         }
       ],
@@ -277,7 +277,7 @@
           "nodeid": "tests.test_logforensics::test_bruteforce_detected",
           "name": "test_bruteforce_detected",
           "status": "passed",
-          "duration": 0.0,
+          "duration": 0.001,
           "detail": ""
         },
         {
@@ -508,7 +508,7 @@
           "nodeid": "tests.test_scanner::test_socket_scan_detects_open_port",
           "name": "test_socket_scan_detects_open_port",
           "status": "passed",
-          "duration": 0.015,
+          "duration": 0.02,
           "detail": ""
         },
         {
@@ -655,7 +655,7 @@
           "nodeid": "tests.test_agent::test_agent_runs_against_localhost",
           "name": "test_agent_runs_against_localhost",
           "status": "passed",
-          "duration": 0.008,
+          "duration": 0.009,
           "detail": ""
         },
         {
@@ -879,7 +879,7 @@
           "nodeid": "tests.test_tip::test_dedup_updates",
           "name": "test_dedup_updates",
           "status": "passed",
-          "duration": 0.0,
+          "duration": 0.001,
           "detail": ""
         },
         {
@@ -907,7 +907,7 @@
           "nodeid": "tests.test_tip::test_rest_api_roundtrip",
           "name": "test_rest_api_roundtrip",
           "status": "passed",
-          "duration": 0.515,
+          "duration": 0.516,
           "detail": ""
         }
       ],

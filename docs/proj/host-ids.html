@@ -21,6 +21,7 @@
           <button class="tab active" data-tab="tests">Testes</button>
           <button class="tab" data-tab="how">Como funciona</button>
           <button class="tab" data-tab="algo">Algoritmo</button>
+          <button class="tab" data-tab="example">Exemplo</button>
         </div>
         <section class="pane active" id="tests"><p class="summary"><b>8</b> testes · <span class="ok">8 passou</span> · <span class="bad">0 falhou</span> · <span class="muted">0 skip</span></p><ul class="tests"><li class="trow pass"><span class="dot"></span><span class="tname">test_new_process_detection</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_suspicious_process_is_critical</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_new_connection_detection</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_new_user_alert</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_file_integrity_modified</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_file_integrity_new_and_removed</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_real_collectors_run</span><span class="ttime">0.02s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_snapshot_and_diff</span><span class="ttime">0.06s</span><div class="tdetail"></div></li></ul></section>
         <section class="pane" id="how">
@@ -101,24 +102,44 @@ hostids/
 MIT
 </div>
         </section>
-        <section class="pane" id="algo"><div class="algo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 574" class="flow" role="img" aria-label="host-ids">
-<text x="150" y="18" class="flow-title">host-ids</text>
-<defs><marker id="a140052656669632next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="124" x2="150" y2="124" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a140052656669632next)"/>
-<defs><marker id="a140052656925488yes" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#56d364"/></marker></defs><line x1="390" y1="159" x2="210" y2="229" stroke="#56d364" stroke-width="1.6" marker-end="url(#a140052656925488yes)"/><text x="300" y="194" class="edge-lbl" fill="#56d364">S</text>
-<defs><marker id="a140052656925248no" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ff7b72"/></marker></defs><line x1="-90" y1="159" x2="90" y2="299" stroke="#ff7b72" stroke-width="1.6" marker-end="url(#a140052656925248no)"/><text x="0" y="229" class="edge-lbl" fill="#ff7b72">N</text>
-<defs><marker id="a140052656669632next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="264" x2="150" y2="474" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a140052656669632next)"/>
-<defs><marker id="a140052656669632next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="334" x2="150" y2="334" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a140052656669632next)"/>
-<defs><marker id="a140052656925488yes" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#56d364"/></marker></defs><line x1="390" y1="369" x2="210" y2="439" stroke="#56d364" stroke-width="1.6" marker-end="url(#a140052656925488yes)"/><text x="300" y="404" class="edge-lbl" fill="#56d364">S</text>
-<defs><marker id="a140052656925248no" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ff7b72"/></marker></defs><line x1="-90" y1="369" x2="90" y2="299" stroke="#ff7b72" stroke-width="1.6" marker-end="url(#a140052656925248no)"/><text x="0" y="334" class="edge-lbl" fill="#ff7b72">N</text>
-<defs><marker id="a140052656669632next" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker></defs><line x1="150" y1="474" x2="150" y2="264" stroke="#58a6ff" stroke-width="1.6" marker-end="url(#a140052656669632next)"/>
-<g class="node"><ellipse cx="150.0" cy="89.0" rx="120.0" ry="28.0" class="oval"/><text x="150.0" y="89.0" class="lbl">Varredura de baseline (--once)</text></g>
-<g class="node"><polygon points="150.0,124 270,159.0 150.0,180 30,159.0" class="dia"/><text x="150.0" y="159.0" class="lbl">Modo baseline?</text></g>
-<g class="node"><rect x="30" y="194" width="240" height="56" rx="8" class="box"/><text x="150.0" y="229.0" class="lbl">Snapshot de processos/conexões/arquivos</text></g>
-<g class="node"><rect x="30" y="264" width="240" height="56" rx="8" class="box"/><text x="150.0" y="299.0" class="lbl">Nova varredura periódica</text></g>
-<g class="node"><polygon points="150.0,334 270,369.0 150.0,390 30,369.0" class="dia"/><text x="150.0" y="369.0" class="lbl">Mudança vs baseline?</text></g>
-<g class="node"><rect x="30" y="404" width="240" height="56" rx="8" class="box"/><text x="150.0" y="439.0" class="lbl">Emitir alerta</text></g>
-<g class="node"><ellipse cx="150.0" cy="509.0" rx="120.0" ry="28.0" class="oval end"/><text x="150.0" y="509.0" class="lbl">Baseline pronto / Monitor ativo</text></g>
+        <section class="pane" id="algo"><div class="algo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 316 614" class="flow" role="img" aria-label="host-ids">
+<defs>
+<marker id="arw-next" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker>
+<marker id="arw-yes" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L6,3 L0,6 Z" fill="#56d364"/></marker>
+<marker id="arw-no" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L6,3 L0,6 Z" fill="#ff7b72"/></marker>
+</defs>
+<text x="158" y="18" class="flow-title">host-ids</text>
+<line x1="158.0" y1="112.0" x2="158.0" y2="130.0" stroke="#58a6ff" stroke-width="1.8" marker-end="url(#arw-next)"/>
+<line x1="288.0" y1="159.0" x2="288.0" y2="235.0" stroke="#56d364" stroke-width="1.8" marker-end="url(#arw-yes)"/><text x="296" y="197" class="edge-lbl" fill="#56d364">S</text>
+<line x1="288.0" y1="235.0" x2="158.0" y2="206.0" stroke="#56d364" stroke-width="1.8" marker-end="url(#arw-yes)"/>
+<line x1="28.0" y1="159.0" x2="28.0" y2="311.0" stroke="#ff7b72" stroke-width="1.8" marker-end="url(#arw-no)"/><text x="36" y="235" class="edge-lbl" fill="#ff7b72">N</text>
+<line x1="28.0" y1="311.0" x2="158.0" y2="282.0" stroke="#ff7b72" stroke-width="1.8" marker-end="url(#arw-no)"/>
+<line x1="158.0" y1="264.0" x2="158.0" y2="510.0" stroke="#58a6ff" stroke-width="1.8" marker-end="url(#arw-next)"/>
+<line x1="158.0" y1="340.0" x2="158.0" y2="358.0" stroke="#58a6ff" stroke-width="1.8" marker-end="url(#arw-next)"/>
+<line x1="288.0" y1="387.0" x2="288.0" y2="463.0" stroke="#56d364" stroke-width="1.8" marker-end="url(#arw-yes)"/><text x="296" y="425" class="edge-lbl" fill="#56d364">S</text>
+<line x1="288.0" y1="463.0" x2="158.0" y2="434.0" stroke="#56d364" stroke-width="1.8" marker-end="url(#arw-yes)"/>
+<line x1="28.0" y1="387.0" x2="28.0" y2="311.0" stroke="#ff7b72" stroke-width="1.8" marker-end="url(#arw-no)"/><text x="36" y="349" class="edge-lbl" fill="#ff7b72">N</text>
+<line x1="28.0" y1="311.0" x2="158.0" y2="282.0" stroke="#ff7b72" stroke-width="1.8" marker-end="url(#arw-no)"/>
+<line x1="158.0" y1="492.0" x2="158.0" y2="282.0" stroke="#58a6ff" stroke-width="1.8" marker-end="url(#arw-next)"/>
+<g class="node"><ellipse cx="158.0" cy="83.0" rx="130.0" ry="29.0" class="oval"/><text x="158.0" y="83.0" class="lbl">Varredura de baseline (--once)</text></g>
+<g class="node"><polygon points="158.0,130 288,159.0 158.0,188 28,159.0" class="dia"/><text x="158.0" y="159.0" class="lbl">Modo baseline?</text></g>
+<g class="node"><rect x="28" y="206" width="260" height="58" rx="9" class="box"/><text x="158.0" y="235.0" class="lbl">Snapshot de processos/conexões/arquivos</text></g>
+<g class="node"><rect x="28" y="282" width="260" height="58" rx="9" class="box"/><text x="158.0" y="311.0" class="lbl">Nova varredura periódica</text></g>
+<g class="node"><polygon points="158.0,358 288,387.0 158.0,416 28,387.0" class="dia"/><text x="158.0" y="387.0" class="lbl">Mudança vs baseline?</text></g>
+<g class="node"><rect x="28" y="434" width="260" height="58" rx="9" class="box"/><text x="158.0" y="463.0" class="lbl">Emitir alerta</text></g>
+<g class="node"><ellipse cx="158.0" cy="539.0" rx="130.0" ry="29.0" class="oval end"/><text x="158.0" y="539.0" class="lbl">Baseline pronto / Monitor ativo</text></g>
 </svg></div></section>
+        <section class="pane" id="example"><p class="lead">Como rodar na prática (entrada → saída):</p>
+        <div class="ex">
+          <div class="ex-cmd"><span class="prompt">$ </span>host-ids --once</div>
+          <div class="ex-out"><pre>baseline: 312 processos, 48 conexoes
+monitor ativo (intervalo 30s)</pre></div>
+        </div>
+        <div class="ex">
+          <div class="ex-cmd"><span class="prompt">$ </span>host-ids</div>
+          <div class="ex-out"><pre>ALERTA: novo processo &#x27;miner-x&#x27; (PID 8841) fora do baseline
+ALERTA: conexao saida 185.220.101.x:4444</pre></div>
+        </div></section>
         </main>
 <footer class="foot">Portfólio estático gerado por projview — nenhum código é executado no servidor ou no navegador.</footer>
 <script src="../assets/site.js"></script>
