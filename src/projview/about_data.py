@@ -24,7 +24,7 @@ ABOUT = {
         ("🌊", "Estética anime / demônio no desktop"),
     ],
     "socials": [
-        ("🔗 GitHub", "https://github.com/Diogo-Damasceno"),
-        ("✉️ Email", "mailto:mitszukyo@gmail.com"),
+        ("🔗", "GitHub", "https://github.com/Diogo-Damasceno"),
+        ("✉️", "Email", "mailto:dev.diogodamasceno@gmail.com"),
     ],
 }

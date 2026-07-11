@@ -121,8 +121,9 @@ def _hero_html() -> str:
     name = html.escape(ABOUT["name"])
     tag = html.escape(ABOUT["tagline"])
     socials = "".join(
-        f'<a class="social" href="{html.escape(u)}" target="_blank" rel="noopener">{html.escape(lbl)}</a>'
-        for lbl, u in ABOUT["socials"]
+        f'<a class="social" href="{html.escape(u)}" target="_blank" rel="noopener">'
+        f'<span class="social-ic">{html.escape(ic)}</span>{html.escape(lbl)}</a>'
+        for ic, lbl, u in ABOUT["socials"]
     )
     return f"""
     <header class="hero">
@@ -288,11 +289,14 @@ animation:fadeUp .7s ease both}
 .hero-tag{position:relative;z-index:1;max-width:680px;margin:18px auto 0;
 color:var(--mist);font-size:clamp(1rem,2.4vw,1.2rem)}
 .hero-socials{position:relative;z-index:1;margin-top:26px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.social{padding:9px 18px;border:1px solid var(--line);border-radius:999px;
-color:var(--foam);text-decoration:none;font-size:14px;transition:.18s;
-background:var(--panel)}
-.social:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px);
-box-shadow:0 8px 24px rgba(34,211,238,.15)}
+.social{display:inline-flex;align-items:center;gap:9px;padding:11px 22px;border-radius:12px;
+color:var(--foam);text-decoration:none;font-size:15px;font-weight:600;transition:.18s;
+background:linear-gradient(120deg,var(--panel2),var(--panel));
+border:1px solid var(--line);box-shadow:0 4px 14px rgba(0,0,0,.3)}
+.social-ic{font-size:18px;line-height:1}
+.social:hover{border-color:transparent;color:#fff;transform:translateY(-3px);
+background:linear-gradient(120deg,var(--ocean),var(--accent));
+box-shadow:0 12px 30px rgba(34,211,238,.28)}
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 
 /* ---------- SOBRE ---------- */
