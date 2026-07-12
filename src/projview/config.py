@@ -23,6 +23,12 @@ _LOCAL_ROOTS = [
 # Nome no GitHub -> metadados
 # lang: usado só para badge; category: agrupa na home
 PROJECTS: dict[str, dict] = {
+    # >>> FEATURED START (TUIs destacadas no topo)
+    "blackview":            dict(lang="Python", category="TUIs", featured=True, desc="TUI estilo dockview para listar, instalar e rodar ferramentas do BlackArch Linux."),
+    "gitview":              dict(lang="Python", category="TUIs", featured=True, desc="TUI estilo dockview para git/github: stage, branches, repos, history, PRs e navegação de arquivos do PC."),
+    "dockview":             dict(lang="Python", category="TUIs", featured=True, desc="TUI visual para Docker (Textual) com abas para todos os tipos de recurso."),
+    # <<< FEATURED END
+
     "log-forensics":         dict(lang="Python", category="Defensiva", desc="Detector de ataques em logs de autenticação (brute-force SSH, user scan, root login)."),
     "cve-watch":             dict(lang="Python", category="Defensiva", desc="Matcher local de CVEs: cruza inventário de software com base local de vulnerabilidades (offline)."),
     "pwned-check":           dict(lang="Python", category="Defensiva", desc="Verificador de vazamento de senhas via k-anonymity (HIBP range API, só 5 chars do SHA-1 saem)."),
@@ -38,7 +44,6 @@ PROJECTS: dict[str, dict] = {
     "network-scanner":       dict(lang="Python", category="Defensiva", desc="Scanner de rede: hosts, portas, SO e relatório HTML com histórico SQLite."),
     "threat-intel":          dict(lang="Python", category="Defensiva", desc="TIP: armazena, busca e expõe IOCs via API REST (stdlib pura)."),
     "mini-siem":             dict(lang="Python", category="Defensiva", desc="Mini-SIEM: ingestão, normalização e correlação de logs com detecção de ataques."),
-    "dockview":              dict(lang="Python", category="DevOps",    desc="TUI visual para Docker (Textual) com abas para todos os tipos de recurso."),
     "DDfetch":               dict(lang="Shell",  category="DevOps",    desc="System fetch em Bash com ASCII art customizável (estilo fastfetch/neofetch)."),
     "BIGMAN":                dict(lang="Node",   category="Web",       desc="Bot de WhatsApp com IA conversacional para barbearia (Node + Gemini + Supabase)."),
     "Umbra":                 dict(lang="Java",   category="Privacidade",desc="Simulador de privacidade em Java que detecta/anonimiza dados sensíveis em JSON."),

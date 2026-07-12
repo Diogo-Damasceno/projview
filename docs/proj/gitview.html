@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>gitview · ProjView</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body>
+<header class="top">
+  <a class="brand" href="../index.html">◈ ProjView</a>
+  <nav><a href="../index.html">Projetos</a></nav>
+</header>
+<main class="wrap">
+        <a class="back" href="../index.html">← todos os projetos</a>
+        <div class="phead">
+          <h1>gitview</h1>
+          <div class="tags"><span class="lang">Python</span>
+          <span class="cat">TUIs</span>
+          <span class="tag feat">★ destaque</span>
+          <a class="repo" href="https://github.com/Diogo-Damasceno/gitview" target="_blank" rel="noopener">GitHub ↗</a></div>
+          <p class="lead">TUI estilo dockview para git/github: stage, branches, repos, history, PRs e navegação de arquivos do PC.</p>
+        </div>
+        <div class="tabs">
+          <button class="tab active" data-tab="tests">Testes</button>
+          <button class="tab" data-tab="how">Como funciona</button>
+          <button class="tab" data-tab="algo">Algoritmo</button>
+          <button class="tab" data-tab="example">Exemplo</button>
+        </div>
+        <section class="pane active" id="tests"><p class="summary"><b>3</b> testes · <span class="ok">3 passou</span> · <span class="bad">0 falhou</span> · <span class="muted">0 skip</span></p><ul class="tests"><li class="trow pass"><span class="dot"></span><span class="tname">test_mount_files_tab</span><span class="ttime">2.47s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_add_file_to_repo</span><span class="ttime">0.02s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_add_dir_preserves_structure</span><span class="ttime">0.02s</span><div class="tdetail"></div></li></ul></section>
+        <section class="pane" id="how">
+          
+    <h3>Entrypoints (CLI)</h3><ul class="eps"><li><code>gitview</code></li></ul>
+    <h3>Módulos e funções principais</h3><details><summary>src/gitview/__init__.py</summary><ul><li>—</li></ul></details><details><summary>src/gitview/cli.py</summary><ul><li><code>main()</code></li></ul></details><details><summary>src/gitview/gitlib.py</summary><ul><li><code>is_repo()</code></li><li><code>current_branch()</code></li><li><code>current_remote()</code></li><li><code>default_branch()</code></li><li><code>status()</code> — Retorna arquivos do working tree (inclui não rastreados).</li><li><code>stage()</code></li><li><code>unstage()</code></li><li><code>discard()</code></li></ul></details><details><summary>src/gitview/theme.py</summary><ul><li>—</li></ul></details><details><summary>src/gitview/tui.py</summary><ul><li>—</li></ul></details>
+    <h3>Estrutura de arquivos</h3><ul class="tree"><li>LICENSE</li><li>README.md</li><li>pyproject.toml</li><li>src/gitview/__init__.py</li><li>src/gitview/cli.py</li><li>src/gitview/gitlib.py</li><li>src/gitview/theme.py</li><li>src/gitview/tui.py</li><li>tests/test_tui.py</li></ul>
+    
+          <h3>README</h3>
+          <div class="readme"># gitview
+
+TUI interativa para git/github, no estilo do **dockview** — navegável por
+teclado, com abas para tudo que você faz no dia a dia com versionamento.
+
+## Funcionalidades
+
+- **Stage**: lista arquivos do working tree, marca com `space` o que vai
+  subir, faz commit e push sem sair da TUI.
+- **Files**: navega o seu PC com uma árvore de diretórios; selecione um
+  arquivo ou pasta e aperte `a` para copiá-lo para o repo (já fazendo o
+  stage). Ótimo para puxar qualquer coisa do computador pro projeto.
+- **Branches**: lista, cria, troca e apaga branches locais.
+- **Repos**: lista seus repositórios no GitHub (`gh repo list`), cria novos
+  (`gh repo create`) e apaga (com confirmação — irreversível).
+- **Repos (avançado)**: `A` cria um repo novo no GitHub **a partir de uma
+  pasta do seu PC** — inicializa git, commit inicial e push automáticos.
+- **History**: log de commits locais com marcação do que já foi pusheado.
+- **PRs**: lista e cria Pull Requests (`gh pr list` / `gh pr create`).
+
+## Atalhos
+
+| Tecla | Ação |
+|-------|------|
+| `tab` / `shift+tab` | trocar aba |
+| `r` | atualizar |
+| `space` | stage/unstage (aba Stage) |
+| `c` | commit |
+| `p` | push |
+| `n` | nova branch |
+| `b` | trocar branch |
+| `d` | apagar branch |
+| `N` | novo repo (GitHub) |
+| `D` | apagar repo (GitHub) |
+| `a` | adicionar arquivo/pasta selecionado (aba Files) ao repo |
+| `A` | novo repo a partir de uma pasta do PC |
+| `P` | novo PR |
+| `q` | sair |
+
+## Instalação
+
+```bash
+python3 -m venv .venv &amp;&amp; . .venv/bin/activate
+pip install -e .
+```
+
+Dependências: `textual&gt;=8.2`. Requer `git` e `gh` (CLI do GitHub) autenticado
+para as abas Repos/PRs.
+
+## Uso
+
+```bash
+gitview                 # abre no repo do diretório atual
+gitview /caminho/repo   # abre um repo específico
+```
+
+## ⚠️ Aviso ético
+
+Ferramenta de uso pessoal/educacional para gerenciar **seus próprios**
+repositórios e commits. A ação de **apagar repositórios** é irreversível e
+exige confirmação explícita na tela. Use com responsabilidade.
+
+## Licença
+
+MIT
+</div>
+        </section>
+        <section class="pane" id="algo"><p class="muted">Diagrama de fluxo em breve.</p></section>
+        <section class="pane" id="example"><p class="muted">Exemplo em breve.</p></section>
+        </main>
+<footer class="foot">Portfólio estático gerado por projview — nenhum código é executado no servidor ou no navegador.</footer>
+<script src="../assets/site.js"></script>
+</body></html>

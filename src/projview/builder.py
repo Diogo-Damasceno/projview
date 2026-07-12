@@ -37,6 +37,9 @@ def _card(p: dict, status: dict) -> str:
     lang = p.get("lang", "")
     cat = p.get("category", "")
     desc = p.get("desc", "")
+    featured = p.get("featured", False)
+    feat_cls = " featured" if featured else ""
+    feat_tag = '<span class="tag feat">★ destaque</span>' if featured else ""
     if status.get("ran"):
         badge = (f'<span class="badge ok">{status["passed"]}/{status["total"]} passou</span>'
                  if status["failed"] == 0 else
@@ -44,14 +47,14 @@ def _card(p: dict, status: dict) -> str:
     else:
         badge = '<span class="badge none">sem testes</span>'
     return f"""
-    <a class="card" href="proj/{name}.html">
+    <a class="card{feat_cls}" href="proj/{name}.html">
       <div class="card-top">
         <span class="lang">{html.escape(lang)}</span>
         <span class="cat">{html.escape(cat)}</span>
       </div>
       <h3>{html.escape(name)}</h3>
       <p>{html.escape(desc)}</p>
-      <div class="card-foot">{badge}</div>
+      <div class="card-foot">{badge}{feat_tag}</div>
     </a>"""
 
 
@@ -191,11 +194,15 @@ def build_site() -> None:
         p["analysis"] = an
         projects.append(p)
 
-    # ordena: projetos com testes passando primeiro, depois os sem testes
+    # ordena: featured primeiro (na ordem do config), depois por testes, depois nome
     def _has_tests(p):
         s = p["suite"]
         return s.get("ran") and s.get("total", 0) > 0
-    projects.sort(key=lambda p: (not _has_tests(p), p["name"]))
+    def _sort_key(p):
+        feat = (not p.get("featured", False))
+        has = _has_tests(p)
+        return (feat, not has, p["name"])
+    projects.sort(key=_sort_key)
 
     # home
     cards = "\n".join(_card(p, p["suite"]) for p in projects)
@@ -214,12 +221,14 @@ def build_site() -> None:
     # páginas por projeto
     for p in projects:
         an = p["analysis"]
+        feat_tag = '<span class="tag feat">★ destaque</span>' if p.get("featured") else ""
         body = f"""
         <a class="back" href="../index.html">← todos os projetos</a>
         <div class="phead">
           <h1>{html.escape(p['name'])}</h1>
           <div class="tags"><span class="lang">{html.escape(p.get('lang',''))}</span>
           <span class="cat">{html.escape(p.get('category',''))}</span>
+          {feat_tag}
           <a class="repo" href="{html.escape(p['repo'])}" target="_blank" rel="noopener">GitHub ↗</a></div>
           <p class="lead">{html.escape(p.get('desc',''))}</p>
         </div>
@@ -347,6 +356,20 @@ background:linear-gradient(135deg,transparent,var(--accent),transparent);
 .badge.ok{background:#0c2a16;color:var(--ok)}
 .badge.bad{background:#2a0c10;color:var(--bad)}
 .badge.none{background:#1a1a1a;color:var(--mist)}
+/* ---------- CARD DESTAQUE (TUIs) ---------- */
+.card.featured{background:linear-gradient(160deg,#0b1320,#13234a 60%,#1a1740);
+border-color:var(--accent);box-shadow:0 0 0 1px var(--accent),0 14px 40px rgba(34,211,238,.22);
+animation:featGlow 3.4s ease-in-out infinite}
+.card.featured:hover{transform:translateY(-6px)}
+.card.featured h3{background:linear-gradient(100deg,var(--foam),var(--accent));
+-webkit-background-clip:text;background-clip:text;color:transparent;font-size:1.3rem}
+.card.featured::before{content:"★";position:absolute;top:10px;right:12px;
+color:var(--accent);font-size:18px;filter:drop-shadow(0 0 6px var(--accent))}
+@keyframes featGlow{0%,100%{box-shadow:0 0 0 1px var(--accent),0 14px 40px rgba(34,211,238,.18)}
+50%{box-shadow:0 0 0 1px var(--accent),0 14px 52px rgba(124,58,237,.30)}}
+.tag.feat{display:inline-block;margin-left:8px;padding:2px 9px;border-radius:9px;
+font-size:11px;font-weight:700;letter-spacing:.5px;color:#04121a;
+background:linear-gradient(120deg,var(--accent),var(--accent2));vertical-align:middle}
 
 /* ---------- PÁGINA DE PROJETO ---------- */
 .tags .lang,.tags .cat{padding:2px 9px;border-radius:9px;font-size:12px;margin-right:6px}

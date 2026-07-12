@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>blackview · ProjView</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body>
+<header class="top">
+  <a class="brand" href="../index.html">◈ ProjView</a>
+  <nav><a href="../index.html">Projetos</a></nav>
+</header>
+<main class="wrap">
+        <a class="back" href="../index.html">← todos os projetos</a>
+        <div class="phead">
+          <h1>blackview</h1>
+          <div class="tags"><span class="lang">Python</span>
+          <span class="cat">TUIs</span>
+          <span class="tag feat">★ destaque</span>
+          <a class="repo" href="https://github.com/Diogo-Damasceno/blackview" target="_blank" rel="noopener">GitHub ↗</a></div>
+          <p class="lead">TUI estilo dockview para listar, instalar e rodar ferramentas do BlackArch Linux.</p>
+        </div>
+        <div class="tabs">
+          <button class="tab active" data-tab="tests">Testes</button>
+          <button class="tab" data-tab="how">Como funciona</button>
+          <button class="tab" data-tab="algo">Algoritmo</button>
+          <button class="tab" data-tab="example">Exemplo</button>
+        </div>
+        <section class="pane active" id="tests"><p class="summary"><b>2</b> testes · <span class="ok">2 passou</span> · <span class="bad">0 falhou</span> · <span class="muted">0 skip</span></p><ul class="tests"><li class="trow pass"><span class="dot"></span><span class="tname">test_mount_and_tabs</span><span class="ttime">0.40s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_filter_and_help</span><span class="ttime">0.37s</span><div class="tdetail"></div></li></ul></section>
+        <section class="pane" id="how">
+          
+    <h3>Entrypoints (CLI)</h3><ul class="eps"><li><code>blackview</code></li></ul>
+    <h3>Módulos e funções principais</h3><details><summary>src/blackview/__init__.py</summary><ul><li>—</li></ul></details><details><summary>src/blackview/blacklib.py</summary><ul><li><code>categories()</code></li><li><code>list_tools()</code> — Lista ferramentas (repo se disponível, senão cache).</li><li><code>sync()</code> — Sincroniza a lista do repo blackarch (requer repo habilitado).</li><li><code>is_installed()</code></li><li><code>install()</code> — Instala via sudo pacman -S --needed. Requer senha de sudo.</li><li><code>remove()</code></li><li><code>binary_path()</code> — Tenta adivinhar o binario principal do pacote.</li><li><code>run_help()</code> — Captura a saida de `&lt;bin&gt; --help` para exibir na TUI.</li></ul></details><details><summary>src/blackview/cli.py</summary><ul><li><code>main()</code></li></ul></details><details><summary>src/blackview/theme.py</summary><ul><li>—</li></ul></details><details><summary>src/blackview/tui.py</summary><ul><li>—</li></ul></details>
+    <h3>Estrutura de arquivos</h3><ul class="tree"><li>LICENSE</li><li>README.md</li><li>pyproject.toml</li><li>src/blackview/__init__.py</li><li>src/blackview/blacklib.py</li><li>src/blackview/cli.py</li><li>src/blackview/theme.py</li><li>src/blackview/tui.py</li><li>tests/test_tui.py</li></ul>
+    
+          <h3>README</h3>
+          <div class="readme"># blackview
+
+TUI interativa para o **BlackArch Linux** — lista, instala e executa
+ferramentas de segurança, no estilo do **dockview**.
+
+## Funcionalidades
+
+- **Tools**: lista as ferramentas do BlackArch (sync do `pacman -Sl blackarch`
+  ou cache de fallback embutido). Filtra por nome/descrição/categoria.
+- **Categorias**: agrupa por categoria (scanner, cracker, sniffer, forensic,
+  malware, wireless, web, defensive, ...).
+- **Installed**: mostra o que já está instalado no sistema.
+- **Log**: saída das ações (instalação, --help das ferramentas).
+
+## Atalhos
+
+| Tecla | Ação |
+|-------|------|
+| `tab` / `shift+tab` | trocar aba |
+| `r` | atualizar lista |
+| `f` | filtrar |
+| `i` | instalar ferramenta selecionada (sudo) |
+| `u` | remover ferramenta |
+| `x` | ver saída de `--help` da ferramenta |
+| `t` | abrir ferramenta num terminal gráfico (kitty/foot/alacritty) |
+| `s` | sincronizar repo BlackArch |
+| `q` | sair |
+
+## Instalação
+
+```bash
+python3 -m venv .venv &amp;&amp; . .venv/bin/activate
+pip install -e .
+```
+
+Dependências: `textual&gt;=8.2`. Para instalar ferramentas de verdade, precisa do
+repo **BlackArch** habilitado e de `sudo`:
+
+```bash
+curl -s https://blackarch.org/strap.sh | sudo sh
+sudo pacman -Syu
+```
+
+Sem o repo, a TUI ainda abre com o cache de fallback (lista representativa).
+
+## ⚠️ Aviso ético
+
+O BlackArch reúne ferramentas de **ofensivas e defensivas**. Use apenas em
+ambientes próprios, labs autorizados ou com permissão explícita. A instalação
+requer `sudo` e modifica o sistema — confirme antes de prosseguir.
+
+## Licença
+
+MIT
+</div>
+        </section>
+        <section class="pane" id="algo"><p class="muted">Diagrama de fluxo em breve.</p></section>
+        <section class="pane" id="example"><p class="muted">Exemplo em breve.</p></section>
+        </main>
+<footer class="foot">Portfólio estático gerado por projview — nenhum código é executado no servidor ou no navegador.</footer>
+<script src="../assets/site.js"></script>
+</body></html>
