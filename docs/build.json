@@ -235,14 +235,14 @@
           "nodeid": "com.umbra.detection.PIIDetectorTest::detectsCpf",
           "name": "detectsCpf",
           "status": "passed",
-          "duration": 0.032,
+          "duration": 0.033,
           "detail": ""
         },
         {
           "nodeid": "com.umbra.detection.PIIDetectorTest::detectsIp",
           "name": "detectsIp",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.002,
           "detail": ""
         },
         {
@@ -256,14 +256,14 @@
           "nodeid": "com.umbra.detection.PIIDetectorTest::detectsPhone",
           "name": "detectsPhone",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.002,
           "detail": ""
         },
         {
           "nodeid": "com.umbra.detection.PIIDetectorTest::isPIIAggregates",
           "name": "isPIIAggregates",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.002,
           "detail": ""
         },
         {
@@ -277,14 +277,14 @@
           "nodeid": "com.umbra.anonymization.AnonymizerTest::masksPhone",
           "name": "masksPhone",
           "status": "passed",
-          "duration": 0.002,
+          "duration": 0.003,
           "detail": ""
         },
         {
           "nodeid": "com.umbra.anonymization.AnonymizerTest::hashesOneWay",
           "name": "hashesOneWay",
           "status": "passed",
-          "duration": 0.022,
+          "duration": 0.025,
           "detail": ""
         },
         {
@@ -326,14 +326,14 @@
           "nodeid": "tests.test_core::test_digest_known",
           "name": "test_digest_known",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.0,
           "detail": ""
         },
         {
           "nodeid": "tests.test_core::test_crack_found",
           "name": "test_crack_found",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.0,
           "detail": ""
         },
         {
@@ -361,7 +361,7 @@
           "nodeid": "tests.test_core::test_scan_match",
           "name": "test_scan_match",
           "status": "passed",
-          "duration": 0.0,
+          "duration": 0.001,
           "detail": ""
         },
         {
@@ -515,7 +515,7 @@
           "nodeid": "tests.test_core::test_url_roundtrip",
           "name": "test_url_roundtrip",
           "status": "passed",
-          "duration": 0.0,
+          "duration": 0.001,
           "detail": ""
         },
         {
@@ -585,7 +585,7 @@
           "nodeid": "tests.test_core::test_match_none",
           "name": "test_match_none",
           "status": "passed",
-          "duration": 0.0,
+          "duration": 0.001,
           "detail": ""
         }
       ],
@@ -697,14 +697,14 @@
           "nodeid": "tests.test_fim::test_cli_init_check_clean",
           "name": "test_cli_init_check_clean",
           "status": "passed",
-          "duration": 0.003,
+          "duration": 0.002,
           "detail": ""
         },
         {
           "nodeid": "tests.test_fim::test_cli_diff_json",
           "name": "test_cli_diff_json",
           "status": "passed",
-          "duration": 0.003,
+          "duration": 0.002,
           "detail": ""
         }
       ],
@@ -767,7 +767,7 @@
           "nodeid": "tests.test_core::test_fetch_headers_empty",
           "name": "test_fetch_headers_empty",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.0,
           "detail": ""
         }
       ],
@@ -830,7 +830,7 @@
           "nodeid": "tests.test_engine::test_new_process_detection",
           "name": "test_new_process_detection",
           "status": "passed",
-          "duration": 0.0,
+          "duration": 0.001,
           "detail": ""
         },
         {
@@ -872,14 +872,14 @@
           "nodeid": "tests.test_engine::test_real_collectors_run",
           "name": "test_real_collectors_run",
           "status": "passed",
-          "duration": 0.019,
+          "duration": 0.027,
           "detail": ""
         },
         {
           "nodeid": "tests.test_engine::test_snapshot_and_diff",
           "name": "test_snapshot_and_diff",
           "status": "passed",
-          "duration": 0.058,
+          "duration": 0.082,
           "detail": ""
         }
       ],
@@ -914,7 +914,7 @@
           "nodeid": "tests.test_core::test_diff_added_removed",
           "name": "test_diff_added_removed",
           "status": "passed",
-          "duration": 0.0,
+          "duration": 0.001,
           "detail": ""
         }
       ],
@@ -935,7 +935,7 @@
           "nodeid": "tests.test_core::test_audit_missing",
           "name": "test_audit_missing",
           "status": "passed",
-          "duration": 0.01,
+          "duration": 0.014,
           "detail": ""
         },
         {
@@ -963,7 +963,7 @@
           "nodeid": "tests.test_core::test_scan_match",
           "name": "test_scan_match",
           "status": "passed",
-          "duration": 0.0,
+          "duration": 0.001,
           "detail": ""
         },
         {
@@ -1320,7 +1320,7 @@
           "nodeid": "tests.test_scanner::test_socket_scan_detects_open_port",
           "name": "test_socket_scan_detects_open_port",
           "status": "passed",
-          "duration": 0.02,
+          "duration": 0.025,
           "detail": ""
         },
         {
@@ -1446,7 +1446,7 @@
           "nodeid": "tests.test_analyzer::test_common_password_is_flagged",
           "name": "test_common_password_is_flagged",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.0,
           "detail": ""
         },
         {
@@ -1663,7 +1663,7 @@
           "nodeid": "tests.test_analyzer::test_legit_url_low_score",
           "name": "test_legit_url_low_score",
           "status": "passed",
-          "duration": 0.0,
+          "duration": 0.001,
           "detail": ""
         },
         {
@@ -1915,14 +1915,14 @@
           "nodeid": "tests.test_core::test_resolve_invalid",
           "name": "test_resolve_invalid",
           "status": "passed",
-          "duration": 0.011,
+          "duration": 0.008,
           "detail": ""
         },
         {
           "nodeid": "tests.test_core::test_check_returns_list",
           "name": "test_check_returns_list",
           "status": "passed",
-          "duration": 0.007,
+          "duration": 0.005,
           "detail": ""
         }
       ],
@@ -1978,7 +1978,7 @@
           "nodeid": "tests.test_core::test_digest_stable",
           "name": "test_digest_stable",
           "status": "passed",
-          "duration": 0.0,
+          "duration": 0.001,
           "detail": ""
         },
         {
@@ -2076,14 +2076,14 @@
           "nodeid": "tests.test_core::test_resolve_invalid",
           "name": "test_resolve_invalid",
           "status": "passed",
-          "duration": 0.008,
+          "duration": 0.007,
           "detail": ""
         },
         {
           "nodeid": "tests.test_core::test_check_returns_list",
           "name": "test_check_returns_list",
           "status": "passed",
-          "duration": 0.005,
+          "duration": 0.006,
           "detail": ""
         }
       ],
@@ -2181,7 +2181,7 @@
           "nodeid": "tests.test_tip::test_rest_api_roundtrip",
           "name": "test_rest_api_roundtrip",
           "status": "passed",
-          "duration": 0.517,
+          "duration": 0.515,
           "detail": ""
         }
       ],
@@ -2322,6 +2322,62 @@
     },
     "lang": "Python",
     "category": "Ofensiva"
+  },
+  "warden-codec": {
+    "suite": {
+      "ran": true,
+      "total": 6,
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_core::test_encode_base64",
+          "name": "test_encode_base64",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_decode_base64",
+          "name": "test_decode_base64",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_encode_hex",
+          "name": "test_encode_hex",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_decode_hex",
+          "name": "test_decode_hex",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_url_roundtrip",
+          "name": "test_url_roundtrip",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_unknown_scheme",
+          "name": "test_unknown_scheme",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
   },
   "xssmith": {
     "suite": {

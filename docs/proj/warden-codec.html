@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>warden-codec · ProjView</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body>
+<header class="top">
+  <a class="brand" href="../index.html">◈ ProjView</a>
+  <nav><a href="../index.html">Projetos</a></nav>
+</header>
+<main class="wrap">
+        <a class="back" href="../index.html">← todos os projetos</a>
+        <div class="phead">
+          <h1>warden-codec</h1>
+          <div class="tags"><span class="lang">Python</span>
+          <span class="cat">Defensiva</span>
+          <a class="repo" href="https://github.com/Diogo-Damasceno/warden-codec" target="_blank" rel="noopener">GitHub ↗</a></div>
+          <p class="lead">Codifica/decodifica payloads em base64/hex/url para análise segura.</p>
+        </div>
+        <div class="tabs">
+          <button class="tab active" data-tab="tests">Testes</button>
+          <button class="tab" data-tab="how">Como funciona</button>
+          <button class="tab" data-tab="algo">Algoritmo</button>
+          <button class="tab" data-tab="example">Exemplo</button>
+        </div>
+        <section class="pane active" id="tests"><p class="summary"><b>6</b> testes · <span class="ok">6 passou</span> · <span class="bad">0 falhou</span> · <span class="muted">0 skip</span></p><ul class="tests"><li class="trow pass"><span class="dot"></span><span class="tname">test_encode_base64</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_decode_base64</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_encode_hex</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_decode_hex</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_url_roundtrip</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_unknown_scheme</span><span class="ttime">0.00s</span><div class="tdetail"></div></li></ul></section>
+        <section class="pane" id="how">
+          
+    <h3>Entrypoints (CLI)</h3><ul class="eps"><li><code>payload-coder</code></li></ul>
+    <h3>Módulos e funções principais</h3><details><summary>src/warden_codec/__init__.py</summary><ul><li>—</li></ul></details><details><summary>src/warden_codec/cli.py</summary><ul><li><code>main()</code></li></ul></details><details><summary>src/warden_codec/core.py</summary><ul><li><code>encode()</code></li><li><code>decode()</code></li><li><code>main()</code></li></ul></details>
+    <h3>Estrutura de arquivos</h3><ul class="tree"><li>LICENSE</li><li>README.md</li><li>pyproject.toml</li><li>src/warden_codec/__init__.py</li><li>src/warden_codec/cli.py</li><li>src/warden_codec/core.py</li><li>tests/test_core.py</li></ul>
+    
+          <h3>README</h3>
+          <div class="readme"># warden-codec
+
+Codifica/decodifica payloads em base64/hex/url para análise segura.
+
+## O que faz
+
+Esta ferramenta de **defensiva** contra alvos que voce possui ou tem autorizacao. Codifica/decodifica payloads em base64/hex/url para análise segura. O codigo e
+testavel localmente (sem dependencias de rede para os testes unitarios).
+
+&gt; **Aviso etico:** uso exclusivo para fins educacionais e testes em ambientes
+&gt; que voce **possui** ou tem **autorizacao expressa** para auditar. Nunca a
+&gt; utilize contra sistemas de terceiros. O autor nao se responsabiliza por uso
+&gt; indevido.
+
+## Instalacao
+
+```bash
+git clone https://github.com/Diogo-Damasceno/warden-codec.git
+cd warden-codec
+python3 -m venv .venv &amp;&amp; . .venv/bin/activate
+pip install -e .
+```
+
+## Uso
+
+Codifique um payload antes de testar WAF/input-validation em apps suas.
+
+## Exemplos reais
+
+```bash
+$ payload-coder encode base64 &#x27;&lt;?php eval($_GET[x]);?&gt;&#x27;
+# PD9waHAgZXZhbCgkX0dFVFt4XSk7Pz4=
+```
+```bash
+$ payload-coder decode hex 414243
+# ABC
+```
+
+## Como funciona (resumo)
+
+O modulo principal implementa a logica em funcoes puras e testaveis; a CLI e
+apenas a casca de argumentos. Os testes em `tests/` (Python) ou `CoreTest.java`
+(Java) cobrem os casos principais e rodam offline.
+
+## O que NAO faz
+
+- Nao executa ataques contra terceiros.
+- Nao exfiltra dados.
+- Nao substitui uma solucao comercial de seguranca.
+
+## Licenca
+
+MIT — ver `LICENSE`.
+</div>
+        </section>
+        <section class="pane" id="algo"><p class="muted">Diagrama de fluxo em breve.</p></section>
+        <section class="pane" id="example"><p class="muted">Exemplo em breve.</p></section>
+        </main>
+<footer class="foot">Portfólio estático gerado por projview — nenhum código é executado no servidor ou no navegador.</footer>
+<script src="../assets/site.js"></script>
+</body></html>

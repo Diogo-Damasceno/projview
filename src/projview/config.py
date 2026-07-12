@@ -48,6 +48,8 @@ PROJECTS: dict[str, dict] = {
     
 
     # >>> FORGE45 START
+    "warden-codec":           dict(lang="Python", category="Defensiva", desc="Codifica/decodifica payloads em base64/hex/url para análise segura."),
+
     "hashforge-cli":           dict(lang="Python", category="Defensiva", desc="Força-bruta de hash com wordlist (apenas testes autorizados)."),
     "authsentry":           dict(lang="Python", category="Defensiva", desc="Detector de brute-force e varredura em logs de autenticação."),
     "portscope":           dict(lang="Python", category="Defensiva", desc="Scanner de portas TCP (contra alvos que você possui)."),
