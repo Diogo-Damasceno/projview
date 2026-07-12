@@ -242,7 +242,7 @@
           "nodeid": "com.umbra.detection.PIIDetectorTest::detectsIp",
           "name": "detectsIp",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.002,
           "detail": ""
         },
         {
@@ -263,14 +263,14 @@
           "nodeid": "com.umbra.detection.PIIDetectorTest::isPIIAggregates",
           "name": "isPIIAggregates",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.002,
           "detail": ""
         },
         {
           "nodeid": "com.umbra.anonymization.AnonymizerTest::masksEmail",
           "name": "masksEmail",
           "status": "passed",
-          "duration": 0.002,
+          "duration": 0.003,
           "detail": ""
         },
         {
@@ -284,7 +284,7 @@
           "nodeid": "com.umbra.anonymization.AnonymizerTest::hashesOneWay",
           "name": "hashesOneWay",
           "status": "passed",
-          "duration": 0.021,
+          "duration": 0.024,
           "detail": ""
         },
         {
@@ -313,6 +313,251 @@
     },
     "lang": "Java",
     "category": "Privacidade"
+  },
+  "auth-log-watch": {
+    "suite": {
+      "ran": true,
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_core::test_scan_match",
+          "name": "test_scan_match",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_scan_nomatch",
+          "name": "test_scan_nomatch",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_analyze_counts",
+          "name": "test_analyze_counts",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
+  "backup-verifier": {
+    "suite": {
+      "ran": true,
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_core::test_digest_stable",
+          "name": "test_digest_stable",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_diff_changed",
+          "name": "test_diff_changed",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_diff_added_removed",
+          "name": "test_diff_added_removed",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
+  "brute-api": {
+    "suite": {
+      "ran": true,
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_core::test_digest_known",
+          "name": "test_digest_known",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_crack_found",
+          "name": "test_crack_found",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_crack_notfound",
+          "name": "test_crack_notfound",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
+  "cert-linter": {
+    "suite": {
+      "ran": true,
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_core::test_audit_missing",
+          "name": "test_audit_missing",
+          "status": "passed",
+          "duration": 0.013,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_fetch_headers_empty",
+          "name": "test_fetch_headers_empty",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
+  "cookie-flag": {
+    "suite": {
+      "ran": true,
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_core::test_audit_missing",
+          "name": "test_audit_missing",
+          "status": "passed",
+          "duration": 0.012,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_fetch_headers_empty",
+          "name": "test_fetch_headers_empty",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
+  "csrf-forge": {
+    "suite": {
+      "ran": true,
+      "total": 6,
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_core::test_encode_base64",
+          "name": "test_encode_base64",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_decode_base64",
+          "name": "test_decode_base64",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_encode_hex",
+          "name": "test_encode_hex",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_decode_hex",
+          "name": "test_decode_hex",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_url_roundtrip",
+          "name": "test_url_roundtrip",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_unknown_scheme",
+          "name": "test_unknown_scheme",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
+  "cve-matcher": {
+    "suite": {
+      "ran": true,
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_core::test_match_found",
+          "name": "test_match_found",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_match_none",
+          "name": "test_match_none",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
   },
   "cve-watch": {
     "suite": {
@@ -349,6 +594,41 @@
     "lang": "Python",
     "category": "Defensiva"
   },
+  "dir-brute": {
+    "suite": {
+      "ran": true,
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_core::test_scan_match",
+          "name": "test_scan_match",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_scan_nomatch",
+          "name": "test_scan_nomatch",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_analyze_counts",
+          "name": "test_analyze_counts",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
   "dockview": {
     "suite": {
       "ran": true,
@@ -361,7 +641,7 @@
           "nodeid": "tests.test_smoke::test_whale_art",
           "name": "test_whale_art",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.0,
           "detail": ""
         },
         {
@@ -398,6 +678,41 @@
     "lang": "Python",
     "category": "DevOps"
   },
+  "evil-link": {
+    "suite": {
+      "ran": true,
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_core::test_score_high",
+          "name": "test_score_high",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_score_low",
+          "name": "test_score_low",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_verdict",
+          "name": "test_verdict",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
   "file-integrity-monitor": {
     "suite": {
       "ran": true,
@@ -410,7 +725,7 @@
           "nodeid": "tests.test_fim::test_hash_file_stable",
           "name": "test_hash_file_stable",
           "status": "passed",
-          "duration": 0.003,
+          "duration": 0.002,
           "detail": ""
         },
         {
@@ -468,6 +783,104 @@
     "lang": "Python",
     "category": "Defensiva"
   },
+  "hash-breaker": {
+    "suite": {
+      "ran": true,
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_core::test_digest_known",
+          "name": "test_digest_known",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_crack_found",
+          "name": "test_crack_found",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_crack_notfound",
+          "name": "test_crack_notfound",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
+  "header-leak": {
+    "suite": {
+      "ran": true,
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_core::test_scan_match",
+          "name": "test_scan_match",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_scan_nomatch",
+          "name": "test_scan_nomatch",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_analyze_counts",
+          "name": "test_analyze_counts",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
+  "header-spoof": {
+    "suite": {
+      "ran": true,
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_core::test_audit_missing",
+          "name": "test_audit_missing",
+          "status": "passed",
+          "duration": 0.013,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_fetch_headers_empty",
+          "name": "test_fetch_headers_empty",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
   "honeypot": {
     "suite": {
       "ran": true,
@@ -494,7 +907,7 @@
           "nodeid": "tests.test_honeypot::test_honeypot_captures_http_connection",
           "name": "test_honeypot_captures_http_connection",
           "status": "passed",
-          "duration": 0.605,
+          "duration": 0.607,
           "detail": ""
         },
         {
@@ -502,6 +915,41 @@
           "name": "test_honeypot_captures_ssh_banner",
           "status": "passed",
           "duration": 0.604,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
+  "host-audit": {
+    "suite": {
+      "ran": true,
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_core::test_digest_stable",
+          "name": "test_digest_stable",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_diff_changed",
+          "name": "test_diff_changed",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_diff_added_removed",
+          "name": "test_diff_added_removed",
+          "status": "passed",
+          "duration": 0.001,
           "detail": ""
         }
       ],
@@ -522,7 +970,7 @@
           "nodeid": "tests.test_engine::test_new_process_detection",
           "name": "test_new_process_detection",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.0,
           "detail": ""
         },
         {
@@ -564,14 +1012,140 @@
           "nodeid": "tests.test_engine::test_real_collectors_run",
           "name": "test_real_collectors_run",
           "status": "passed",
-          "duration": 0.035,
+          "duration": 0.027,
           "detail": ""
         },
         {
           "nodeid": "tests.test_engine::test_snapshot_and_diff",
           "name": "test_snapshot_and_diff",
           "status": "passed",
-          "duration": 0.11,
+          "duration": 0.082,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
+  "integrity-guard": {
+    "suite": {
+      "ran": true,
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_core::test_digest_stable",
+          "name": "test_digest_stable",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_diff_changed",
+          "name": "test_diff_changed",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_diff_added_removed",
+          "name": "test_diff_added_removed",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
+  "ioc-hunter": {
+    "suite": {
+      "ran": true,
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_core::test_scan_match",
+          "name": "test_scan_match",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_scan_nomatch",
+          "name": "test_scan_nomatch",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_analyze_counts",
+          "name": "test_analyze_counts",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
+  "jwt-inspector": {
+    "suite": {
+      "ran": true,
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_core::test_decode",
+          "name": "test_decode",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_invalid",
+          "name": "test_invalid",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
+  "lfi-probe": {
+    "suite": {
+      "ran": true,
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_core::test_audit_missing",
+          "name": "test_audit_missing",
+          "status": "passed",
+          "duration": 0.008,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_fetch_headers_empty",
+          "name": "test_fetch_headers_empty",
+          "status": "passed",
+          "duration": 0.0,
           "detail": ""
         }
       ],
@@ -641,7 +1215,7 @@
           "nodeid": "tests.test_logforensics::test_cli_json",
           "name": "test_cli_json",
           "status": "passed",
-          "duration": 0.003,
+          "duration": 0.002,
           "detail": ""
         }
       ],
@@ -662,7 +1236,7 @@
           "nodeid": "tests.test_analyzer::test_entropy_bounds",
           "name": "test_entropy_bounds",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.0,
           "detail": ""
         },
         {
@@ -732,7 +1306,7 @@
           "nodeid": "tests.test_imports::test_source_files_present",
           "name": "test_source_files_present",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.0,
           "detail": ""
         },
         {
@@ -802,7 +1376,7 @@
           "nodeid": "tests.test_scanner::test_expand_cidr",
           "name": "test_expand_cidr",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.0,
           "detail": ""
         },
         {
@@ -816,7 +1390,7 @@
           "nodeid": "tests.test_scanner::test_guess_os",
           "name": "test_guess_os",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.0,
           "detail": ""
         },
         {
@@ -846,6 +1420,97 @@
     "lang": "Python",
     "category": "Defensiva"
   },
+  "packet-sniffer": {
+    "suite": {
+      "ran": true,
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_core::test_scan_match",
+          "name": "test_scan_match",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_scan_nomatch",
+          "name": "test_scan_nomatch",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_analyze_counts",
+          "name": "test_analyze_counts",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
+  "param-tamper": {
+    "suite": {
+      "ran": true,
+      "total": 6,
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_core::test_encode_base64",
+          "name": "test_encode_base64",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_decode_base64",
+          "name": "test_decode_base64",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_encode_hex",
+          "name": "test_encode_hex",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_decode_hex",
+          "name": "test_decode_hex",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_url_roundtrip",
+          "name": "test_url_roundtrip",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_unknown_scheme",
+          "name": "test_unknown_scheme",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
   "password-auditor": {
     "suite": {
       "ran": true,
@@ -865,7 +1530,7 @@
           "nodeid": "tests.test_analyzer::test_strong_password_scores_high",
           "name": "test_strong_password_scores_high",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.0,
           "detail": ""
         },
         {
@@ -923,6 +1588,62 @@
     "lang": "Python",
     "category": "Defensiva"
   },
+  "payload-coder": {
+    "suite": {
+      "ran": true,
+      "total": 6,
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_core::test_encode_base64",
+          "name": "test_encode_base64",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_decode_base64",
+          "name": "test_decode_base64",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_encode_hex",
+          "name": "test_encode_hex",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_decode_hex",
+          "name": "test_decode_hex",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_url_roundtrip",
+          "name": "test_url_roundtrip",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_unknown_scheme",
+          "name": "test_unknown_scheme",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
   "pentest-agent": {
     "suite": {
       "ran": true,
@@ -935,7 +1656,7 @@
           "nodeid": "tests.test_agent::test_authorization_allows_listed",
           "name": "test_authorization_allows_listed",
           "status": "passed",
-          "duration": 0.002,
+          "duration": 0.001,
           "detail": ""
         },
         {
@@ -970,7 +1691,7 @@
           "nodeid": "tests.test_agent::test_agent_runs_against_localhost",
           "name": "test_agent_runs_against_localhost",
           "status": "passed",
-          "duration": 0.015,
+          "duration": 0.008,
           "detail": ""
         },
         {
@@ -984,7 +1705,7 @@
           "nodeid": "tests.test_imports::test_source_files_present",
           "name": "test_source_files_present",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.0,
           "detail": ""
         }
       ],
@@ -992,6 +1713,41 @@
     },
     "lang": "Python",
     "category": "Ofensiva"
+  },
+  "phish-rater": {
+    "suite": {
+      "ran": true,
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_core::test_score_high",
+          "name": "test_score_high",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_score_low",
+          "name": "test_score_low",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_verdict",
+          "name": "test_verdict",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
   },
   "phishing-detector": {
     "suite": {
@@ -1005,14 +1761,14 @@
           "nodeid": "tests.test_analyzer::test_legit_url_low_score",
           "name": "test_legit_url_low_score",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.0,
           "detail": ""
         },
         {
           "nodeid": "tests.test_analyzer::test_ip_host_flagged",
           "name": "test_ip_host_flagged",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.0,
           "detail": ""
         },
         {
@@ -1033,14 +1789,14 @@
           "nodeid": "tests.test_analyzer::test_at_symbol_obfuscation",
           "name": "test_at_symbol_obfuscation",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.0,
           "detail": ""
         },
         {
           "nodeid": "tests.test_analyzer::test_suspicious_tld",
           "name": "test_suspicious_tld",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.0,
           "detail": ""
         },
         {
@@ -1061,7 +1817,42 @@
           "nodeid": "tests.test_analyzer::test_score_capped",
           "name": "test_score_capped",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
+  "port-lister": {
+    "suite": {
+      "ran": true,
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_core::test_probe_closed",
+          "name": "test_probe_closed",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_scan_empty",
+          "name": "test_scan_empty",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_scan_localhost",
+          "name": "test_scan_localhost",
+          "status": "passed",
+          "duration": 0.0,
           "detail": ""
         }
       ],
@@ -1133,6 +1924,167 @@
     "lang": "Python",
     "category": "Defensiva"
   },
+  "recon-foot": {
+    "suite": {
+      "ran": true,
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_core::test_resolve_valid",
+          "name": "test_resolve_valid",
+          "status": "passed",
+          "duration": 0.002,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_resolve_invalid",
+          "name": "test_resolve_invalid",
+          "status": "passed",
+          "duration": 0.007,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_check_returns_list",
+          "name": "test_check_returns_list",
+          "status": "passed",
+          "duration": 0.306,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
+  "redirect-find": {
+    "suite": {
+      "ran": true,
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_core::test_score_high",
+          "name": "test_score_high",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_score_low",
+          "name": "test_score_low",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_verdict",
+          "name": "test_verdict",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
+  "sqli-forge": {
+    "suite": {
+      "ran": true,
+      "total": 6,
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_core::test_encode_base64",
+          "name": "test_encode_base64",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_decode_base64",
+          "name": "test_decode_base64",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_encode_hex",
+          "name": "test_encode_hex",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_decode_hex",
+          "name": "test_decode_hex",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_url_roundtrip",
+          "name": "test_url_roundtrip",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_unknown_scheme",
+          "name": "test_unknown_scheme",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
+  "subdomain-mapper": {
+    "suite": {
+      "ran": true,
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_core::test_resolve_valid",
+          "name": "test_resolve_valid",
+          "status": "passed",
+          "duration": 0.002,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_resolve_invalid",
+          "name": "test_resolve_invalid",
+          "status": "passed",
+          "duration": 0.008,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_check_returns_list",
+          "name": "test_check_returns_list",
+          "status": "passed",
+          "duration": 0.009,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
   "subdomain-recon": {
     "suite": {
       "ran": true,
@@ -1145,7 +2097,7 @@
           "nodeid": "tests.test_core::test_parse_crtsh_extrai_e_normaliza",
           "name": "test_parse_crtsh_extrai_e_normaliza",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.0,
           "detail": ""
         },
         {
@@ -1180,7 +2132,7 @@
           "nodeid": "tests.test_tip::test_detect_type",
           "name": "test_detect_type",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.0,
           "detail": ""
         },
         {
@@ -1222,7 +2174,7 @@
           "nodeid": "tests.test_tip::test_rest_api_roundtrip",
           "name": "test_rest_api_roundtrip",
           "status": "passed",
-          "duration": 0.521,
+          "duration": 0.52,
           "detail": ""
         }
       ],
@@ -1299,6 +2251,383 @@
       "error": ""
     },
     "lang": "Python",
+    "category": "Defensiva"
+  },
+  "tls-checker": {
+    "suite": {
+      "ran": true,
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_core::test_audit_missing",
+          "name": "test_audit_missing",
+          "status": "passed",
+          "duration": 0.014,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_fetch_headers_empty",
+          "name": "test_fetch_headers_empty",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
+  "token-leak": {
+    "suite": {
+      "ran": true,
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_core::test_scan_match",
+          "name": "test_scan_match",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_scan_nomatch",
+          "name": "test_scan_nomatch",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_analyze_counts",
+          "name": "test_analyze_counts",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
+  "waf-tester": {
+    "suite": {
+      "ran": true,
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_core::test_score_high",
+          "name": "test_score_high",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_score_low",
+          "name": "test_score_low",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_verdict",
+          "name": "test_verdict",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
+  "web-hardener": {
+    "suite": {
+      "ran": true,
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_core::test_audit_missing",
+          "name": "test_audit_missing",
+          "status": "passed",
+          "duration": 0.013,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_fetch_headers_empty",
+          "name": "test_fetch_headers_empty",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
+  "xss-forge": {
+    "suite": {
+      "ran": true,
+      "total": 6,
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_core::test_encode_base64",
+          "name": "test_encode_base64",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_decode_base64",
+          "name": "test_decode_base64",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_encode_hex",
+          "name": "test_encode_hex",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_decode_hex",
+          "name": "test_decode_hex",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_url_roundtrip",
+          "name": "test_url_roundtrip",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_unknown_scheme",
+          "name": "test_unknown_scheme",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
+  "java-aes": {
+    "suite": {
+      "ran": false,
+      "total": 0,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [],
+      "error": "make test sem resultados"
+    },
+    "lang": "Java",
+    "category": "Defensiva"
+  },
+  "java-b64": {
+    "suite": {
+      "ran": false,
+      "total": 0,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [],
+      "error": "make test sem resultados"
+    },
+    "lang": "Java",
+    "category": "Defensiva"
+  },
+  "java-cpf-check": {
+    "suite": {
+      "ran": false,
+      "total": 0,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [],
+      "error": "make test sem resultados"
+    },
+    "lang": "Java",
+    "category": "Defensiva"
+  },
+  "java-dns": {
+    "suite": {
+      "ran": false,
+      "total": 0,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [],
+      "error": "make test sem resultados"
+    },
+    "lang": "Java",
+    "category": "Defensiva"
+  },
+  "java-filehash": {
+    "suite": {
+      "ran": false,
+      "total": 0,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [],
+      "error": "make test sem resultados"
+    },
+    "lang": "Java",
+    "category": "Defensiva"
+  },
+  "java-hash-crack": {
+    "suite": {
+      "ran": false,
+      "total": 0,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [],
+      "error": "make test sem resultados"
+    },
+    "lang": "Java",
+    "category": "Defensiva"
+  },
+  "java-json-anon": {
+    "suite": {
+      "ran": false,
+      "total": 0,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [],
+      "error": "make test sem resultados"
+    },
+    "lang": "Java",
+    "category": "Defensiva"
+  },
+  "java-logscan": {
+    "suite": {
+      "ran": false,
+      "total": 0,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [],
+      "error": "make test sem resultados"
+    },
+    "lang": "Java",
+    "category": "Defensiva"
+  },
+  "java-otp": {
+    "suite": {
+      "ran": false,
+      "total": 0,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [],
+      "error": "make test sem resultados"
+    },
+    "lang": "Java",
+    "category": "Defensiva"
+  },
+  "java-pass-hasher": {
+    "suite": {
+      "ran": false,
+      "total": 0,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [],
+      "error": "make test sem resultados"
+    },
+    "lang": "Java",
+    "category": "Defensiva"
+  },
+  "java-portscan": {
+    "suite": {
+      "ran": false,
+      "total": 0,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [],
+      "error": "make test sem resultados"
+    },
+    "lang": "Java",
+    "category": "Defensiva"
+  },
+  "java-rc4": {
+    "suite": {
+      "ran": false,
+      "total": 0,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [],
+      "error": "make test sem resultados"
+    },
+    "lang": "Java",
+    "category": "Defensiva"
+  },
+  "java-subdomain": {
+    "suite": {
+      "ran": false,
+      "total": 0,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [],
+      "error": "make test sem resultados"
+    },
+    "lang": "Java",
+    "category": "Defensiva"
+  },
+  "java-url-coder": {
+    "suite": {
+      "ran": false,
+      "total": 0,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [],
+      "error": "make test sem resultados"
+    },
+    "lang": "Java",
+    "category": "Defensiva"
+  },
+  "java-validator": {
+    "suite": {
+      "ran": false,
+      "total": 0,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [],
+      "error": "make test sem resultados"
+    },
+    "lang": "Java",
     "category": "Defensiva"
   }
 }

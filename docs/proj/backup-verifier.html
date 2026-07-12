@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>backup-verifier · ProjView</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body>
+<header class="top">
+  <a class="brand" href="../index.html">◈ ProjView</a>
+  <nav><a href="../index.html">Projetos</a></nav>
+</header>
+<main class="wrap">
+        <a class="back" href="../index.html">← todos os projetos</a>
+        <div class="phead">
+          <h1>backup-verifier</h1>
+          <div class="tags"><span class="lang">Python</span>
+          <span class="cat">Defensiva</span>
+          <a class="repo" href="https://github.com/Diogo-Damasceno/backup-verifier" target="_blank" rel="noopener">GitHub ↗</a></div>
+          <p class="lead">Verifica integridade de backups por hash antes de restaurar.</p>
+        </div>
+        <div class="tabs">
+          <button class="tab active" data-tab="tests">Testes</button>
+          <button class="tab" data-tab="how">Como funciona</button>
+          <button class="tab" data-tab="algo">Algoritmo</button>
+          <button class="tab" data-tab="example">Exemplo</button>
+        </div>
+        <section class="pane active" id="tests"><p class="summary"><b>3</b> testes · <span class="ok">3 passou</span> · <span class="bad">0 falhou</span> · <span class="muted">0 skip</span></p><ul class="tests"><li class="trow pass"><span class="dot"></span><span class="tname">test_digest_stable</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_diff_changed</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_diff_added_removed</span><span class="ttime">0.00s</span><div class="tdetail"></div></li></ul></section>
+        <section class="pane" id="how">
+          
+    <h3>Entrypoints (CLI)</h3><ul class="eps"><li><code>backup-verifier</code></li></ul>
+    <h3>Módulos e funções principais</h3><details><summary>src/backup_verifier/__init__.py</summary><ul><li>—</li></ul></details><details><summary>src/backup_verifier/cli.py</summary><ul><li><code>main()</code></li></ul></details><details><summary>src/backup_verifier/core.py</summary><ul><li><code>digest()</code></li><li><code>baseline()</code></li><li><code>diff()</code></li><li><code>main()</code></li></ul></details>
+    <h3>Estrutura de arquivos</h3><ul class="tree"><li>LICENSE</li><li>README.md</li><li>pyproject.toml</li><li>src/backup_verifier/__init__.py</li><li>src/backup_verifier/cli.py</li><li>src/backup_verifier/core.py</li><li>tests/test_core.py</li></ul>
+    
+          <h3>README</h3>
+          <div class="readme"># backup-verifier
+
+Verifica integridade de backups por hash antes de restaurar.
+
+&gt; **Aviso etico:** ferramenta exclusiva para fins educacionais e testes em
+&gt; ambientes que voce possui ou tem autorizacao para auditar. Categoria:
+&gt; Defensiva. Nunca a use contra terceiros.
+
+## Instalacao
+
+```bash
+git clone https://github.com/Diogo-Damasceno/backup-verifier.git
+cd backup-verifier
+python3 -m venv .venv &amp;&amp; . .venv/bin/activate
+pip install -e .
+```
+
+## Uso
+
+Confirme que seus backups não foram corrompidos.
+
+Exemplos reais:
+
+```
+  $ backup-verifier backup1.tar backup2.tar
+  {&#x27;backup1.tar&#x27;: &#x27;e5f6...&#x27;}```
+
+## Arquitetura
+
+`src/backup_verifier/core.py` tem a logica pura (funcoes testaveis); `cli.py` e a
+casca de argumentos. Testes em `tests/` cobrem os casos principais.
+</div>
+        </section>
+        <section class="pane" id="algo"><p class="muted">Diagrama de fluxo em breve.</p></section>
+        <section class="pane" id="example"><p class="muted">Exemplo em breve.</p></section>
+        </main>
+<footer class="foot">Portfólio estático gerado por projview — nenhum código é executado no servidor ou no navegador.</footer>
+<script src="../assets/site.js"></script>
+</body></html>
