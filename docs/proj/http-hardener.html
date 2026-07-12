@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>http-hardener · ProjView</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body>
+<header class="top">
+  <a class="brand" href="../index.html">◈ ProjView</a>
+  <nav><a href="../index.html">Projetos</a></nav>
+</header>
+<main class="wrap">
+        <a class="back" href="../index.html">← todos os projetos</a>
+        <div class="phead">
+          <h1>http-hardener</h1>
+          <div class="tags"><span class="lang">Python</span>
+          <span class="cat">Defensiva</span>
+          <a class="repo" href="https://github.com/Diogo-Damasceno/http-hardener" target="_blank" rel="noopener">GitHub ↗</a></div>
+          <p class="lead">Sonda cabeçalhos de segurança (HSTS, CSP, X-Frame) do seu site.</p>
+        </div>
+        <div class="tabs">
+          <button class="tab active" data-tab="tests">Testes</button>
+          <button class="tab" data-tab="how">Como funciona</button>
+          <button class="tab" data-tab="algo">Algoritmo</button>
+          <button class="tab" data-tab="example">Exemplo</button>
+        </div>
+        <section class="pane active" id="tests"><p class="summary"><b>2</b> testes · <span class="ok">2 passou</span> · <span class="bad">0 falhou</span> · <span class="muted">0 skip</span></p><ul class="tests"><li class="trow pass"><span class="dot"></span><span class="tname">test_audit_missing</span><span class="ttime">0.01s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_fetch_headers_empty</span><span class="ttime">0.00s</span><div class="tdetail"></div></li></ul></section>
+        <section class="pane" id="how">
+          
+    <h3>Entrypoints (CLI)</h3><ul class="eps"><li><code>web-hardener</code></li></ul>
+    <h3>Módulos e funções principais</h3><details><summary>src/http_hardener/__init__.py</summary><ul><li>—</li></ul></details><details><summary>src/http_hardener/cli.py</summary><ul><li><code>main()</code></li></ul></details><details><summary>src/http_hardener/core.py</summary><ul><li><code>fetch_headers()</code></li><li><code>audit()</code></li><li><code>main()</code></li></ul></details>
+    <h3>Estrutura de arquivos</h3><ul class="tree"><li>LICENSE</li><li>README.md</li><li>pyproject.toml</li><li>src/http_hardener/__init__.py</li><li>src/http_hardener/cli.py</li><li>src/http_hardener/core.py</li><li>tests/test_core.py</li></ul>
+    
+          <h3>README</h3>
+          <div class="readme"># http-hardener
+
+Sonda cabeçalhos de segurança (HSTS, CSP, X-Frame) do seu site.
+
+## O que faz
+
+Esta ferramenta de **defensiva** contra alvos que voce possui ou tem autorizacao. Sonda cabeçalhos de segurança (HSTS, CSP, X-Frame) do seu site. O codigo e
+testavel localmente (sem dependencias de rede para os testes unitarios).
+
+&gt; **Aviso etico:** uso exclusivo para fins educacionais e testes em ambientes
+&gt; que voce **possui** ou tem **autorizacao expressa** para auditar. Nunca a
+&gt; utilize contra sistemas de terceiros. O autor nao se responsabiliza por uso
+&gt; indevido.
+
+## Instalacao
+
+```bash
+git clone https://github.com/Diogo-Damasceno/http-hardener.git
+cd http-hardener
+python3 -m venv .venv &amp;&amp; . .venv/bin/activate
+pip install -e .
+```
+
+## Uso
+
+Audite seu próprio domínio e corrija cabeçalhos faltantes.
+
+## Exemplos reais
+
+```bash
+$ web-hardener https://meusite.com
+# {&quot;hsts&quot;: true, &quot;csp&quot;: true, &quot;xframe&quot;: true}
+```
+
+## Como funciona (resumo)
+
+O modulo principal implementa a logica em funcoes puras e testaveis; a CLI e
+apenas a casca de argumentos. Os testes em `tests/` (Python) ou `CoreTest.java`
+(Java) cobrem os casos principais e rodam offline.
+
+## O que NAO faz
+
+- Nao executa ataques contra terceiros.
+- Nao exfiltra dados.
+- Nao substitui uma solucao comercial de seguranca.
+
+## Licenca
+
+MIT — ver `LICENSE`.
+</div>
+        </section>
+        <section class="pane" id="algo"><p class="muted">Diagrama de fluxo em breve.</p></section>
+        <section class="pane" id="example"><p class="muted">Exemplo em breve.</p></section>
+        </main>
+<footer class="foot">Portfólio estático gerado por projview — nenhum código é executado no servidor ou no navegador.</footer>
+<script src="../assets/site.js"></script>
+</body></html>

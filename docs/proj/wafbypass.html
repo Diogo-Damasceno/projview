@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>wafbypass · ProjView</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body>
+<header class="top">
+  <a class="brand" href="../index.html">◈ ProjView</a>
+  <nav><a href="../index.html">Projetos</a></nav>
+</header>
+<main class="wrap">
+        <a class="back" href="../index.html">← todos os projetos</a>
+        <div class="phead">
+          <h1>wafbypass</h1>
+          <div class="tags"><span class="lang">Python</span>
+          <span class="cat">Ofensiva</span>
+          <a class="repo" href="https://github.com/Diogo-Damasceno/wafbypass" target="_blank" rel="noopener">GitHub ↗</a></div>
+          <p class="lead">Classifica vetores de evasão de WAF por pontuação de risco.</p>
+        </div>
+        <div class="tabs">
+          <button class="tab active" data-tab="tests">Testes</button>
+          <button class="tab" data-tab="how">Como funciona</button>
+          <button class="tab" data-tab="algo">Algoritmo</button>
+          <button class="tab" data-tab="example">Exemplo</button>
+        </div>
+        <section class="pane active" id="tests"><p class="summary"><b>3</b> testes · <span class="ok">3 passou</span> · <span class="bad">0 falhou</span> · <span class="muted">0 skip</span></p><ul class="tests"><li class="trow pass"><span class="dot"></span><span class="tname">test_score_high</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_score_low</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_verdict</span><span class="ttime">0.00s</span><div class="tdetail"></div></li></ul></section>
+        <section class="pane" id="how">
+          
+    <h3>Entrypoints (CLI)</h3><ul class="eps"><li><code>waf-tester</code></li></ul>
+    <h3>Módulos e funções principais</h3><details><summary>src/wafbypass/__init__.py</summary><ul><li>—</li></ul></details><details><summary>src/wafbypass/cli.py</summary><ul><li><code>main()</code></li></ul></details><details><summary>src/wafbypass/core.py</summary><ul><li><code>score()</code></li><li><code>verdict()</code></li><li><code>main()</code></li></ul></details>
+    <h3>Estrutura de arquivos</h3><ul class="tree"><li>LICENSE</li><li>README.md</li><li>pyproject.toml</li><li>src/wafbypass/__init__.py</li><li>src/wafbypass/cli.py</li><li>src/wafbypass/core.py</li><li>tests/test_core.py</li></ul>
+    
+          <h3>README</h3>
+          <div class="readme"># wafbypass
+
+Classifica vetores de evasão de WAF por pontuação de risco.
+
+## O que faz
+
+Esta ferramenta de **ofensiva** apenas em aplicacoes suas ou engajamento autorizado. Classifica vetores de evasão de WAF por pontuação de risco. O codigo e
+testavel localmente (sem dependencias de rede para os testes unitarios).
+
+&gt; **Aviso etico:** uso exclusivo para fins educacionais e testes em ambientes
+&gt; que voce **possui** ou tem **autorizacao expressa** para auditar. Nunca a
+&gt; utilize contra sistemas de terceiros. O autor nao se responsabiliza por uso
+&gt; indevido.
+
+## Instalacao
+
+```bash
+git clone https://github.com/Diogo-Damasceno/wafbypass.git
+cd wafbypass
+python3 -m venv .venv &amp;&amp; . .venv/bin/activate
+pip install -e .
+```
+
+## Uso
+
+Envie variações ao seu próprio WAF e veja o que passa.
+
+## Exemplos reais
+
+```bash
+$ waf-tester &#x27;&lt;ScRiPt&gt;alert(1)&lt;/sCriPt&gt;&#x27;
+# 95 (alto)
+```
+
+## Como funciona (resumo)
+
+O modulo principal implementa a logica em funcoes puras e testaveis; a CLI e
+apenas a casca de argumentos. Os testes em `tests/` (Python) ou `CoreTest.java`
+(Java) cobrem os casos principais e rodam offline.
+
+## O que NAO faz
+
+- Nao executa ataques contra terceiros.
+- Nao exfiltra dados.
+- Nao substitui uma solucao comercial de seguranca.
+
+## Licenca
+
+MIT — ver `LICENSE`.
+</div>
+        </section>
+        <section class="pane" id="algo"><p class="muted">Diagrama de fluxo em breve.</p></section>
+        <section class="pane" id="example"><p class="muted">Exemplo em breve.</p></section>
+        </main>
+<footer class="foot">Portfólio estático gerado por projview — nenhum código é executado no servidor ou no navegador.</footer>
+<script src="../assets/site.js"></script>
+</body></html>

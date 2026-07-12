@@ -235,14 +235,14 @@
           "nodeid": "com.umbra.detection.PIIDetectorTest::detectsCpf",
           "name": "detectsCpf",
           "status": "passed",
-          "duration": 0.035,
+          "duration": 0.032,
           "detail": ""
         },
         {
           "nodeid": "com.umbra.detection.PIIDetectorTest::detectsIp",
           "name": "detectsIp",
           "status": "passed",
-          "duration": 0.002,
+          "duration": 0.001,
           "detail": ""
         },
         {
@@ -263,14 +263,14 @@
           "nodeid": "com.umbra.detection.PIIDetectorTest::isPIIAggregates",
           "name": "isPIIAggregates",
           "status": "passed",
-          "duration": 0.002,
+          "duration": 0.001,
           "detail": ""
         },
         {
           "nodeid": "com.umbra.anonymization.AnonymizerTest::masksEmail",
           "name": "masksEmail",
           "status": "passed",
-          "duration": 0.003,
+          "duration": 0.002,
           "detail": ""
         },
         {
@@ -284,7 +284,7 @@
           "nodeid": "com.umbra.anonymization.AnonymizerTest::hashesOneWay",
           "name": "hashesOneWay",
           "status": "passed",
-          "duration": 0.024,
+          "duration": 0.022,
           "detail": ""
         },
         {
@@ -314,7 +314,42 @@
     "lang": "Java",
     "category": "Privacidade"
   },
-  "auth-log-watch": {
+  "apibrute": {
+    "suite": {
+      "ran": true,
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_core::test_digest_known",
+          "name": "test_digest_known",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_crack_found",
+          "name": "test_crack_found",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_crack_notfound",
+          "name": "test_crack_notfound",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Ofensiva"
+  },
+  "authsentry": {
     "suite": {
       "ran": true,
       "total": 3,
@@ -326,7 +361,7 @@
           "nodeid": "tests.test_core::test_scan_match",
           "name": "test_scan_match",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.0,
           "detail": ""
         },
         {
@@ -349,7 +384,7 @@
     "lang": "Python",
     "category": "Defensiva"
   },
-  "backup-verifier": {
+  "backupseal": {
     "suite": {
       "ran": true,
       "total": 3,
@@ -384,42 +419,7 @@
     "lang": "Python",
     "category": "Defensiva"
   },
-  "brute-api": {
-    "suite": {
-      "ran": true,
-      "total": 3,
-      "passed": 3,
-      "failed": 0,
-      "skipped": 0,
-      "tests": [
-        {
-          "nodeid": "tests.test_core::test_digest_known",
-          "name": "test_digest_known",
-          "status": "passed",
-          "duration": 0.0,
-          "detail": ""
-        },
-        {
-          "nodeid": "tests.test_core::test_crack_found",
-          "name": "test_crack_found",
-          "status": "passed",
-          "duration": 0.0,
-          "detail": ""
-        },
-        {
-          "nodeid": "tests.test_core::test_crack_notfound",
-          "name": "test_crack_notfound",
-          "status": "passed",
-          "duration": 0.0,
-          "detail": ""
-        }
-      ],
-      "error": ""
-    },
-    "lang": "Python",
-    "category": "Defensiva"
-  },
-  "cert-linter": {
+  "certlint": {
     "suite": {
       "ran": true,
       "total": 2,
@@ -447,7 +447,7 @@
     "lang": "Python",
     "category": "Defensiva"
   },
-  "cookie-flag": {
+  "cookieguard": {
     "suite": {
       "ran": true,
       "total": 2,
@@ -459,7 +459,7 @@
           "nodeid": "tests.test_core::test_audit_missing",
           "name": "test_audit_missing",
           "status": "passed",
-          "duration": 0.012,
+          "duration": 0.013,
           "detail": ""
         },
         {
@@ -475,7 +475,7 @@
     "lang": "Python",
     "category": "Defensiva"
   },
-  "csrf-forge": {
+  "csrfmith": {
     "suite": {
       "ran": true,
       "total": 6,
@@ -515,7 +515,7 @@
           "nodeid": "tests.test_core::test_url_roundtrip",
           "name": "test_url_roundtrip",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.0,
           "detail": ""
         },
         {
@@ -529,35 +529,7 @@
       "error": ""
     },
     "lang": "Python",
-    "category": "Defensiva"
-  },
-  "cve-matcher": {
-    "suite": {
-      "ran": true,
-      "total": 2,
-      "passed": 2,
-      "failed": 0,
-      "skipped": 0,
-      "tests": [
-        {
-          "nodeid": "tests.test_core::test_match_found",
-          "name": "test_match_found",
-          "status": "passed",
-          "duration": 0.001,
-          "detail": ""
-        },
-        {
-          "nodeid": "tests.test_core::test_match_none",
-          "name": "test_match_none",
-          "status": "passed",
-          "duration": 0.001,
-          "detail": ""
-        }
-      ],
-      "error": ""
-    },
-    "lang": "Python",
-    "category": "Defensiva"
+    "category": "Ofensiva"
   },
   "cve-watch": {
     "suite": {
@@ -594,31 +566,24 @@
     "lang": "Python",
     "category": "Defensiva"
   },
-  "dir-brute": {
+  "cvematic": {
     "suite": {
       "ran": true,
-      "total": 3,
-      "passed": 3,
+      "total": 2,
+      "passed": 2,
       "failed": 0,
       "skipped": 0,
       "tests": [
         {
-          "nodeid": "tests.test_core::test_scan_match",
-          "name": "test_scan_match",
+          "nodeid": "tests.test_core::test_match_found",
+          "name": "test_match_found",
           "status": "passed",
           "duration": 0.001,
           "detail": ""
         },
         {
-          "nodeid": "tests.test_core::test_scan_nomatch",
-          "name": "test_scan_nomatch",
-          "status": "passed",
-          "duration": 0.0,
-          "detail": ""
-        },
-        {
-          "nodeid": "tests.test_core::test_analyze_counts",
-          "name": "test_analyze_counts",
+          "nodeid": "tests.test_core::test_match_none",
+          "name": "test_match_none",
           "status": "passed",
           "duration": 0.0,
           "detail": ""
@@ -678,41 +643,6 @@
     "lang": "Python",
     "category": "DevOps"
   },
-  "evil-link": {
-    "suite": {
-      "ran": true,
-      "total": 3,
-      "passed": 3,
-      "failed": 0,
-      "skipped": 0,
-      "tests": [
-        {
-          "nodeid": "tests.test_core::test_score_high",
-          "name": "test_score_high",
-          "status": "passed",
-          "duration": 0.0,
-          "detail": ""
-        },
-        {
-          "nodeid": "tests.test_core::test_score_low",
-          "name": "test_score_low",
-          "status": "passed",
-          "duration": 0.0,
-          "detail": ""
-        },
-        {
-          "nodeid": "tests.test_core::test_verdict",
-          "name": "test_verdict",
-          "status": "passed",
-          "duration": 0.0,
-          "detail": ""
-        }
-      ],
-      "error": ""
-    },
-    "lang": "Python",
-    "category": "Defensiva"
-  },
   "file-integrity-monitor": {
     "suite": {
       "ran": true,
@@ -760,21 +690,21 @@
           "nodeid": "tests.test_fim::test_cli_init_check_detects_modification",
           "name": "test_cli_init_check_detects_modification",
           "status": "passed",
-          "duration": 0.004,
+          "duration": 0.003,
           "detail": ""
         },
         {
           "nodeid": "tests.test_fim::test_cli_init_check_clean",
           "name": "test_cli_init_check_clean",
           "status": "passed",
-          "duration": 0.004,
+          "duration": 0.003,
           "detail": ""
         },
         {
           "nodeid": "tests.test_fim::test_cli_diff_json",
           "name": "test_cli_diff_json",
           "status": "passed",
-          "duration": 0.004,
+          "duration": 0.003,
           "detail": ""
         }
       ],
@@ -783,7 +713,7 @@
     "lang": "Python",
     "category": "Defensiva"
   },
-  "hash-breaker": {
+  "hashforge-cli": {
     "suite": {
       "ran": true,
       "total": 3,
@@ -818,42 +748,7 @@
     "lang": "Python",
     "category": "Defensiva"
   },
-  "header-leak": {
-    "suite": {
-      "ran": true,
-      "total": 3,
-      "passed": 3,
-      "failed": 0,
-      "skipped": 0,
-      "tests": [
-        {
-          "nodeid": "tests.test_core::test_scan_match",
-          "name": "test_scan_match",
-          "status": "passed",
-          "duration": 0.001,
-          "detail": ""
-        },
-        {
-          "nodeid": "tests.test_core::test_scan_nomatch",
-          "name": "test_scan_nomatch",
-          "status": "passed",
-          "duration": 0.0,
-          "detail": ""
-        },
-        {
-          "nodeid": "tests.test_core::test_analyze_counts",
-          "name": "test_analyze_counts",
-          "status": "passed",
-          "duration": 0.0,
-          "detail": ""
-        }
-      ],
-      "error": ""
-    },
-    "lang": "Python",
-    "category": "Defensiva"
-  },
-  "header-spoof": {
+  "headerspoof": {
     "suite": {
       "ran": true,
       "total": 2,
@@ -865,7 +760,7 @@
           "nodeid": "tests.test_core::test_audit_missing",
           "name": "test_audit_missing",
           "status": "passed",
-          "duration": 0.013,
+          "duration": 0.008,
           "detail": ""
         },
         {
@@ -879,7 +774,7 @@
       "error": ""
     },
     "lang": "Python",
-    "category": "Defensiva"
+    "category": "Ofensiva"
   },
   "honeypot": {
     "suite": {
@@ -915,41 +810,6 @@
           "name": "test_honeypot_captures_ssh_banner",
           "status": "passed",
           "duration": 0.604,
-          "detail": ""
-        }
-      ],
-      "error": ""
-    },
-    "lang": "Python",
-    "category": "Defensiva"
-  },
-  "host-audit": {
-    "suite": {
-      "ran": true,
-      "total": 3,
-      "passed": 3,
-      "failed": 0,
-      "skipped": 0,
-      "tests": [
-        {
-          "nodeid": "tests.test_core::test_digest_stable",
-          "name": "test_digest_stable",
-          "status": "passed",
-          "duration": 0.001,
-          "detail": ""
-        },
-        {
-          "nodeid": "tests.test_core::test_diff_changed",
-          "name": "test_diff_changed",
-          "status": "passed",
-          "duration": 0.001,
-          "detail": ""
-        },
-        {
-          "nodeid": "tests.test_core::test_diff_added_removed",
-          "name": "test_diff_added_removed",
-          "status": "passed",
-          "duration": 0.001,
           "detail": ""
         }
       ],
@@ -1012,14 +872,14 @@
           "nodeid": "tests.test_engine::test_real_collectors_run",
           "name": "test_real_collectors_run",
           "status": "passed",
-          "duration": 0.027,
+          "duration": 0.019,
           "detail": ""
         },
         {
           "nodeid": "tests.test_engine::test_snapshot_and_diff",
           "name": "test_snapshot_and_diff",
           "status": "passed",
-          "duration": 0.082,
+          "duration": 0.058,
           "detail": ""
         }
       ],
@@ -1028,7 +888,7 @@
     "lang": "Python",
     "category": "Defensiva"
   },
-  "integrity-guard": {
+  "hostwatch": {
     "suite": {
       "ran": true,
       "total": 3,
@@ -1054,6 +914,34 @@
           "nodeid": "tests.test_core::test_diff_added_removed",
           "name": "test_diff_added_removed",
           "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
+  "http-hardener": {
+    "suite": {
+      "ran": true,
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_core::test_audit_missing",
+          "name": "test_audit_missing",
+          "status": "passed",
+          "duration": 0.01,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_fetch_headers_empty",
+          "name": "test_fetch_headers_empty",
+          "status": "passed",
           "duration": 0.001,
           "detail": ""
         }
@@ -1063,7 +951,7 @@
     "lang": "Python",
     "category": "Defensiva"
   },
-  "ioc-hunter": {
+  "iochunt": {
     "suite": {
       "ran": true,
       "total": 3,
@@ -1075,7 +963,7 @@
           "nodeid": "tests.test_core::test_scan_match",
           "name": "test_scan_match",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.0,
           "detail": ""
         },
         {
@@ -1098,7 +986,7 @@
     "lang": "Python",
     "category": "Defensiva"
   },
-  "jwt-inspector": {
+  "jwtpeek": {
     "suite": {
       "ran": true,
       "total": 2,
@@ -1126,7 +1014,42 @@
     "lang": "Python",
     "category": "Defensiva"
   },
-  "lfi-probe": {
+  "leakheaders": {
+    "suite": {
+      "ran": true,
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_core::test_scan_match",
+          "name": "test_scan_match",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_scan_nomatch",
+          "name": "test_scan_nomatch",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_analyze_counts",
+          "name": "test_analyze_counts",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
+  "lfiscope": {
     "suite": {
       "ran": true,
       "total": 2,
@@ -1152,7 +1075,7 @@
       "error": ""
     },
     "lang": "Python",
-    "category": "Defensiva"
+    "category": "Ofensiva"
   },
   "log-forensics": {
     "suite": {
@@ -1355,7 +1278,7 @@
           "nodeid": "tests.test_siem::test_stats",
           "name": "test_stats",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.0,
           "detail": ""
         }
       ],
@@ -1397,7 +1320,7 @@
           "nodeid": "tests.test_scanner::test_socket_scan_detects_open_port",
           "name": "test_socket_scan_detects_open_port",
           "status": "passed",
-          "duration": 0.016,
+          "duration": 0.02,
           "detail": ""
         },
         {
@@ -1420,7 +1343,7 @@
     "lang": "Python",
     "category": "Defensiva"
   },
-  "packet-sniffer": {
+  "openredir": {
     "suite": {
       "ran": true,
       "total": 3,
@@ -1429,22 +1352,22 @@
       "skipped": 0,
       "tests": [
         {
-          "nodeid": "tests.test_core::test_scan_match",
-          "name": "test_scan_match",
+          "nodeid": "tests.test_core::test_score_high",
+          "name": "test_score_high",
           "status": "passed",
           "duration": 0.0,
           "detail": ""
         },
         {
-          "nodeid": "tests.test_core::test_scan_nomatch",
-          "name": "test_scan_nomatch",
+          "nodeid": "tests.test_core::test_score_low",
+          "name": "test_score_low",
           "status": "passed",
           "duration": 0.0,
           "detail": ""
         },
         {
-          "nodeid": "tests.test_core::test_analyze_counts",
-          "name": "test_analyze_counts",
+          "nodeid": "tests.test_core::test_verdict",
+          "name": "test_verdict",
           "status": "passed",
           "duration": 0.0,
           "detail": ""
@@ -1453,9 +1376,9 @@
       "error": ""
     },
     "lang": "Python",
-    "category": "Defensiva"
+    "category": "Ofensiva"
   },
-  "param-tamper": {
+  "paramfuzz": {
     "suite": {
       "ran": true,
       "total": 6,
@@ -1509,7 +1432,7 @@
       "error": ""
     },
     "lang": "Python",
-    "category": "Defensiva"
+    "category": "Ofensiva"
   },
   "password-auditor": {
     "suite": {
@@ -1588,52 +1511,31 @@
     "lang": "Python",
     "category": "Defensiva"
   },
-  "payload-coder": {
+  "pathbrute": {
     "suite": {
       "ran": true,
-      "total": 6,
-      "passed": 6,
+      "total": 3,
+      "passed": 3,
       "failed": 0,
       "skipped": 0,
       "tests": [
         {
-          "nodeid": "tests.test_core::test_encode_base64",
-          "name": "test_encode_base64",
+          "nodeid": "tests.test_core::test_scan_match",
+          "name": "test_scan_match",
           "status": "passed",
           "duration": 0.0,
           "detail": ""
         },
         {
-          "nodeid": "tests.test_core::test_decode_base64",
-          "name": "test_decode_base64",
+          "nodeid": "tests.test_core::test_scan_nomatch",
+          "name": "test_scan_nomatch",
           "status": "passed",
           "duration": 0.0,
           "detail": ""
         },
         {
-          "nodeid": "tests.test_core::test_encode_hex",
-          "name": "test_encode_hex",
-          "status": "passed",
-          "duration": 0.0,
-          "detail": ""
-        },
-        {
-          "nodeid": "tests.test_core::test_decode_hex",
-          "name": "test_decode_hex",
-          "status": "passed",
-          "duration": 0.0,
-          "detail": ""
-        },
-        {
-          "nodeid": "tests.test_core::test_url_roundtrip",
-          "name": "test_url_roundtrip",
-          "status": "passed",
-          "duration": 0.0,
-          "detail": ""
-        },
-        {
-          "nodeid": "tests.test_core::test_unknown_scheme",
-          "name": "test_unknown_scheme",
+          "nodeid": "tests.test_core::test_analyze_counts",
+          "name": "test_analyze_counts",
           "status": "passed",
           "duration": 0.0,
           "detail": ""
@@ -1642,7 +1544,7 @@
       "error": ""
     },
     "lang": "Python",
-    "category": "Defensiva"
+    "category": "Ofensiva"
   },
   "pentest-agent": {
     "suite": {
@@ -1714,7 +1616,7 @@
     "lang": "Python",
     "category": "Ofensiva"
   },
-  "phish-rater": {
+  "phishforge": {
     "suite": {
       "ran": true,
       "total": 3,
@@ -1747,7 +1649,7 @@
       "error": ""
     },
     "lang": "Python",
-    "category": "Defensiva"
+    "category": "Ofensiva"
   },
   "phishing-detector": {
     "suite": {
@@ -1826,7 +1728,77 @@
     "lang": "Python",
     "category": "Defensiva"
   },
-  "port-lister": {
+  "phishscore": {
+    "suite": {
+      "ran": true,
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_core::test_score_high",
+          "name": "test_score_high",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_score_low",
+          "name": "test_score_low",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_verdict",
+          "name": "test_verdict",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
+  "pktwatch": {
+    "suite": {
+      "ran": true,
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_core::test_scan_match",
+          "name": "test_scan_match",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_scan_nomatch",
+          "name": "test_scan_nomatch",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_analyze_counts",
+          "name": "test_analyze_counts",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Defensiva"
+  },
+  "portscope": {
     "suite": {
       "ran": true,
       "total": 3,
@@ -1924,7 +1896,7 @@
     "lang": "Python",
     "category": "Defensiva"
   },
-  "recon-foot": {
+  "reconmap": {
     "suite": {
       "ran": true,
       "total": 3,
@@ -1943,23 +1915,23 @@
           "nodeid": "tests.test_core::test_resolve_invalid",
           "name": "test_resolve_invalid",
           "status": "passed",
-          "duration": 0.007,
+          "duration": 0.011,
           "detail": ""
         },
         {
           "nodeid": "tests.test_core::test_check_returns_list",
           "name": "test_check_returns_list",
           "status": "passed",
-          "duration": 0.306,
+          "duration": 0.007,
           "detail": ""
         }
       ],
       "error": ""
     },
     "lang": "Python",
-    "category": "Defensiva"
+    "category": "Ofensiva"
   },
-  "redirect-find": {
+  "secretlint": {
     "suite": {
       "ran": true,
       "total": 3,
@@ -1968,22 +1940,57 @@
       "skipped": 0,
       "tests": [
         {
-          "nodeid": "tests.test_core::test_score_high",
-          "name": "test_score_high",
-          "status": "passed",
-          "duration": 0.001,
-          "detail": ""
-        },
-        {
-          "nodeid": "tests.test_core::test_score_low",
-          "name": "test_score_low",
+          "nodeid": "tests.test_core::test_scan_match",
+          "name": "test_scan_match",
           "status": "passed",
           "duration": 0.0,
           "detail": ""
         },
         {
-          "nodeid": "tests.test_core::test_verdict",
-          "name": "test_verdict",
+          "nodeid": "tests.test_core::test_scan_nomatch",
+          "name": "test_scan_nomatch",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_analyze_counts",
+          "name": "test_analyze_counts",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Python",
+    "category": "Ofensiva"
+  },
+  "sha-sentinel": {
+    "suite": {
+      "ran": true,
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "tests.test_core::test_digest_stable",
+          "name": "test_digest_stable",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_diff_changed",
+          "name": "test_diff_changed",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_diff_added_removed",
+          "name": "test_diff_added_removed",
           "status": "passed",
           "duration": 0.0,
           "detail": ""
@@ -1994,7 +2001,7 @@
     "lang": "Python",
     "category": "Defensiva"
   },
-  "sqli-forge": {
+  "sqlinja": {
     "suite": {
       "ran": true,
       "total": 6,
@@ -2048,9 +2055,9 @@
       "error": ""
     },
     "lang": "Python",
-    "category": "Defensiva"
+    "category": "Ofensiva"
   },
-  "subdomain-mapper": {
+  "subdns-recon": {
     "suite": {
       "ran": true,
       "total": 3,
@@ -2076,7 +2083,7 @@
           "nodeid": "tests.test_core::test_check_returns_list",
           "name": "test_check_returns_list",
           "status": "passed",
-          "duration": 0.009,
+          "duration": 0.005,
           "detail": ""
         }
       ],
@@ -2146,7 +2153,7 @@
           "nodeid": "tests.test_tip::test_dedup_updates",
           "name": "test_dedup_updates",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.0,
           "detail": ""
         },
         {
@@ -2174,7 +2181,7 @@
           "nodeid": "tests.test_tip::test_rest_api_roundtrip",
           "name": "test_rest_api_roundtrip",
           "status": "passed",
-          "duration": 0.52,
+          "duration": 0.517,
           "detail": ""
         }
       ],
@@ -2253,7 +2260,7 @@
     "lang": "Python",
     "category": "Defensiva"
   },
-  "tls-checker": {
+  "tlssentry": {
     "suite": {
       "ran": true,
       "total": 2,
@@ -2265,7 +2272,7 @@
           "nodeid": "tests.test_core::test_audit_missing",
           "name": "test_audit_missing",
           "status": "passed",
-          "duration": 0.014,
+          "duration": 0.009,
           "detail": ""
         },
         {
@@ -2281,42 +2288,7 @@
     "lang": "Python",
     "category": "Defensiva"
   },
-  "token-leak": {
-    "suite": {
-      "ran": true,
-      "total": 3,
-      "passed": 3,
-      "failed": 0,
-      "skipped": 0,
-      "tests": [
-        {
-          "nodeid": "tests.test_core::test_scan_match",
-          "name": "test_scan_match",
-          "status": "passed",
-          "duration": 0.0,
-          "detail": ""
-        },
-        {
-          "nodeid": "tests.test_core::test_scan_nomatch",
-          "name": "test_scan_nomatch",
-          "status": "passed",
-          "duration": 0.0,
-          "detail": ""
-        },
-        {
-          "nodeid": "tests.test_core::test_analyze_counts",
-          "name": "test_analyze_counts",
-          "status": "passed",
-          "duration": 0.0,
-          "detail": ""
-        }
-      ],
-      "error": ""
-    },
-    "lang": "Python",
-    "category": "Defensiva"
-  },
-  "waf-tester": {
+  "wafbypass": {
     "suite": {
       "ran": true,
       "total": 3,
@@ -2349,37 +2321,9 @@
       "error": ""
     },
     "lang": "Python",
-    "category": "Defensiva"
+    "category": "Ofensiva"
   },
-  "web-hardener": {
-    "suite": {
-      "ran": true,
-      "total": 2,
-      "passed": 2,
-      "failed": 0,
-      "skipped": 0,
-      "tests": [
-        {
-          "nodeid": "tests.test_core::test_audit_missing",
-          "name": "test_audit_missing",
-          "status": "passed",
-          "duration": 0.013,
-          "detail": ""
-        },
-        {
-          "nodeid": "tests.test_core::test_fetch_headers_empty",
-          "name": "test_fetch_headers_empty",
-          "status": "passed",
-          "duration": 0.001,
-          "detail": ""
-        }
-      ],
-      "error": ""
-    },
-    "lang": "Python",
-    "category": "Defensiva"
-  },
-  "xss-forge": {
+  "xssmith": {
     "suite": {
       "ran": true,
       "total": 6,
@@ -2419,7 +2363,7 @@
           "nodeid": "tests.test_core::test_url_roundtrip",
           "name": "test_url_roundtrip",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.0,
           "detail": ""
         },
         {
@@ -2433,9 +2377,61 @@
       "error": ""
     },
     "lang": "Python",
-    "category": "Defensiva"
+    "category": "Ofensiva"
   },
-  "java-aes": {
+  "aeslock": {
+    "suite": {
+      "ran": false,
+      "total": 0,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [],
+      "error": "make test sem resultados"
+    },
+    "lang": "Java",
+    "category": "Privacidade"
+  },
+  "b64kit": {
+    "suite": {
+      "ran": false,
+      "total": 0,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [],
+      "error": "make test sem resultados"
+    },
+    "lang": "Java",
+    "category": "Seguran\u00e7a"
+  },
+  "cpfvalid": {
+    "suite": {
+      "ran": false,
+      "total": 0,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [],
+      "error": "make test sem resultados"
+    },
+    "lang": "Java",
+    "category": "Seguran\u00e7a"
+  },
+  "hashvault": {
+    "suite": {
+      "ran": false,
+      "total": 0,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [],
+      "error": "make test sem resultados"
+    },
+    "lang": "Java",
+    "category": "Seguran\u00e7a"
+  },
+  "jcpfcheck": {
     "suite": {
       "ran": false,
       "total": 0,
@@ -2448,7 +2444,7 @@
     "lang": "Java",
     "category": "Defensiva"
   },
-  "java-b64": {
+  "jdnslook": {
     "suite": {
       "ran": false,
       "total": 0,
@@ -2461,7 +2457,7 @@
     "lang": "Java",
     "category": "Defensiva"
   },
-  "java-cpf-check": {
+  "jfilehash": {
     "suite": {
       "ran": false,
       "total": 0,
@@ -2474,7 +2470,20 @@
     "lang": "Java",
     "category": "Defensiva"
   },
-  "java-dns": {
+  "jhashcrack": {
+    "suite": {
+      "ran": false,
+      "total": 0,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [],
+      "error": "make test sem resultados"
+    },
+    "lang": "Java",
+    "category": "Ofensiva"
+  },
+  "jlogscan": {
     "suite": {
       "ran": false,
       "total": 0,
@@ -2487,7 +2496,20 @@
     "lang": "Java",
     "category": "Defensiva"
   },
-  "java-filehash": {
+  "jotpgen": {
+    "suite": {
+      "ran": false,
+      "total": 0,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [],
+      "error": "make test sem resultados"
+    },
+    "lang": "Java",
+    "category": "Seguran\u00e7a"
+  },
+  "jportscan": {
     "suite": {
       "ran": false,
       "total": 0,
@@ -2500,7 +2522,7 @@
     "lang": "Java",
     "category": "Defensiva"
   },
-  "java-hash-crack": {
+  "jrc4stream": {
     "suite": {
       "ran": false,
       "total": 0,
@@ -2511,9 +2533,9 @@
       "error": "make test sem resultados"
     },
     "lang": "Java",
-    "category": "Defensiva"
+    "category": "Privacidade"
   },
-  "java-json-anon": {
+  "jsonmask": {
     "suite": {
       "ran": false,
       "total": 0,
@@ -2524,9 +2546,9 @@
       "error": "make test sem resultados"
     },
     "lang": "Java",
-    "category": "Defensiva"
+    "category": "Privacidade"
   },
-  "java-logscan": {
+  "jsubdomain": {
     "suite": {
       "ran": false,
       "total": 0,
@@ -2537,9 +2559,9 @@
       "error": "make test sem resultados"
     },
     "lang": "Java",
-    "category": "Defensiva"
+    "category": "Ofensiva"
   },
-  "java-otp": {
+  "jurlmask": {
     "suite": {
       "ran": false,
       "total": 0,
@@ -2550,84 +2572,6 @@
       "error": "make test sem resultados"
     },
     "lang": "Java",
-    "category": "Defensiva"
-  },
-  "java-pass-hasher": {
-    "suite": {
-      "ran": false,
-      "total": 0,
-      "passed": 0,
-      "failed": 0,
-      "skipped": 0,
-      "tests": [],
-      "error": "make test sem resultados"
-    },
-    "lang": "Java",
-    "category": "Defensiva"
-  },
-  "java-portscan": {
-    "suite": {
-      "ran": false,
-      "total": 0,
-      "passed": 0,
-      "failed": 0,
-      "skipped": 0,
-      "tests": [],
-      "error": "make test sem resultados"
-    },
-    "lang": "Java",
-    "category": "Defensiva"
-  },
-  "java-rc4": {
-    "suite": {
-      "ran": false,
-      "total": 0,
-      "passed": 0,
-      "failed": 0,
-      "skipped": 0,
-      "tests": [],
-      "error": "make test sem resultados"
-    },
-    "lang": "Java",
-    "category": "Defensiva"
-  },
-  "java-subdomain": {
-    "suite": {
-      "ran": false,
-      "total": 0,
-      "passed": 0,
-      "failed": 0,
-      "skipped": 0,
-      "tests": [],
-      "error": "make test sem resultados"
-    },
-    "lang": "Java",
-    "category": "Defensiva"
-  },
-  "java-url-coder": {
-    "suite": {
-      "ran": false,
-      "total": 0,
-      "passed": 0,
-      "failed": 0,
-      "skipped": 0,
-      "tests": [],
-      "error": "make test sem resultados"
-    },
-    "lang": "Java",
-    "category": "Defensiva"
-  },
-  "java-validator": {
-    "suite": {
-      "ran": false,
-      "total": 0,
-      "passed": 0,
-      "failed": 0,
-      "skipped": 0,
-      "tests": [],
-      "error": "make test sem resultados"
-    },
-    "lang": "Java",
-    "category": "Defensiva"
+    "category": "Ofensiva"
   }
 }

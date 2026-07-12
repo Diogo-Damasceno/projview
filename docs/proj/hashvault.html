@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>hashvault · ProjView</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body>
+<header class="top">
+  <a class="brand" href="../index.html">◈ ProjView</a>
+  <nav><a href="../index.html">Projetos</a></nav>
+</header>
+<main class="wrap">
+        <a class="back" href="../index.html">← todos os projetos</a>
+        <div class="phead">
+          <h1>hashvault</h1>
+          <div class="tags"><span class="lang">Java</span>
+          <span class="cat">Segurança</span>
+          <a class="repo" href="https://github.com/Diogo-Damasceno/hashvault" target="_blank" rel="noopener">GitHub ↗</a></div>
+          <p class="lead">Hasher de senhas em Java (SHA-256) para testes autorizados.</p>
+        </div>
+        <div class="tabs">
+          <button class="tab active" data-tab="tests">Testes</button>
+          <button class="tab" data-tab="how">Como funciona</button>
+          <button class="tab" data-tab="algo">Algoritmo</button>
+          <button class="tab" data-tab="example">Exemplo</button>
+        </div>
+        <section class="pane active" id="tests"><p class="muted">Este projeto não possui suíte de testes configurada (make test sem resultados).</p></section>
+        <section class="pane" id="how">
+          
+    <h3>Entrypoints (CLI)</h3><ul class="eps"><li>—</li></ul>
+    <h3>Módulos e funções principais</h3>
+    <h3>Estrutura de arquivos</h3><ul class="tree"><li>LICENSE</li><li>Makefile</li><li>README.md</li><li>bin/passhasher/Core.class</li><li>bin/passhasher/CoreTest.class</li><li>bin/passhasher/Main.class</li><li>src/passhasher/Core.java</li><li>src/passhasher/CoreTest.java</li><li>src/passhasher/Main.java</li></ul>
+    
+          <h3>README</h3>
+          <div class="readme"># hashvault
+
+Hasher de senhas em Java (SHA-256) para testes autorizados.
+
+## O que faz
+
+Esta ferramenta de **segurança** contra alvos que voce possui ou tem autorizacao. Hasher de senhas em Java (SHA-256) para testes autorizados. O codigo e
+testavel localmente (sem dependencias de rede para os testes unitarios).
+
+&gt; **Aviso etico:** uso exclusivo para fins educacionais e testes em ambientes
+&gt; que voce **possui** ou tem **autorizacao expressa** para auditar. Nunca a
+&gt; utilize contra sistemas de terceiros. O autor nao se responsabiliza por uso
+&gt; indevido.
+
+## Instalacao
+
+```bash
+git clone https://github.com/Diogo-Damasceno/hashvault.git
+cd hashvault
+# Java 21
+make build
+```
+
+## Uso
+
+Compare força de senhas que você define.
+
+## Exemplos reais
+
+```bash
+$ java passhasher.Main open
+# &lt;hash sha256&gt;
+```
+
+## Como funciona (resumo)
+
+O modulo principal implementa a logica em funcoes puras e testaveis; a CLI e
+apenas a casca de argumentos. Os testes em `tests/` (Python) ou `CoreTest.java`
+(Java) cobrem os casos principais e rodam offline.
+
+## O que NAO faz
+
+- Nao executa ataques contra terceiros.
+- Nao exfiltra dados.
+- Nao substitui uma solucao comercial de seguranca.
+
+## Licenca
+
+MIT — ver `LICENSE`.
+</div>
+        </section>
+        <section class="pane" id="algo"><p class="muted">Diagrama de fluxo em breve.</p></section>
+        <section class="pane" id="example"><p class="muted">Exemplo em breve.</p></section>
+        </main>
+<footer class="foot">Portfólio estático gerado por projview — nenhum código é executado no servidor ou no navegador.</footer>
+<script src="../assets/site.js"></script>
+</body></html>

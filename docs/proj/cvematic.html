@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cvematic · ProjView</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body>
+<header class="top">
+  <a class="brand" href="../index.html">◈ ProjView</a>
+  <nav><a href="../index.html">Projetos</a></nav>
+</header>
+<main class="wrap">
+        <a class="back" href="../index.html">← todos os projetos</a>
+        <div class="phead">
+          <h1>cvematic</h1>
+          <div class="tags"><span class="lang">Python</span>
+          <span class="cat">Defensiva</span>
+          <a class="repo" href="https://github.com/Diogo-Damasceno/cvematic" target="_blank" rel="noopener">GitHub ↗</a></div>
+          <p class="lead">Cruza inventário de software com base local de CVEs (offline).</p>
+        </div>
+        <div class="tabs">
+          <button class="tab active" data-tab="tests">Testes</button>
+          <button class="tab" data-tab="how">Como funciona</button>
+          <button class="tab" data-tab="algo">Algoritmo</button>
+          <button class="tab" data-tab="example">Exemplo</button>
+        </div>
+        <section class="pane active" id="tests"><p class="summary"><b>2</b> testes · <span class="ok">2 passou</span> · <span class="bad">0 falhou</span> · <span class="muted">0 skip</span></p><ul class="tests"><li class="trow pass"><span class="dot"></span><span class="tname">test_match_found</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_match_none</span><span class="ttime">0.00s</span><div class="tdetail"></div></li></ul></section>
+        <section class="pane" id="how">
+          
+    <h3>Entrypoints (CLI)</h3><ul class="eps"><li><code>cve-matcher</code></li></ul>
+    <h3>Módulos e funções principais</h3><details><summary>src/cvematic/__init__.py</summary><ul><li>—</li></ul></details><details><summary>src/cvematic/cli.py</summary><ul><li><code>main()</code></li></ul></details><details><summary>src/cvematic/core.py</summary><ul><li><code>load_cves()</code></li><li><code>match()</code></li><li><code>main()</code></li></ul></details>
+    <h3>Estrutura de arquivos</h3><ul class="tree"><li>LICENSE</li><li>README.md</li><li>pyproject.toml</li><li>src/cvematic/__init__.py</li><li>src/cvematic/cli.py</li><li>src/cvematic/core.py</li><li>tests/test_core.py</li></ul>
+    
+          <h3>README</h3>
+          <div class="readme"># cvematic
+
+Cruza inventário de software com base local de CVEs (offline).
+
+## O que faz
+
+Esta ferramenta de **defensiva** contra alvos que voce possui ou tem autorizacao. Cruza inventário de software com base local de CVEs (offline). O codigo e
+testavel localmente (sem dependencias de rede para os testes unitarios).
+
+&gt; **Aviso etico:** uso exclusivo para fins educacionais e testes em ambientes
+&gt; que voce **possui** ou tem **autorizacao expressa** para auditar. Nunca a
+&gt; utilize contra sistemas de terceiros. O autor nao se responsabiliza por uso
+&gt; indevido.
+
+## Instalacao
+
+```bash
+git clone https://github.com/Diogo-Damasceno/cvematic.git
+cd cvematic
+python3 -m venv .venv &amp;&amp; . .venv/bin/activate
+pip install -e .
+```
+
+## Uso
+
+Compare seu inventário com uma base CVE mantida localmente.
+
+## Exemplos reais
+
+```bash
+$ cve-matcher inventory.txt cves.json
+# [{&quot;cve&quot;: &quot;CVE-2026-1&quot;, ...}]
+```
+
+## Como funciona (resumo)
+
+O modulo principal implementa a logica em funcoes puras e testaveis; a CLI e
+apenas a casca de argumentos. Os testes em `tests/` (Python) ou `CoreTest.java`
+(Java) cobrem os casos principais e rodam offline.
+
+## O que NAO faz
+
+- Nao executa ataques contra terceiros.
+- Nao exfiltra dados.
+- Nao substitui uma solucao comercial de seguranca.
+
+## Licenca
+
+MIT — ver `LICENSE`.
+</div>
+        </section>
+        <section class="pane" id="algo"><p class="muted">Diagrama de fluxo em breve.</p></section>
+        <section class="pane" id="example"><p class="muted">Exemplo em breve.</p></section>
+        </main>
+<footer class="foot">Portfólio estático gerado por projview — nenhum código é executado no servidor ou no navegador.</footer>
+<script src="../assets/site.js"></script>
+</body></html>
