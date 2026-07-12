@@ -86,9 +86,22 @@ def _has_pytest(project_path: str) -> bool:
 
 
 def _run_pytest(project_path: str, timeout: int, env: dict) -> SuiteResult:
-    py = os.path.join(project_path, ".venv", "bin", "python")
-    if not os.path.exists(py):
-        py = "python3"
+    if os.path.isfile(os.path.join(project_path, ".venv", "bin", "python")):
+        py = os.path.join(project_path, ".venv", "bin", "python")
+    else:
+        # projeto sem venv: usa o python do sistema (absoluto) para não
+        # herdar um venv ativo no PATH do shell chamador.
+        py = "/usr/bin/python3"
+    # PATH limpo para garantir que o python usado seja o do sistema
+    env = dict(env)
+    env["PATH"] = "/usr/bin:/bin:/usr/local/bin:" + env.get("PATH", "")
+    # garante que o pacote do projeto (src/ ou raiz) seja importável no teste
+    existing = env.get("PYTHONPATH", "")
+    for cand in ("src", "."):
+        cp = os.path.join(project_path, cand)
+        if os.path.isdir(cp) and cp not in existing:
+            existing = (existing + ":" + cp) if existing else cp
+    env["PYTHONPATH"] = existing
     with tempfile.TemporaryDirectory() as td:
         junit = os.path.join(td, "results.xml")
         try:
@@ -275,11 +288,18 @@ def _parse_shell(out: str) -> list[TestResult]:
     tests = []
     for line in out.splitlines():
         s = line.strip()
-        if s.startswith("ok  -"):
+        if s.startswith("ok -") or s.startswith("ok  -"):
             tests.append(TestResult(nodeid=s, name=s.split("-", 1)[1].strip(),
                                     status="passed", duration=0.0, detail=""))
-        elif s.startswith("FAIL -"):
+        elif s.startswith("FAIL -") or s.startswith("FAIL  -"):
             tests.append(TestResult(nodeid=s, name=s.split("-", 1)[1].strip(),
+                                    status="failed", duration=0.0, detail=""))
+        # formato genérico PASS <nome> / FAIL <nome> (ex: testes Java via make)
+        elif s[:5].upper() == "PASS ":
+            tests.append(TestResult(nodeid=s, name=s[5:].strip() or s,
+                                    status="passed", duration=0.0, detail=""))
+        elif s[:5].upper() == "FAIL ":
+            tests.append(TestResult(nodeid=s, name=s[5:].strip() or s,
                                     status="failed", duration=0.0, detail=""))
     if "TODOS OS TESTES PASSARAM" in out:
         status = "passed"
@@ -289,7 +309,7 @@ def _parse_shell(out: str) -> list[TestResult]:
         status = None
     if not tests and status:
         # teste único implícito
-        tests.append(TestResult(nodeid="ddfetch", name="ddfetch smoke", status=status,
+        tests.append(TestResult(nodeid="smoke", name="smoke", status=status,
                                 duration=0.0, detail=""))
     return tests
 
