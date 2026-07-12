@@ -11,14 +11,14 @@
           "nodeid": "tests.test_tui::test_mount_and_tabs",
           "name": "test_mount_and_tabs",
           "status": "passed",
-          "duration": 0.398,
+          "duration": 0.396,
           "detail": ""
         },
         {
           "nodeid": "tests.test_tui::test_filter_and_help",
           "name": "test_filter_and_help",
           "status": "passed",
-          "duration": 0.374,
+          "duration": 0.436,
           "detail": ""
         }
       ],
@@ -88,21 +88,21 @@
           "nodeid": "tests.test_tui::test_mount_files_tab",
           "name": "test_mount_files_tab",
           "status": "passed",
-          "duration": 2.473,
+          "duration": 2.501,
           "detail": ""
         },
         {
           "nodeid": "tests.test_tui::test_add_file_to_repo",
           "name": "test_add_file_to_repo",
           "status": "passed",
-          "duration": 0.02,
+          "duration": 0.013,
           "detail": ""
         },
         {
           "nodeid": "tests.test_tui::test_add_dir_preserves_structure",
           "name": "test_add_dir_preserves_structure",
           "status": "passed",
-          "duration": 0.016,
+          "duration": 0.015,
           "detail": ""
         }
       ],
@@ -347,21 +347,21 @@
           "nodeid": "com.umbra.detection.PIIDetectorTest::detectsCpf",
           "name": "detectsCpf",
           "status": "passed",
-          "duration": 0.035,
+          "duration": 0.025,
           "detail": ""
         },
         {
           "nodeid": "com.umbra.detection.PIIDetectorTest::detectsIp",
           "name": "detectsIp",
           "status": "passed",
-          "duration": 0.002,
+          "duration": 0.001,
           "detail": ""
         },
         {
           "nodeid": "com.umbra.detection.PIIDetectorTest::detectsEmail",
           "name": "detectsEmail",
           "status": "passed",
-          "duration": 0.002,
+          "duration": 0.001,
           "detail": ""
         },
         {
@@ -375,14 +375,14 @@
           "nodeid": "com.umbra.detection.PIIDetectorTest::isPIIAggregates",
           "name": "isPIIAggregates",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.002,
           "detail": ""
         },
         {
           "nodeid": "com.umbra.anonymization.AnonymizerTest::masksEmail",
           "name": "masksEmail",
           "status": "passed",
-          "duration": 0.003,
+          "duration": 0.002,
           "detail": ""
         },
         {
@@ -396,14 +396,14 @@
           "nodeid": "com.umbra.anonymization.AnonymizerTest::hashesOneWay",
           "name": "hashesOneWay",
           "status": "passed",
-          "duration": 0.02,
+          "duration": 0.018,
           "detail": ""
         },
         {
           "nodeid": "com.umbra.anonymization.AnonymizerTest::masksCpf",
           "name": "masksCpf",
           "status": "passed",
-          "duration": 0.002,
+          "duration": 0.001,
           "detail": ""
         },
         {
@@ -418,6 +418,34 @@
           "name": "ipFullyMasked",
           "status": "passed",
           "duration": 0.001,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Java",
+    "category": "Privacidade"
+  },
+  "aeslock": {
+    "suite": {
+      "ran": true,
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "PASS roundtrip",
+          "name": "roundtrip",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "PASS cifrado diferente",
+          "name": "cifrado diferente",
+          "status": "passed",
+          "duration": 0.0,
           "detail": ""
         }
       ],
@@ -496,6 +524,41 @@
     "lang": "Python",
     "category": "Defensiva"
   },
+  "b64kit": {
+    "suite": {
+      "ran": true,
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "PASS roundtrip",
+          "name": "roundtrip",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "PASS encode conhecido",
+          "name": "encode conhecido",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "PASS decode conhecido",
+          "name": "decode conhecido",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Java",
+    "category": "Seguran\u00e7a"
+  },
   "backupseal": {
     "suite": {
       "ran": true,
@@ -515,7 +578,7 @@
           "nodeid": "tests.test_core::test_diff_changed",
           "name": "test_diff_changed",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.0,
           "detail": ""
         },
         {
@@ -543,14 +606,14 @@
           "nodeid": "tests.test_core::test_audit_missing",
           "name": "test_audit_missing",
           "status": "passed",
-          "duration": 0.009,
+          "duration": 0.008,
           "detail": ""
         },
         {
           "nodeid": "tests.test_core::test_fetch_headers_empty",
           "name": "test_fetch_headers_empty",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.0,
           "detail": ""
         }
       ],
@@ -571,14 +634,14 @@
           "nodeid": "tests.test_core::test_audit_missing",
           "name": "test_audit_missing",
           "status": "passed",
-          "duration": 0.009,
+          "duration": 0.008,
           "detail": ""
         },
         {
           "nodeid": "tests.test_core::test_fetch_headers_empty",
           "name": "test_fetch_headers_empty",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.0,
           "detail": ""
         }
       ],
@@ -586,6 +649,48 @@
     },
     "lang": "Python",
     "category": "Defensiva"
+  },
+  "cpfvalid": {
+    "suite": {
+      "ran": true,
+      "total": 4,
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "PASS email ok",
+          "name": "email ok",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "PASS email ruim",
+          "name": "email ruim",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "PASS cpf ok",
+          "name": "cpf ok",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "PASS cpf repetido",
+          "name": "cpf repetido",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Java",
+    "category": "Seguran\u00e7a"
   },
   "csrfmith": {
     "suite": {
@@ -646,17 +751,52 @@
   "cve-watch": {
     "suite": {
       "ran": true,
-      "total": 1,
-      "passed": 0,
-      "failed": 1,
+      "total": 6,
+      "passed": 6,
+      "failed": 0,
       "skipped": 0,
       "tests": [
         {
-          "nodeid": "tests.test_core",
-          "name": "tests.test_core",
-          "status": "error",
+          "nodeid": "tests.test_core::test_match_encontra_vulneravel",
+          "name": "test_match_encontra_vulneravel",
+          "status": "passed",
           "duration": 0.0,
-          "detail": "collection failure"
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_match_ignora_versao_nao_afetada",
+          "name": "test_match_ignora_versao_nao_afetada",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_match_sem_achados",
+          "name": "test_match_sem_achados",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_match_intervalo_versao",
+          "name": "test_match_intervalo_versao",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_match_fora_do_intervalo",
+          "name": "test_match_fora_do_intervalo",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_match_filtro_severidade",
+          "name": "test_match_filtro_severidade",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
         }
       ],
       "error": ""
@@ -695,17 +835,66 @@
   "file-integrity-monitor": {
     "suite": {
       "ran": true,
-      "total": 1,
-      "passed": 0,
-      "failed": 1,
+      "total": 8,
+      "passed": 8,
+      "failed": 0,
       "skipped": 0,
       "tests": [
         {
-          "nodeid": "tests.test_fim",
-          "name": "tests.test_fim",
-          "status": "error",
-          "duration": 0.0,
-          "detail": "collection failure"
+          "nodeid": "tests.test_fim::test_hash_file_stable",
+          "name": "test_hash_file_stable",
+          "status": "passed",
+          "duration": 0.002,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_fim::test_build_baseline_file",
+          "name": "test_build_baseline_file",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_fim::test_build_baseline_dir",
+          "name": "test_build_baseline_dir",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_fim::test_compare_detects_change",
+          "name": "test_compare_detects_change",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_fim::test_compare_detects_added_and_removed",
+          "name": "test_compare_detects_added_and_removed",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_fim::test_cli_init_check_detects_modification",
+          "name": "test_cli_init_check_detects_modification",
+          "status": "passed",
+          "duration": 0.003,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_fim::test_cli_init_check_clean",
+          "name": "test_cli_init_check_clean",
+          "status": "passed",
+          "duration": 0.002,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_fim::test_cli_diff_json",
+          "name": "test_cli_diff_json",
+          "status": "passed",
+          "duration": 0.002,
+          "detail": ""
         }
       ],
       "error": ""
@@ -725,7 +914,7 @@
           "nodeid": "tests.test_core::test_digest_known",
           "name": "test_digest_known",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.0,
           "detail": ""
         },
         {
@@ -748,6 +937,41 @@
     "lang": "Python",
     "category": "Defensiva"
   },
+  "hashvault": {
+    "suite": {
+      "ran": true,
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "PASS hash estavel",
+          "name": "hash estavel",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "PASS hash diferente",
+          "name": "hash diferente",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "PASS tamanho SHA-256",
+          "name": "tamanho SHA-256",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Java",
+    "category": "Seguran\u00e7a"
+  },
   "headerspoof": {
     "suite": {
       "ran": true,
@@ -760,14 +984,14 @@
           "nodeid": "tests.test_core::test_audit_missing",
           "name": "test_audit_missing",
           "status": "passed",
-          "duration": 0.013,
+          "duration": 0.008,
           "detail": ""
         },
         {
           "nodeid": "tests.test_core::test_fetch_headers_empty",
           "name": "test_fetch_headers_empty",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.0,
           "detail": ""
         }
       ],
@@ -802,14 +1026,14 @@
           "nodeid": "tests.test_honeypot::test_honeypot_captures_http_connection",
           "name": "test_honeypot_captures_http_connection",
           "status": "passed",
-          "duration": 0.606,
+          "duration": 0.605,
           "detail": ""
         },
         {
           "nodeid": "tests.test_honeypot::test_honeypot_captures_ssh_banner",
           "name": "test_honeypot_captures_ssh_banner",
           "status": "passed",
-          "duration": 0.604,
+          "duration": 0.605,
           "detail": ""
         }
       ],
@@ -830,7 +1054,7 @@
           "nodeid": "tests.test_engine::test_new_process_detection",
           "name": "test_new_process_detection",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.0,
           "detail": ""
         },
         {
@@ -872,14 +1096,14 @@
           "nodeid": "tests.test_engine::test_real_collectors_run",
           "name": "test_real_collectors_run",
           "status": "passed",
-          "duration": 0.03,
+          "duration": 0.019,
           "detail": ""
         },
         {
           "nodeid": "tests.test_engine::test_snapshot_and_diff",
           "name": "test_snapshot_and_diff",
           "status": "passed",
-          "duration": 0.091,
+          "duration": 0.059,
           "detail": ""
         }
       ],
@@ -907,14 +1131,14 @@
           "nodeid": "tests.test_core::test_diff_changed",
           "name": "test_diff_changed",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.0,
           "detail": ""
         },
         {
           "nodeid": "tests.test_core::test_diff_added_removed",
           "name": "test_diff_added_removed",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.0,
           "detail": ""
         }
       ],
@@ -935,7 +1159,7 @@
           "nodeid": "tests.test_core::test_audit_missing",
           "name": "test_audit_missing",
           "status": "passed",
-          "duration": 0.013,
+          "duration": 0.008,
           "detail": ""
         },
         {
@@ -985,6 +1209,370 @@
     },
     "lang": "Python",
     "category": "Defensiva"
+  },
+  "jcpfcheck": {
+    "suite": {
+      "ran": true,
+      "total": 4,
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "PASS email ok",
+          "name": "email ok",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "PASS email ruim",
+          "name": "email ruim",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "PASS cpf ok",
+          "name": "cpf ok",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "PASS cpf repetido",
+          "name": "cpf repetido",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Java",
+    "category": "Defensiva"
+  },
+  "jdnslook": {
+    "suite": {
+      "ran": true,
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "PASS localhost",
+          "name": "localhost",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "PASS invalido",
+          "name": "invalido",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Java",
+    "category": "Defensiva"
+  },
+  "jfilehash": {
+    "suite": {
+      "ran": true,
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "PASS hash estavel",
+          "name": "hash estavel",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "PASS hash diferente",
+          "name": "hash diferente",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "PASS tamanho SHA-256",
+          "name": "tamanho SHA-256",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Java",
+    "category": "Defensiva"
+  },
+  "jhashcrack": {
+    "suite": {
+      "ran": true,
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "PASS hash estavel",
+          "name": "hash estavel",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "PASS hash diferente",
+          "name": "hash diferente",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "PASS tamanho MD5",
+          "name": "tamanho MD5",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Java",
+    "category": "Ofensiva"
+  },
+  "jlogscan": {
+    "suite": {
+      "ran": true,
+      "total": 4,
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "PASS email ok",
+          "name": "email ok",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "PASS email ruim",
+          "name": "email ruim",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "PASS cpf ok",
+          "name": "cpf ok",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "PASS cpf repetido",
+          "name": "cpf repetido",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Java",
+    "category": "Defensiva"
+  },
+  "jotpgen": {
+    "suite": {
+      "ran": true,
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "PASS roundtrip",
+          "name": "roundtrip",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "PASS encode conhecido",
+          "name": "encode conhecido",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "PASS decode conhecido",
+          "name": "decode conhecido",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Java",
+    "category": "Seguran\u00e7a"
+  },
+  "jportscan": {
+    "suite": {
+      "ran": true,
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "PASS porta 1 fechada",
+          "name": "porta 1 fechada",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "PASS retorna boolean",
+          "name": "retorna boolean",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Java",
+    "category": "Defensiva"
+  },
+  "jrc4stream": {
+    "suite": {
+      "ran": true,
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "PASS roundtrip",
+          "name": "roundtrip",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "PASS cifrado diferente",
+          "name": "cifrado diferente",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Java",
+    "category": "Privacidade"
+  },
+  "jsonmask": {
+    "suite": {
+      "ran": true,
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "PASS remove cpf",
+          "name": "remove cpf",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "PASS mantem nome",
+          "name": "mantem nome",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Java",
+    "category": "Privacidade"
+  },
+  "jsubdomain": {
+    "suite": {
+      "ran": true,
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "PASS localhost",
+          "name": "localhost",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "PASS invalido",
+          "name": "invalido",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Java",
+    "category": "Ofensiva"
+  },
+  "jurlmask": {
+    "suite": {
+      "ran": true,
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "tests": [
+        {
+          "nodeid": "PASS roundtrip",
+          "name": "roundtrip",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "PASS encode conhecido",
+          "name": "encode conhecido",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "PASS decode conhecido",
+          "name": "decode conhecido",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        }
+      ],
+      "error": ""
+    },
+    "lang": "Java",
+    "category": "Ofensiva"
   },
   "jwtpeek": {
     "suite": {
@@ -1068,7 +1656,7 @@
           "nodeid": "tests.test_core::test_fetch_headers_empty",
           "name": "test_fetch_headers_empty",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.0,
           "detail": ""
         }
       ],
@@ -1080,17 +1668,80 @@
   "log-forensics": {
     "suite": {
       "ran": true,
-      "total": 1,
-      "passed": 0,
-      "failed": 1,
+      "total": 10,
+      "passed": 10,
+      "failed": 0,
       "skipped": 0,
       "tests": [
         {
-          "nodeid": "tests.test_logforensics",
-          "name": "tests.test_logforensics",
-          "status": "error",
+          "nodeid": "tests.test_logforensics::test_bruteforce_detected",
+          "name": "test_bruteforce_detected",
+          "status": "passed",
           "duration": 0.0,
-          "detail": "collection failure"
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_logforensics::test_user_scanning_detected",
+          "name": "test_user_scanning_detected",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_logforensics::test_root_login_detected",
+          "name": "test_root_login_detected",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_logforensics::test_benign_ip_not_flagged",
+          "name": "test_benign_ip_not_flagged",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_logforensics::test_per_ip_stats",
+          "name": "test_per_ip_stats",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_logforensics::test_unique_ips_count",
+          "name": "test_unique_ips_count",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_logforensics::test_privesc_detected",
+          "name": "test_privesc_detected",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_logforensics::test_threshold_adjusts_bruteforce",
+          "name": "test_threshold_adjusts_bruteforce",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_logforensics::test_cli_stdin",
+          "name": "test_cli_stdin",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_logforensics::test_cli_json",
+          "name": "test_cli_json",
+          "status": "passed",
+          "duration": 0.002,
+          "detail": ""
         }
       ],
       "error": ""
@@ -1271,7 +1922,7 @@
           "nodeid": "tests.test_scanner::test_socket_scan_detects_open_port",
           "name": "test_socket_scan_detects_open_port",
           "status": "passed",
-          "duration": 0.025,
+          "duration": 0.02,
           "detail": ""
         },
         {
@@ -1397,7 +2048,7 @@
           "nodeid": "tests.test_analyzer::test_common_password_is_flagged",
           "name": "test_common_password_is_flagged",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.0,
           "detail": ""
         },
         {
@@ -1565,7 +2216,7 @@
           "nodeid": "tests.test_imports::test_source_files_present",
           "name": "test_source_files_present",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.0,
           "detail": ""
         }
       ],
@@ -1801,17 +2452,73 @@
   "pwned-check": {
     "suite": {
       "ran": true,
-      "total": 1,
-      "passed": 0,
-      "failed": 1,
+      "total": 9,
+      "passed": 9,
+      "failed": 0,
       "skipped": 0,
       "tests": [
         {
-          "nodeid": "tests.test_checker",
-          "name": "tests.test_checker",
-          "status": "error",
+          "nodeid": "tests.test_checker::test_sha1_hex_known_value",
+          "name": "test_sha1_hex_known_value",
+          "status": "passed",
           "duration": 0.0,
-          "detail": "collection failure"
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_checker::test_sha1_hex_is_uppercase",
+          "name": "test_sha1_hex_is_uppercase",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_checker::test_split_hash_lengths",
+          "name": "test_split_hash_lengths",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_checker::test_match_suffix_count_found",
+          "name": "test_match_suffix_count_found",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_checker::test_match_suffix_count_not_found",
+          "name": "test_match_suffix_count_not_found",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_checker::test_match_suffix_count_case_insensitive",
+          "name": "test_match_suffix_count_case_insensitive",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_checker::test_check_password_offline",
+          "name": "test_check_password_offline",
+          "status": "passed",
+          "duration": 0.003,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_checker::test_check_password_online_erro_rede",
+          "name": "test_check_password_online_erro_rede",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_checker::test_check_password_online_sucesso",
+          "name": "test_check_password_online_sucesso",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
         }
       ],
       "error": ""
@@ -1838,14 +2545,14 @@
           "nodeid": "tests.test_core::test_resolve_invalid",
           "name": "test_resolve_invalid",
           "status": "passed",
-          "duration": 0.031,
+          "duration": 0.013,
           "detail": ""
         },
         {
           "nodeid": "tests.test_core::test_check_returns_list",
           "name": "test_check_returns_list",
           "status": "passed",
-          "duration": 0.027,
+          "duration": 0.01,
           "detail": ""
         }
       ],
@@ -1999,7 +2706,7 @@
           "nodeid": "tests.test_core::test_resolve_invalid",
           "name": "test_resolve_invalid",
           "status": "passed",
-          "duration": 0.007,
+          "duration": 0.008,
           "detail": ""
         },
         {
@@ -2018,17 +2725,31 @@
   "subdomain-recon": {
     "suite": {
       "ran": true,
-      "total": 1,
-      "passed": 0,
-      "failed": 1,
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
       "skipped": 0,
       "tests": [
         {
-          "nodeid": "tests.test_core",
-          "name": "tests.test_core",
-          "status": "error",
+          "nodeid": "tests.test_core::test_parse_crtsh_extrai_e_normaliza",
+          "name": "test_parse_crtsh_extrai_e_normaliza",
+          "status": "passed",
           "duration": 0.0,
-          "detail": "collection failure"
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_parse_crtsh_deduplica",
+          "name": "test_parse_crtsh_deduplica",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_core::test_dedupe_preserva_ordem",
+          "name": "test_dedupe_preserva_ordem",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
         }
       ],
       "error": ""
@@ -2062,7 +2783,7 @@
           "nodeid": "tests.test_tip::test_dedup_updates",
           "name": "test_dedup_updates",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.0,
           "detail": ""
         },
         {
@@ -2090,7 +2811,7 @@
           "nodeid": "tests.test_tip::test_rest_api_roundtrip",
           "name": "test_rest_api_roundtrip",
           "status": "passed",
-          "duration": 0.517,
+          "duration": 0.515,
           "detail": ""
         }
       ],
@@ -2102,17 +2823,80 @@
   "tls-auditor": {
     "suite": {
       "ran": true,
-      "total": 1,
-      "passed": 0,
-      "failed": 1,
+      "total": 10,
+      "passed": 10,
+      "failed": 0,
       "skipped": 0,
       "tests": [
         {
-          "nodeid": "tests.test_auditor",
-          "name": "tests.test_auditor",
-          "status": "error",
+          "nodeid": "tests.test_auditor::test_classify_protocol_weak",
+          "name": "test_classify_protocol_weak",
+          "status": "passed",
+          "duration": 0.001,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_auditor::test_classify_protocol_ok",
+          "name": "test_classify_protocol_ok",
+          "status": "passed",
           "duration": 0.0,
-          "detail": "collection failure"
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_auditor::test_is_weak_cipher_detects_markers",
+          "name": "test_is_weak_cipher_detects_markers",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_auditor::test_is_weak_cipher_safe",
+          "name": "test_is_weak_cipher_safe",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_auditor::test_split_weak_ciphers_separates",
+          "name": "test_split_weak_ciphers_separates",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_auditor::test_is_cert_expired_future",
+          "name": "test_is_cert_expired_future",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_auditor::test_is_cert_expired_past",
+          "name": "test_is_cert_expired_past",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_auditor::test_is_cert_expired_string",
+          "name": "test_is_cert_expired_string",
+          "status": "passed",
+          "duration": 0.0,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_auditor::test_check_cert_expiry_ok",
+          "name": "test_check_cert_expiry_ok",
+          "status": "passed",
+          "duration": 0.005,
+          "detail": ""
+        },
+        {
+          "nodeid": "tests.test_auditor::test_check_cert_expiry_falha_rede",
+          "name": "test_check_cert_expiry_falha_rede",
+          "status": "passed",
+          "duration": 0.01,
+          "detail": ""
         }
       ],
       "error": ""
@@ -2132,7 +2916,7 @@
           "nodeid": "tests.test_core::test_audit_missing",
           "name": "test_audit_missing",
           "status": "passed",
-          "duration": 0.013,
+          "duration": 0.008,
           "detail": ""
         },
         {
@@ -2223,7 +3007,7 @@
           "nodeid": "tests.test_core::test_url_roundtrip",
           "name": "test_url_roundtrip",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.0,
           "detail": ""
         },
         {
@@ -2279,7 +3063,7 @@
           "nodeid": "tests.test_core::test_url_roundtrip",
           "name": "test_url_roundtrip",
           "status": "passed",
-          "duration": 0.001,
+          "duration": 0.0,
           "detail": ""
         },
         {
@@ -2293,201 +3077,6 @@
       "error": ""
     },
     "lang": "Python",
-    "category": "Ofensiva"
-  },
-  "aeslock": {
-    "suite": {
-      "ran": false,
-      "total": 0,
-      "passed": 0,
-      "failed": 0,
-      "skipped": 0,
-      "tests": [],
-      "error": "make test sem resultados"
-    },
-    "lang": "Java",
-    "category": "Privacidade"
-  },
-  "b64kit": {
-    "suite": {
-      "ran": false,
-      "total": 0,
-      "passed": 0,
-      "failed": 0,
-      "skipped": 0,
-      "tests": [],
-      "error": "make test sem resultados"
-    },
-    "lang": "Java",
-    "category": "Seguran\u00e7a"
-  },
-  "cpfvalid": {
-    "suite": {
-      "ran": false,
-      "total": 0,
-      "passed": 0,
-      "failed": 0,
-      "skipped": 0,
-      "tests": [],
-      "error": "make test sem resultados"
-    },
-    "lang": "Java",
-    "category": "Seguran\u00e7a"
-  },
-  "hashvault": {
-    "suite": {
-      "ran": false,
-      "total": 0,
-      "passed": 0,
-      "failed": 0,
-      "skipped": 0,
-      "tests": [],
-      "error": "make test sem resultados"
-    },
-    "lang": "Java",
-    "category": "Seguran\u00e7a"
-  },
-  "jcpfcheck": {
-    "suite": {
-      "ran": false,
-      "total": 0,
-      "passed": 0,
-      "failed": 0,
-      "skipped": 0,
-      "tests": [],
-      "error": "make test sem resultados"
-    },
-    "lang": "Java",
-    "category": "Defensiva"
-  },
-  "jdnslook": {
-    "suite": {
-      "ran": false,
-      "total": 0,
-      "passed": 0,
-      "failed": 0,
-      "skipped": 0,
-      "tests": [],
-      "error": "make test sem resultados"
-    },
-    "lang": "Java",
-    "category": "Defensiva"
-  },
-  "jfilehash": {
-    "suite": {
-      "ran": false,
-      "total": 0,
-      "passed": 0,
-      "failed": 0,
-      "skipped": 0,
-      "tests": [],
-      "error": "make test sem resultados"
-    },
-    "lang": "Java",
-    "category": "Defensiva"
-  },
-  "jhashcrack": {
-    "suite": {
-      "ran": false,
-      "total": 0,
-      "passed": 0,
-      "failed": 0,
-      "skipped": 0,
-      "tests": [],
-      "error": "make test sem resultados"
-    },
-    "lang": "Java",
-    "category": "Ofensiva"
-  },
-  "jlogscan": {
-    "suite": {
-      "ran": false,
-      "total": 0,
-      "passed": 0,
-      "failed": 0,
-      "skipped": 0,
-      "tests": [],
-      "error": "make test sem resultados"
-    },
-    "lang": "Java",
-    "category": "Defensiva"
-  },
-  "jotpgen": {
-    "suite": {
-      "ran": false,
-      "total": 0,
-      "passed": 0,
-      "failed": 0,
-      "skipped": 0,
-      "tests": [],
-      "error": "make test sem resultados"
-    },
-    "lang": "Java",
-    "category": "Seguran\u00e7a"
-  },
-  "jportscan": {
-    "suite": {
-      "ran": false,
-      "total": 0,
-      "passed": 0,
-      "failed": 0,
-      "skipped": 0,
-      "tests": [],
-      "error": "make test sem resultados"
-    },
-    "lang": "Java",
-    "category": "Defensiva"
-  },
-  "jrc4stream": {
-    "suite": {
-      "ran": false,
-      "total": 0,
-      "passed": 0,
-      "failed": 0,
-      "skipped": 0,
-      "tests": [],
-      "error": "make test sem resultados"
-    },
-    "lang": "Java",
-    "category": "Privacidade"
-  },
-  "jsonmask": {
-    "suite": {
-      "ran": false,
-      "total": 0,
-      "passed": 0,
-      "failed": 0,
-      "skipped": 0,
-      "tests": [],
-      "error": "make test sem resultados"
-    },
-    "lang": "Java",
-    "category": "Privacidade"
-  },
-  "jsubdomain": {
-    "suite": {
-      "ran": false,
-      "total": 0,
-      "passed": 0,
-      "failed": 0,
-      "skipped": 0,
-      "tests": [],
-      "error": "make test sem resultados"
-    },
-    "lang": "Java",
-    "category": "Ofensiva"
-  },
-  "jurlmask": {
-    "suite": {
-      "ran": false,
-      "total": 0,
-      "passed": 0,
-      "failed": 0,
-      "skipped": 0,
-      "tests": [],
-      "error": "make test sem resultados"
-    },
-    "lang": "Java",
     "category": "Ofensiva"
   }
 }

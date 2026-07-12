@@ -24,7 +24,7 @@
           <button class="tab" data-tab="algo">Algoritmo</button>
           <button class="tab" data-tab="example">Exemplo</button>
         </div>
-        <section class="pane active" id="tests"><p class="summary"><b>1</b> testes · <span class="ok">0 passou</span> · <span class="bad">1 falhou</span> · <span class="muted">0 skip</span></p><ul class="tests"><li class="trow fail"><span class="dot"></span><span class="tname">tests.test_fim</span><span class="ttime">0.00s</span><div class="tdetail"><pre class="tb">collection failure</pre></div></li></ul></section>
+        <section class="pane active" id="tests"><p class="summary"><b>8</b> testes · <span class="ok">8 passou</span> · <span class="bad">0 falhou</span> · <span class="muted">0 skip</span></p><ul class="tests"><li class="trow pass"><span class="dot"></span><span class="tname">test_hash_file_stable</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_build_baseline_file</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_build_baseline_dir</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_compare_detects_change</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_compare_detects_added_and_removed</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_cli_init_check_detects_modification</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_cli_init_check_clean</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_cli_diff_json</span><span class="ttime">0.00s</span><div class="tdetail"></div></li></ul></section>
         <section class="pane" id="how">
           
     <h3>Entrypoints (CLI)</h3><ul class="eps"><li><code>fim</code></li></ul>
@@ -127,9 +127,7 @@ MIT — Copyright (c) 2026 Diogo Damasceno.
         </div>
         <div class="ex">
           <div class="ex-cmd"><span class="prompt">$ </span>fim check /etc</div>
-          <div class="ex-out"><pre>ALTERADO  /etc/passwd
-REMOVIDO  /etc/cron.d/backdoor
-INTEGRO   1282/1284 arquivos</pre></div>
+          <div class="ex-out"><pre>ALTERADO /etc/passwd\nINTEGRO 1282/1284 arquivos</pre></div>
         </div></section>
         </main>
 <footer class="foot">Portfólio estático gerado por projview — nenhum código é executado no servidor ou no navegador.</footer>

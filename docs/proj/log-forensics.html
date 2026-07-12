@@ -24,7 +24,7 @@
           <button class="tab" data-tab="algo">Algoritmo</button>
           <button class="tab" data-tab="example">Exemplo</button>
         </div>
-        <section class="pane active" id="tests"><p class="summary"><b>1</b> testes · <span class="ok">0 passou</span> · <span class="bad">1 falhou</span> · <span class="muted">0 skip</span></p><ul class="tests"><li class="trow fail"><span class="dot"></span><span class="tname">tests.test_logforensics</span><span class="ttime">0.00s</span><div class="tdetail"><pre class="tb">collection failure</pre></div></li></ul></section>
+        <section class="pane active" id="tests"><p class="summary"><b>10</b> testes · <span class="ok">10 passou</span> · <span class="bad">0 falhou</span> · <span class="muted">0 skip</span></p><ul class="tests"><li class="trow pass"><span class="dot"></span><span class="tname">test_bruteforce_detected</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_user_scanning_detected</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_root_login_detected</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_benign_ip_not_flagged</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_per_ip_stats</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_unique_ips_count</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_privesc_detected</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_threshold_adjusts_bruteforce</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_cli_stdin</span><span class="ttime">0.00s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_cli_json</span><span class="ttime">0.00s</span><div class="tdetail"></div></li></ul></section>
         <section class="pane" id="how">
           
     <h3>Entrypoints (CLI)</h3><ul class="eps"><li><code>logforensics</code></li></ul>
@@ -127,16 +127,7 @@ MIT — Copyright (c) 2026 Diogo Damasceno.
         <section class="pane" id="example"><p class="lead">Como rodar na prática (entrada → saída):</p>
         <div class="ex">
           <div class="ex-cmd"><span class="prompt">$ </span>lf auth.log --top 3</div>
-          <div class="ex-out"><pre>IP                 tentativas  usuarios
-192.0.2.10         142        root, admin, user
-198.51.100.7       31         root
-203.0.113.22       12         deploy
-
-3 IPs com varredura de senha (user-scanning)</pre></div>
-        </div>
-        <div class="ex">
-          <div class="ex-cmd"><span class="prompt">$ </span>lf auth.log --json</div>
-          <div class="ex-out"><pre>[{&quot;ip&quot;:&quot;192.0.2.10&quot;,&quot;attempts&quot;:142,&quot;users&quot;:[&quot;root&quot;,&quot;admin&quot;]}]</pre></div>
+          <div class="ex-out"><pre>192.0.2.10 142 root,admin\n3 IPs com user-scanning</pre></div>
         </div></section>
         </main>
 <footer class="foot">Portfólio estático gerado por projview — nenhum código é executado no servidor ou no navegador.</footer>

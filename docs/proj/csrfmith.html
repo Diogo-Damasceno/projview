@@ -83,8 +83,28 @@ apenas a casca de argumentos. Os testes em `tests/` (Python) ou `CoreTest.java`
 MIT — ver `LICENSE`.
 </div>
         </section>
-        <section class="pane" id="algo"><p class="muted">Diagrama de fluxo em breve.</p></section>
-        <section class="pane" id="example"><p class="muted">Exemplo em breve.</p></section>
+        <section class="pane" id="algo"><div class="algo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 316 462" class="flow" role="img" aria-label="csrfmith">
+<defs>
+<marker id="arw-next" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker>
+<marker id="arw-yes" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L6,3 L0,6 Z" fill="#56d364"/></marker>
+<marker id="arw-no" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L6,3 L0,6 Z" fill="#ff7b72"/></marker>
+</defs>
+<text x="158" y="18" class="flow-title">csrfmith</text>
+<path d="M158.0,188.0 L158.0,206.0" fill="none" stroke="#58a6ff" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arw-next)"/>
+<path d="M288.0,235.0 L288.0,282.0 L158.0,282.0" fill="none" stroke="#56d364" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arw-yes)"/><text x="304" y="258" class="edge-lbl" fill="#56d364" text-anchor="start">SIM</text>
+<path d="M28.0,235.0 L28.0,358.0 L158.0,358.0" fill="none" stroke="#ff7b72" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arw-no)"/><text x="12" y="296" class="edge-lbl" fill="#ff7b72" text-anchor="end">NÃO</text>
+<path d="M158.0,340.0 L158.0,358.0" fill="none" stroke="#58a6ff" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arw-next)"/>
+<g class="node"><ellipse cx="158.0" cy="83.0" rx="130.0" ry="29.0" class="oval"/><text x="158.0" y="83.0" class="lbl">Endpoint/alvo proprio</text></g>
+<g class="node"><rect x="28" y="130" width="260" height="58" rx="9" class="box"/><text x="158.0" y="159.0" class="lbl">Forjar formulario com token</text></g>
+<g class="node"><polygon points="158.0,206 288,235.0 158.0,264 28,235.0" class="dia"/><text x="158.0" y="235.0" class="lbl">Token ausente/fraco?</text></g>
+<g class="node"><rect x="28" y="282" width="260" height="58" rx="9" class="box"/><text x="158.0" y="311.0" class="lbl">Gerar PoC de CSRF</text></g>
+<g class="node"><ellipse cx="158.0" cy="387.0" rx="130.0" ry="29.0" class="oval end"/><text x="158.0" y="387.0" class="lbl">Formulario de teste (autorizado)</text></g>
+</svg></div></section>
+        <section class="pane" id="example"><p class="lead">Como rodar na prática (entrada → saída):</p>
+        <div class="ex">
+          <div class="ex-cmd"><span class="prompt">$ </span>csrfmith encode url &#x27;&lt;form action=/transfer&gt;&#x27;</div>
+          <div class="ex-out"><pre>&lt;form action=/transfer method=POST&gt;\n&lt;input name=csrf value=&gt; (PoC sem token)</pre></div>
+        </div></section>
         </main>
 <footer class="foot">Portfólio estático gerado por projview — nenhum código é executado no servidor ou no navegador.</footer>
 <script src="../assets/site.js"></script>

@@ -24,7 +24,7 @@
           <button class="tab" data-tab="algo">Algoritmo</button>
           <button class="tab" data-tab="example">Exemplo</button>
         </div>
-        <section class="pane active" id="tests"><p class="summary"><b>2</b> testes · <span class="ok">2 passou</span> · <span class="bad">0 falhou</span> · <span class="muted">0 skip</span></p><ul class="tests"><li class="trow pass"><span class="dot"></span><span class="tname">test_mount_and_tabs</span><span class="ttime">0.40s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_filter_and_help</span><span class="ttime">0.37s</span><div class="tdetail"></div></li></ul></section>
+        <section class="pane active" id="tests"><p class="summary"><b>2</b> testes · <span class="ok">2 passou</span> · <span class="bad">0 falhou</span> · <span class="muted">0 skip</span></p><ul class="tests"><li class="trow pass"><span class="dot"></span><span class="tname">test_mount_and_tabs</span><span class="ttime">0.40s</span><div class="tdetail"></div></li><li class="trow pass"><span class="dot"></span><span class="tname">test_filter_and_help</span><span class="ttime">0.44s</span><div class="tdetail"></div></li></ul></section>
         <section class="pane" id="how">
           
     <h3>Entrypoints (CLI)</h3><ul class="eps"><li><code>blackview</code></li></ul>
@@ -88,8 +88,42 @@ requer `sudo` e modifica o sistema — confirme antes de prosseguir.
 MIT
 </div>
         </section>
-        <section class="pane" id="algo"><p class="muted">Diagrama de fluxo em breve.</p></section>
-        <section class="pane" id="example"><p class="muted">Exemplo em breve.</p></section>
+        <section class="pane" id="algo"><div class="algo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 316 766" class="flow" role="img" aria-label="blackview">
+<defs>
+<marker id="arw-next" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/></marker>
+<marker id="arw-yes" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L6,3 L0,6 Z" fill="#56d364"/></marker>
+<marker id="arw-no" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L6,3 L0,6 Z" fill="#ff7b72"/></marker>
+</defs>
+<text x="158" y="18" class="flow-title">blackview</text>
+<path d="M158.0,188.0 L158.0,206.0" fill="none" stroke="#58a6ff" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arw-next)"/>
+<path d="M288.0,235.0 L288.0,282.0 L158.0,282.0" fill="none" stroke="#56d364" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arw-yes)"/><text x="304" y="258" class="edge-lbl" fill="#56d364" text-anchor="start">SIM</text>
+<path d="M28.0,235.0 L28.0,662.0 L158.0,662.0" fill="none" stroke="#ff7b72" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arw-no)"/><text x="12" y="448" class="edge-lbl" fill="#ff7b72" text-anchor="end">NÃO</text>
+<path d="M158.0,340.0 L158.0,358.0" fill="none" stroke="#58a6ff" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arw-next)"/>
+<path d="M288.0,387.0 L288.0,434.0 L158.0,434.0" fill="none" stroke="#56d364" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arw-yes)"/><text x="304" y="410" class="edge-lbl" fill="#56d364" text-anchor="start">SIM</text>
+<path d="M28.0,387.0 L28.0,510.0 L158.0,510.0" fill="none" stroke="#ff7b72" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arw-no)"/><text x="12" y="448" class="edge-lbl" fill="#ff7b72" text-anchor="end">NÃO</text>
+<path d="M158.0,492.0 L158.0,510.0" fill="none" stroke="#58a6ff" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arw-next)"/>
+<path d="M288.0,539.0 L288.0,586.0 L158.0,586.0" fill="none" stroke="#56d364" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arw-yes)"/><text x="304" y="562" class="edge-lbl" fill="#56d364" text-anchor="start">SIM</text>
+<path d="M28.0,539.0 L28.0,662.0 L158.0,662.0" fill="none" stroke="#ff7b72" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arw-no)"/><text x="12" y="600" class="edge-lbl" fill="#ff7b72" text-anchor="end">NÃO</text>
+<path d="M158.0,644.0 L158.0,662.0" fill="none" stroke="#58a6ff" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arw-next)"/>
+<g class="node"><ellipse cx="158.0" cy="83.0" rx="130.0" ry="29.0" class="oval"/><text x="158.0" y="83.0" class="lbl">Abrir blackview</text></g>
+<g class="node"><rect x="28" y="130" width="260" height="58" rx="9" class="box"/><text x="158.0" y="159.0" class="lbl">Sync lista BlackArch (pacman)</text></g>
+<g class="node"><polygon points="158.0,206 288,235.0 158.0,264 28,235.0" class="dia"/><text x="158.0" y="235.0" class="lbl">Aba selecionada?</text></g>
+<g class="node"><rect x="28" y="282" width="260" height="58" rx="9" class="box"/><text x="158.0" y="311.0" class="lbl">Listar ferramentas/categoria</text></g>
+<g class="node"><polygon points="158.0,358 288,387.0 158.0,416 28,387.0" class="dia"/><text x="158.0" y="387.0" class="lbl">Tecla 'i' (instalar)?</text></g>
+<g class="node"><rect x="28" y="434" width="260" height="58" rx="9" class="box"/><text x="158.0" y="463.0" class="lbl">sudo pacman -S (com confirmacao)</text></g>
+<g class="node"><polygon points="158.0,510 288,539.0 158.0,568 28,539.0" class="dia"/><text x="158.0" y="539.0" class="lbl">Tecla 'x' (ver --help)?</text></g>
+<g class="node"><rect x="28" y="586" width="260" height="58" rx="9" class="box"/><text x="158.0" y="615.0" class="lbl">Capturar --help da ferramenta</text></g>
+<g class="node"><ellipse cx="158.0" cy="691.0" rx="130.0" ry="29.0" class="oval end"/><text x="158.0" y="691.0" class="lbl">Painel atualizado</text></g>
+</svg></div></section>
+        <section class="pane" id="example"><p class="lead">Como rodar na prática (entrada → saída):</p>
+        <div class="ex">
+          <div class="ex-cmd"><span class="prompt">$ </span>blackview</div>
+          <div class="ex-out"><pre>  [BlackArch] 76 ferramentas\n  Tab Files: navegue o PC\n  &#x27;i&#x27; instala (sudo pacman)\n  &#x27;x&#x27; mostra --help</pre></div>
+        </div>
+        <div class="ex">
+          <div class="ex-cmd"><span class="prompt">$ </span>blackview  (tecla i em &#x27;wireshark&#x27;)</div>
+          <div class="ex-out"><pre>[sudo] pacman -S blackarch/wireshark\ninstalando wireshark... OK</pre></div>
+        </div></section>
         </main>
 <footer class="foot">Portfólio estático gerado por projview — nenhum código é executado no servidor ou no navegador.</footer>
 <script src="../assets/site.js"></script>
